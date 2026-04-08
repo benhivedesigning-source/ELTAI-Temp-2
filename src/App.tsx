@@ -208,7 +208,7 @@ export default function App() {
               variants={staggerContainer}
               initial="hidden"
               animate="show"
-              className="text-6xl md:text-8xl lg:text-[8rem] font-heading font-black leading-[0.9] tracking-tighter mb-10 uppercase"
+              className="text-6xl md:text-8xl lg:text-[6rem] font-heading font-black leading-[0.9] tracking-tighter mb-10 uppercase"
             >
               <div className="overflow-hidden pb-2"><motion.div variants={staggerItem} className="text-white">ENGLISH ON THE EDGE:</motion.div></div>
               <div className="overflow-hidden pb-2"><motion.div variants={staggerItem} className="text-primary">SURVIVE? EVOLVE? THRIVE?</motion.div></div>
