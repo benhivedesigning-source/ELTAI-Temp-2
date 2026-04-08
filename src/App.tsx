@@ -75,16 +75,9 @@ const Navbar = () => {
       <div className="w-full px-4 lg:px-8 flex items-center justify-between max-w-[1800px] mx-auto">
         {/* Left Logo (ELT@I) */}
         <div className="flex-1 flex justify-start">
-          <div className="flex items-center gap-2 bg-white px-2.5 py-1.5 rounded-md cursor-pointer shrink-0">
-            <div className="w-8 h-8 relative flex items-center justify-center">
-              <div className="w-6 h-6 bg-[#1B5E20] rounded-full absolute top-0"></div>
-              <div className="w-2 h-4 bg-[#8B0000] absolute bottom-0" style={{ clipPath: 'polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)' }}></div>
-            </div>
-            <div className="flex flex-col justify-center">
-              <span className="text-[#1B5E20] font-serif font-bold text-xl leading-none tracking-tight">ELT@I</span>
-              <span className="text-[6px] text-[#8B0000] font-bold leading-tight mt-0.5">English Language Teachers'<br/>Association of India</span>
-            </div>
-          </div>
+          <a href="#" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-12 p-1.5' : 'h-14 md:h-16 p-2'}`}>
+            <img src="https://conf2026.eltai.in/assets/ELTAI-DxCx19mA.png" alt="ELT@I Logo" className="h-full w-auto object-contain" />
+          </a>
         </div>
         
         {/* Center Menu */}
@@ -110,17 +103,9 @@ const Navbar = () => {
           <div className="w-px h-8 bg-zinc-700"></div>
           
           {/* Right Logo (MIT-AIFT) */}
-          <div className="flex items-center gap-2 bg-white px-2.5 py-1.5 rounded-md cursor-pointer">
-            <div className="w-8 h-8 rounded-full border-[2px] border-[#311B92] flex items-center justify-center relative">
-              <div className="w-4 h-4 border-[1.5px] border-[#311B92] rounded-full flex items-center justify-center">
-                <div className="w-1 h-2 bg-[#311B92]"></div>
-              </div>
-            </div>
-            <div className="flex flex-col justify-center">
-              <span className="text-[#311B92] font-serif font-bold text-base leading-none">MIT-AIFT</span>
-              <span className="text-[6px] text-[#311B92] tracking-widest mt-0.5 font-bold">UNIVERSITY</span>
-            </div>
-          </div>
+          <a href="#" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-12 p-1.5' : 'h-14 md:h-16 p-2'}`}>
+            <img src="https://conf2026.eltai.in/assets/MITADT-KRFaF891.png" alt="MIT-ADT Logo" className="h-full w-auto object-contain" />
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -406,32 +391,22 @@ export default function App() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <div className="relative bg-white">
-        {/* Cloud SVG */}
-        <svg className="absolute bottom-full w-full h-32 md:h-48 lg:h-64 text-white fill-current translate-y-1" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <rect x="0" y="60" width="1200" height="60" fill="white" />
-          <circle cx="20" cy="50" r="70" fill="white" />
-          <circle cx="120" cy="70" r="40" fill="white" />
-          <circle cx="200" cy="55" r="60" fill="white" />
-          <circle cx="320" cy="35" r="80" fill="white" />
-          <circle cx="480" cy="10" r="110" fill="white" />
-          <circle cx="620" cy="65" r="45" fill="white" />
-          <circle cx="700" cy="50" r="65" fill="white" />
-          <circle cx="820" cy="30" r="85" fill="white" />
-          <circle cx="940" cy="60" r="50" fill="white" />
-          <circle cx="1050" cy="25" r="95" fill="white" />
-          <circle cx="1180" cy="45" r="75" fill="white" />
-        </svg>
-        
-
-      </div>
-
       {/* Organiser & Host Section */}
       <div className="relative bg-black">
         {/* Cloud SVG */}
-        <svg className="absolute bottom-full w-full h-24 md:h-40 text-black fill-current translate-y-1" viewBox="0 0 1440 100" preserveAspectRatio="none">
-          <path d="M0,100 C120,100 240,0 360,50 C480,100 600,0 720,50 C840,100 960,0 1080,50 C1200,100 1320,0 1440,50 L1440,100 L0,100 Z" />
+        <svg className="absolute bottom-full w-full h-24 md:h-40 lg:h-56 text-black fill-current translate-y-1" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <rect x="0" y="60" width="1200" height="60" fill="currentColor" />
+          <circle cx="20" cy="50" r="70" fill="currentColor" />
+          <circle cx="120" cy="70" r="40" fill="currentColor" />
+          <circle cx="200" cy="55" r="60" fill="currentColor" />
+          <circle cx="320" cy="35" r="80" fill="currentColor" />
+          <circle cx="480" cy="10" r="110" fill="currentColor" />
+          <circle cx="620" cy="65" r="45" fill="currentColor" />
+          <circle cx="700" cy="50" r="65" fill="currentColor" />
+          <circle cx="820" cy="30" r="85" fill="currentColor" />
+          <circle cx="940" cy="60" r="50" fill="currentColor" />
+          <circle cx="1050" cy="25" r="95" fill="currentColor" />
+          <circle cx="1180" cy="45" r="75" fill="currentColor" />
         </svg>
         
         <section className="py-32 relative z-10 overflow-hidden">
