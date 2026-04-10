@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, User, Globe, Zap, Users, Calendar, Clock, ArrowRight, Instagram, Facebook, Twitter, ChevronDown, MapPin, Building2, Download, Youtube, Linkedin } from 'lucide-react';
+import { Menu, X, User, Globe, Zap, Users, Calendar, Clock, ArrowRight, Instagram, Facebook, Twitter, ChevronDown, MapPin, Building2, Download, Youtube, Linkedin, Home, Lightbulb, FileText, Star, UserPlus, Plane, Mail } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
 
 // --- Data ---
@@ -59,15 +59,15 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', active: true },
-    { name: 'Theme', dropdown: true },
-    { name: 'Submit', dropdown: true },
-    { name: 'Programme', dropdown: true },
-    { name: 'Highlights', dropdown: true },
-    { name: 'Register', dropdown: true },
-    { name: 'Travel', dropdown: true },
-    { name: 'Organizers', dropdown: true },
-    { name: 'Contact', dropdown: true },
+    { name: 'Home', active: true, icon: <Home size={16} /> },
+    { name: 'Theme', dropdown: true, icon: <Lightbulb size={16} /> },
+    { name: 'Submit', dropdown: true, icon: <FileText size={16} /> },
+    { name: 'Programme', dropdown: true, icon: <Calendar size={16} /> },
+    { name: 'Highlights', dropdown: true, icon: <Star size={16} /> },
+    { name: 'Register', dropdown: true, icon: <UserPlus size={16} /> },
+    { name: 'Travel', dropdown: true, icon: <Plane size={16} /> },
+    { name: 'Organizers', dropdown: true, icon: <Users size={16} /> },
+    { name: 'Contact', dropdown: true, icon: <Mail size={16} /> },
   ];
 
   return (
@@ -83,7 +83,8 @@ const Navbar = () => {
         {/* Center Menu */}
         <div className="hidden xl:flex flex-none items-center justify-center gap-6 font-bold text-[14px] tracking-wide uppercase">
           {navLinks.map((link, i) => (
-            <a key={i} href="#" className={`flex items-center gap-1 transition-colors ${link.active ? 'text-primary' : 'text-white hover:text-primary'}`}>
+            <a key={i} href="#" className={`flex items-center gap-1.5 transition-colors ${link.active ? 'text-primary' : 'text-white hover:text-primary'}`}>
+              {link.icon}
               {link.name}
               {link.dropdown && <ChevronDown size={16} strokeWidth={3} />}
             </a>
@@ -95,7 +96,7 @@ const Navbar = () => {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-primary text-black px-5 py-1.5 rounded-full font-bold hover:bg-white hover:text-black transition-colors duration-300 text-[11px] uppercase text-center leading-tight shadow-[0_0_15px_rgba(196,240,66,0.2)]"
+            className="bg-primary text-white px-5 py-1.5 rounded-full font-bold hover:bg-white hover:text-black transition-colors duration-300 text-[11px] uppercase text-center leading-tight shadow-[0_0_15px_rgba(231,99,102,0.2)]"
           >
             Register<br/>Now
           </motion.button>
@@ -125,7 +126,10 @@ const Navbar = () => {
         >
           {navLinks.map((link, i) => (
             <a key={i} href="#" className={`text-lg font-heading font-bold flex items-center justify-between transition-colors uppercase ${link.active ? 'text-primary' : 'text-white hover:text-primary'}`}>
-              {link.name}
+              <div className="flex items-center gap-3">
+                {link.icon && React.cloneElement(link.icon as React.ReactElement, { size: 20 })}
+                {link.name}
+              </div>
               {link.dropdown && <ChevronDown size={20} />}
             </a>
           ))}
@@ -133,7 +137,7 @@ const Navbar = () => {
             <motion.button 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-primary text-black px-6 py-3 rounded-full font-bold text-lg w-full sm:w-auto flex-grow shadow-[0_0_20px_rgba(196,240,66,0.3)] uppercase leading-tight"
+              className="bg-primary text-white px-6 py-3 rounded-full font-bold text-lg w-full sm:w-auto flex-grow shadow-[0_0_20px_rgba(231,99,102,0.3)] uppercase leading-tight"
             >
               Register Now
             </motion.button>
@@ -186,11 +190,11 @@ export default function App() {
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop" 
-            alt="Conference Hall" 
+            src="https://image2url.com/r2/default/images/1775816958015-3657dbdc-49ce-4fca-8f30-4f170d43e608.png" 
+            alt="Conference Banner" 
             className="w-full h-full object-cover origin-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent"></div>
         </div>
 
         <div className="relative z-10 max-w-[1800px] mx-auto px-4 lg:px-8 w-full flex-1 flex flex-col justify-center mt-10">
@@ -238,7 +242,7 @@ export default function App() {
             {/* Card 1 */}
             <div className="bg-black/40 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex items-start gap-4">
               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0">
-                <Calendar className="text-primary" size={20} />
+                <Calendar className="text-white" size={20} />
               </div>
               <div>
                 <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase mb-1">DATES</p>
@@ -250,7 +254,7 @@ export default function App() {
             {/* Card 2 */}
             <div className="bg-black/40 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex items-start gap-4">
               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0">
-                <MapPin className="text-primary" size={20} />
+                <MapPin className="text-white" size={20} />
               </div>
               <div>
                 <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase mb-1">VENUE</p>
@@ -262,7 +266,7 @@ export default function App() {
             {/* Card 3 */}
             <div className="bg-black/40 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex items-start gap-4">
               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0">
-                <Users className="text-primary" size={20} />
+                <Users className="text-white" size={20} />
               </div>
               <div>
                 <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase mb-1">ORGANISED BY</p>
@@ -274,7 +278,7 @@ export default function App() {
             {/* Card 4 */}
             <div className="bg-black/40 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex items-start gap-4">
               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0">
-                <Building2 className="text-primary" size={20} />
+                <Building2 className="text-white" size={20} />
               </div>
               <div>
                 <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase mb-1">HOSTED BY</p>
@@ -313,7 +317,7 @@ export default function App() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <button className="bg-primary text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(196,240,66,0.3)] uppercase tracking-wide">
+                <button className="bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(231,99,102,0.3)] uppercase tracking-wide">
                   REGISTER NOW <ArrowRight size={20} strokeWidth={3} />
                 </button>
                 <button className="bg-[#6d6d6d] text-white border-none px-8 py-4 rounded-full font-bold text-lg hover:bg-[#5a5a5a] transition-colors flex items-center justify-center gap-2 uppercase tracking-wide">
@@ -565,7 +569,7 @@ export default function App() {
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-primary text-black px-8 py-4 rounded-full font-black text-lg hover:bg-white transition-colors inline-flex items-center gap-2 shadow-[0_0_30px_rgba(196,240,66,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] group"
+                  className="bg-primary text-white px-8 py-4 rounded-full font-black text-lg hover:bg-white hover:text-black transition-colors inline-flex items-center gap-2 shadow-[0_0_30px_rgba(231,99,102,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] group"
                 >
                   <ArrowRight strokeWidth={3} className="group-hover:translate-x-1 transition-transform" /> REGISTER NOW
                 </motion.button>
