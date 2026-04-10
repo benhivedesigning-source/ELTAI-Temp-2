@@ -83,7 +83,7 @@ const Navbar = () => {
         {/* Center Menu */}
         <div className="hidden lg:flex flex-none items-center justify-center gap-2 xl:gap-3 font-bold text-[10px] xl:text-[13px] tracking-wide uppercase">
           {navLinks.map((link, i) => (
-            <a key={i} href="#" className={`flex items-center gap-1 xl:gap-0.25 transition-colors ${link.active ? 'text-primary' : 'text-white hover:text-primary'}`}>
+            <a key={i} href="#" className={`flex items-center gap-1 xl:gap-0 transition-colors ${link.active ? 'text-primary' : 'text-white hover:text-primary'}`}>
               <span className="flex items-center [&>svg]:w-3 [&>svg]:h-3 xl:[&>svg]:w-4 xl:[&>svg]:h-4">
                 {link.icon}
               </span>
