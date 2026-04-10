@@ -72,45 +72,47 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 border-b-2 ${isScrolled ? 'bg-black/95 backdrop-blur-md py-4 shadow-lg shadow-black/20 border-zinc-800' : 'bg-black/80 py-6 border-zinc-800/50'}`}>
-      <div className="w-full px-4 lg:px-8 flex items-center justify-between max-w-[1800px] mx-auto">
+      <div className="w-full px-4 xl:px-8 flex items-center justify-between max-w-[1800px] mx-auto">
         {/* Left Logo (ELT@I) */}
         <div className="flex-1 flex justify-start">
-          <a href="#" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-12 p-1.5' : 'h-14 md:h-16 p-2'}`}>
+          <a href="#" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-10 p-1 xl:h-12 xl:p-1.5' : 'h-12 p-1.5 xl:h-16 xl:p-2'}`}>
             <img src="https://conf2026.eltai.in/assets/ELTAI-DxCx19mA.png" alt="ELT@I Logo" className="h-full w-auto object-contain" />
           </a>
         </div>
         
         {/* Center Menu */}
-        <div className="hidden xl:flex flex-none items-center justify-center gap-6 font-bold text-[14px] tracking-wide uppercase">
+        <div className="hidden lg:flex flex-none items-center justify-center gap-2.5 xl:gap-6 font-bold text-[10px] xl:text-[13px] tracking-wide uppercase">
           {navLinks.map((link, i) => (
-            <a key={i} href="#" className={`flex items-center gap-1.5 transition-colors ${link.active ? 'text-primary' : 'text-white hover:text-primary'}`}>
-              {link.icon}
-              {link.name}
-              {link.dropdown && <ChevronDown size={16} strokeWidth={3} />}
+            <a key={i} href="#" className={`flex items-center gap-1 xl:gap-1.5 transition-colors ${link.active ? 'text-primary' : 'text-white hover:text-primary'}`}>
+              <span className="flex items-center [&>svg]:w-3 [&>svg]:h-3 xl:[&>svg]:w-4 xl:[&>svg]:h-4">
+                {link.icon}
+              </span>
+              <span className="whitespace-nowrap">{link.name}</span>
+              {link.dropdown && <ChevronDown className="w-3 h-3 xl:w-4 xl:h-4" strokeWidth={3} />}
             </a>
           ))}
         </div>
 
         {/* Right Section */}
-        <div className="hidden xl:flex flex-1 items-center justify-end gap-4 shrink-0">
+        <div className="hidden lg:flex flex-1 items-center justify-end gap-2 xl:gap-4 shrink-0">
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-primary text-white px-5 py-1.5 rounded-full font-bold hover:bg-white hover:text-black transition-colors duration-300 text-[11px] uppercase text-center leading-tight shadow-[0_0_15px_rgba(231,99,102,0.2)]"
+            className="bg-primary text-white px-3 py-1.5 xl:px-5 xl:py-1.5 rounded-full font-bold hover:bg-white hover:text-black transition-colors duration-300 text-[9px] xl:text-[11px] uppercase text-center leading-tight shadow-[0_0_15px_rgba(231,99,102,0.2)] whitespace-nowrap"
           >
             Register<br/>Now
           </motion.button>
           
-          <div className="w-px h-8 bg-zinc-700"></div>
+          <div className="w-px h-6 xl:h-8 bg-zinc-700"></div>
           
           {/* Right Logo (MIT-AIFT) */}
-          <a href="#" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-12 p-1.5' : 'h-14 md:h-16 p-2'}`}>
+          <a href="#" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-10 p-1 xl:h-12 xl:p-1.5' : 'h-12 p-1.5 xl:h-16 xl:p-2'}`}>
             <img src="https://conf2026.eltai.in/assets/MITADT-KRFaF891.png" alt="MIT-ADT Logo" className="h-full w-auto object-contain" />
           </a>
         </div>
 
         {/* Mobile Toggle */}
-        <div className="xl:hidden flex-1 flex justify-end">
+        <div className="lg:hidden flex-1 flex justify-end">
           <button className="text-white hover:text-primary transition-colors ml-4" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -122,7 +124,7 @@ const Navbar = () => {
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="xl:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-t border-zinc-800 p-6 flex flex-col gap-4 shadow-2xl max-h-[80vh] overflow-y-auto"
+          className="lg:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-t border-zinc-800 p-6 flex flex-col gap-4 shadow-2xl max-h-[80vh] overflow-y-auto"
         >
           {navLinks.map((link, i) => (
             <a key={i} href="#" className={`text-lg font-heading font-bold flex items-center justify-between transition-colors uppercase ${link.active ? 'text-primary' : 'text-white hover:text-primary'}`}>
@@ -186,7 +188,7 @@ export default function App() {
             alt="Conference Banner" 
             className="w-full h-full object-cover origin-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
         </div>
 
         <div className="relative z-10 max-w-[1800px] mx-auto px-4 lg:px-8 w-full flex-1 flex flex-col justify-center mt-10">
