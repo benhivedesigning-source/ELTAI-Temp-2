@@ -141,16 +141,8 @@ const Navbar = () => {
             >
               Register Now
             </motion.button>
-            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg w-full sm:w-auto justify-center">
-              <div className="w-8 h-8 rounded-full border-[2px] border-[#311B92] flex items-center justify-center relative">
-                <div className="w-4 h-4 border-[1.5px] border-[#311B92] rounded-full flex items-center justify-center">
-                  <div className="w-1 h-2 bg-[#311B92]"></div>
-                </div>
-              </div>
-              <div className="flex flex-col justify-center">
-                <span className="text-[#311B92] font-serif font-bold text-base leading-none">MIT-AIFT</span>
-                <span className="text-[6px] text-[#311B92] tracking-widest mt-0.5 font-bold">UNIVERSITY</span>
-              </div>
+            <div className="flex items-center justify-center bg-white px-4 py-2 rounded-lg w-full sm:w-auto h-14">
+              <img src="https://conf2026.eltai.in/assets/MITADT-KRFaF891.png" alt="MIT-ADT Logo" className="h-full w-auto object-contain" />
             </div>
           </div>
         </motion.div>
@@ -212,7 +204,7 @@ export default function App() {
               variants={staggerContainer}
               initial="hidden"
               animate="show"
-              className="text-6xl md:text-8xl lg:text-[6rem] font-heading font-black leading-[0.9] tracking-tighter mb-10 uppercase"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] font-heading font-black leading-[0.9] tracking-tighter mb-10 uppercase"
             >
               <div className="overflow-hidden pb-2"><motion.div variants={staggerItem} className="text-white">ENGLISH ON THE EDGE:</motion.div></div>
               <div className="overflow-hidden pb-2"><motion.div variants={staggerItem} className="text-primary">SURVIVE? EVOLVE? THRIVE?</motion.div></div>
@@ -433,9 +425,9 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="flex flex-col items-center gap-6"
+                className="flex flex-col items-center gap-6 w-full sm:w-auto"
               >
-                <div className="bg-white rounded-3xl p-8 shadow-sm border border-zinc-800 w-80 md:w-96 h-48 flex items-center justify-center hover:shadow-md transition-shadow">
+                <div className="bg-white rounded-3xl p-8 shadow-sm border border-zinc-800 w-full sm:w-80 md:w-96 h-48 flex items-center justify-center hover:shadow-md transition-shadow">
                   <img 
                     src="https://conf2026.eltai.in/assets/ELTAI-DxCx19mA.png" 
                     alt="ELTAI Logo" 
@@ -451,9 +443,9 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="flex flex-col items-center gap-6"
+                className="flex flex-col items-center gap-6 w-full sm:w-auto"
               >
-                <div className="bg-white rounded-3xl p-8 shadow-sm border border-zinc-800 w-80 md:w-96 h-48 flex items-center justify-center hover:shadow-md transition-shadow">
+                <div className="bg-white rounded-3xl p-8 shadow-sm border border-zinc-800 w-full sm:w-80 md:w-96 h-48 flex items-center justify-center hover:shadow-md transition-shadow">
                   <img 
                     src="https://conf2026.eltai.in/assets/MITADT-KRFaF891.png" 
                     alt="MIT-ADT University Logo" 
@@ -553,13 +545,13 @@ export default function App() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-black rounded-[4rem] p-10 md:p-20 flex flex-col lg:flex-row items-center justify-between gap-16 shadow-2xl"
+            className="bg-black rounded-[2rem] sm:rounded-[3rem] md:rounded-[4rem] p-6 sm:p-10 md:p-20 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 shadow-2xl"
           >
             <div className="lg:w-1/2">
               <p className="text-primary font-bold tracking-[0.2em] text-sm uppercase mb-4">
                 07-10 OCTOBER 2026 • PUNE, INDIA
               </p>
-              <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-black tracking-tighter mb-6 leading-[1.1] text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-black tracking-tighter mb-6 leading-[1.1] text-white">
                 Join us at ELTAI 2026 – Where English Education Meets Innovation
               </h2>
               <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-xl font-medium leading-relaxed">
@@ -583,11 +575,11 @@ export default function App() {
               </div>
             </div>
             <div className="lg:w-1/2 w-full relative group cursor-pointer">
-              <div className="absolute inset-0 bg-primary transform rotate-3 rounded-[3rem] transition-transform duration-500 group-hover:rotate-6"></div>
+              <div className="absolute inset-0 bg-primary transform rotate-3 rounded-[2rem] sm:rounded-[3rem] transition-transform duration-500 group-hover:rotate-6"></div>
               <img 
                 src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=2000&auto=format&fit=crop" 
                 alt="Conference Stage" 
-                className="w-full h-auto rounded-[3rem] object-cover aspect-[4/3] relative z-10 shadow-2xl transform -rotate-3 transition-transform duration-500 group-hover:rotate-0"
+                className="w-full h-auto rounded-[2rem] sm:rounded-[3rem] object-cover aspect-[4/3] relative z-10 shadow-2xl transform -rotate-3 transition-transform duration-500 group-hover:rotate-0"
               />
             </div>
           </motion.div>
