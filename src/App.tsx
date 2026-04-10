@@ -71,7 +71,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 border-b-2 ${isScrolled ? 'bg-black/95 backdrop-blur-md py-4 shadow-lg shadow-black/20 border-zinc-800' : 'bg-black/80 py-6 border-zinc-800/50'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 border-b-2 ${isScrolled ? 'bg-black/95 backdrop-blur-md py-4 shadow-lg shadow-black/20 border-zinc-800' : 'bg-transparent py-6 border-transparent'}`}>
       <div className="w-full px-4 xl:px-8 flex items-center justify-between max-w-[1800px] mx-auto">
         {/* Left Logo (ELT@I) */}
         <div className="flex justify-start">
@@ -179,13 +179,16 @@ export default function App() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col pt-32 pb-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <motion.img 
+          <motion.video 
             style={{ y: heroY, opacity: heroOpacity }}
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            src="https://image2url.com/r2/default/images/1775816958015-3657dbdc-49ce-4fca-8f30-4f170d43e608.png" 
-            alt="Conference Banner" 
+            src="https://image2url.com/r2/default/videos/1775823499019-90ef4d81-6ff6-419e-b346-dedab08437be.mp4" 
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover origin-top"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
