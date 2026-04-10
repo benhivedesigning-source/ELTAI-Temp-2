@@ -74,7 +74,7 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 border-b-2 ${isScrolled ? 'bg-black/95 backdrop-blur-md py-4 shadow-lg shadow-black/20 border-zinc-800' : 'bg-black/80 py-6 border-zinc-800/50'}`}>
       <div className="w-full px-4 xl:px-8 flex items-center justify-between max-w-[1800px] mx-auto">
         {/* Left Logo (ELT@I) */}
-        <div className="flex-1 flex justify-start">
+        <div className="flex justify-start">
           <a href="#" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-10 p-1 xl:h-12 xl:p-1.5' : 'h-12 p-1.5 xl:h-16 xl:p-2'}`}>
             <img src="https://conf2026.eltai.in/assets/ELTAI-DxCx19mA.png" alt="ELT@I Logo" className="h-full w-auto object-contain" />
           </a>
