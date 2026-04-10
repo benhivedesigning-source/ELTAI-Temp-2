@@ -184,7 +184,7 @@ export default function App() {
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            src="https://image2url.com/r2/default/videos/1775823499019-90ef4d81-6ff6-419e-b346-dedab08437be.mp4" 
+            src="https://image2url.com/r2/default/videos/1775824547717-30da8b7e-1861-425c-9659-c47fd746e14e.mp4" 
             autoPlay
             loop
             muted
