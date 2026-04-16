@@ -7,6 +7,7 @@ import {
   Star, Layout, Monitor, Globe, PenTool,
   Zap, Mic, ArrowRight
 } from 'lucide-react';
+import PageBanner from '../components/PageBanner';
 
 const CallForAbstractsPage = () => {
   useEffect(() => {
@@ -135,200 +136,170 @@ const CallForAbstractsPage = () => {
 
   return (
     <div className="bg-black min-h-screen font-sans text-white selection:bg-primary selection:text-black overflow-x-hidden">
-      {/* BREADCRUMB */}
-      <nav className="pt-24 max-w-[1800px] mx-auto px-4 lg:px-8 py-4 relative z-20">
-        <div className="text-gray-500 text-sm font-medium flex items-center gap-2">
-          <Link to="/" className="hover:text-white transition-colors">Home</Link>
-          <span className="text-zinc-700">/</span>
-          <Link to="/submit" className="hover:text-white transition-colors">Submit</Link>
-          <span className="text-zinc-700">/</span>
-          <span style={gradientText} className="font-bold">Call for Abstracts</span>
-        </div>
-      </nav>
-
-      {/* SECTION 1 — CINEMATIC HERO */}
-      <section className="min-h-[60vh] relative overflow-hidden bg-black flex items-center justify-center text-center">
-        {/* BACKGROUND */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#e76366]/15 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#8355eb]/15 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
-          <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)', backgroundSize: '60px 60px' }}></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
-            <span className="font-['Poppins'] font-black text-[20vw] leading-none tracking-tighter opacity-[0.03]" style={gradientText}>
-              SUBMIT
-            </span>
-          </div>
-        </div>
-
-        {/* FOREGROUND */}
-        <div className="relative z-10 px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0 }}
-            className="bg-zinc-900 border border-zinc-800 rounded-full px-5 py-2 inline-flex items-center gap-2"
-          >
-            <FileText size={14} className="text-[#e76366]" />
-            <span className="text-white text-xs font-bold uppercase tracking-widest">Registration</span>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-          >
-            <h1 className="font-['Poppins'] font-black text-white text-6xl md:text-8xl mt-4 leading-tight">
-              Call for <br />
-              <span style={gradientText}>Abstracts</span>
-            </h1>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
-            <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mt-8 leading-relaxed font-['Inter']">
-              The 20th International and 56th Annual Conference of ELTAI invites submissions that engage critically, creatively, or experimentally with the conference theme <span style={gradientText} className="font-bold">"English on the Edge: Survive? Evolve? Thrive?"</span> and the seven conference domains. Contributors are encouraged to propose work that is original, rigorous, and reflective of emerging questions in English language and literature studies.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageBanner 
+        title="Call For Abstracts"
+        subtitle="Share your research and insights with a global community of scholars."
+        breadcrumb={[
+          { label: "Submit", path: "/submit" },
+          { label: "Call For Abstracts" }
+        ]}
+        image="https://www.image2url.com/r2/default/images/1776333372596-4c745240-675e-4be0-bb26-d4444fa3565d.png"
+      />
 
       {/* SECTION 2 — ELIGIBLE PRESENTERS */}
-      <section className="py-24 bg-black relative z-10">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0 }}
-            className="bg-zinc-900 border border-zinc-800 rounded-full px-5 py-2 inline-flex items-center gap-2 mb-8"
-          >
-            <FileText size={14} className="text-[#e76366]" />
-            <span className="text-white text-xs font-bold uppercase tracking-widest">Registration</span>
-          </motion.div>
-
-          <div className="flex items-center gap-3 mb-4">
-            <div className="bg-gradient-to-r from-[#e76366] to-[#8355eb] text-white rounded-full px-5 py-2 font-black text-sm uppercase tracking-widest">
-              ELIGIBLE PRESENTERS
-            </div>
-            <h2 className="font-['Poppins'] font-black text-white text-2xl">
-              Who can present?
-            </h2>
+      <section className="bg-white py-32 relative overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
+          <div className="text-center mb-24">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <p className="font-['Caveat'] text-2xl mb-4" style={gradientText}>Who Can Present</p>
+              <h2 className="font-['Poppins'] font-black text-gray-900 text-5xl md:text-7xl tracking-tighter uppercase">
+                Eligible <span style={gradientText}>Presenters</span>
+              </h2>
+              <div className="h-1.5 w-24 mx-auto rounded-full bg-gradient-to-r from-[#e76366] to-[#8355eb] mt-8"></div>
+            </motion.div>
           </div>
 
-          <p className="text-gray-400 text-lg leading-relaxed max-w-4xl mt-4 mb-12 font-['Inter']">
-            Participation is open to a broad community of stakeholders connected to English education, scholarship, and creative practice. Submissions are welcome from:
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {presenters.map((item, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {presenters.map((item, idx) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: index * 0.07 }}
-                className="bg-black/40 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex items-start gap-4 hover:bg-black/60 transition-all duration-300 group"
+                transition={{ delay: idx * 0.05 }}
+                whileHover={{ y: -10 }}
+                className="bg-gray-50 border border-gray-100 p-10 rounded-[2.5rem] hover:bg-white hover:shadow-2xl transition-all duration-500 group"
               >
-                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
-                  {React.cloneElement(item.icon as React.ReactElement, { className: "text-white group-hover:text-primary transition-colors" })}
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#e76366] to-[#8355eb] shadow-lg flex items-center justify-center mb-8 text-white transition-all duration-500">
+                  {item.icon}
                 </div>
-                <div>
-                  <h3 className="font-['Poppins'] font-bold text-white text-base leading-tight">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mt-1 font-['Inter']">
-                    {item.desc}
-                  </p>
-                </div>
+                <h3 className="font-['Poppins'] font-black text-xl text-gray-900 mb-4 tracking-tight leading-snug">{item.title}</h3>
+                <p className="text-gray-500 font-medium leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
 
-          <p className="text-gray-400 text-base leading-relaxed max-w-4xl mt-10 italic font-['Inter']">
+          <p className="text-gray-400 text-lg leading-relaxed max-w-4xl mx-auto mt-20 text-center italic font-medium">
             All individuals and groups whose work intersects with the future of English language and literature – through teaching, research, creativity, policy, or practice – are warmly invited to contribute.
           </p>
         </div>
       </section>
 
-      {/* Wave divider: black -> white */}
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full block relative z-10" style={{ background: '#000' }}>
-        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff" />
+      {/* Wave divider: white -> black */}
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full block relative z-10" style={{ background: '#fff' }}>
+        <path d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" fill="#000000" />
       </svg>
 
       {/* SECTION 3 — SUBMISSION CATEGORIES INTRO */}
-      <section className="py-20 bg-white relative z-10">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="bg-gradient-to-r from-[#e76366] to-[#8355eb] text-white rounded-full px-5 py-2 font-black text-sm uppercase tracking-widest">
-              SUBMISSION CATEGORIES
-            </div>
-            <h2 className="font-['Poppins'] font-black text-gray-900 text-2xl">
-              What Can Be Presented?
-            </h2>
-          </div>
+      <section className="py-32 bg-black relative z-10 overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#e76366]/10 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#8355eb]/10 to-transparent rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
 
-          <div className="max-w-4xl mx-auto text-gray-600 text-lg leading-relaxed space-y-5 font-['Inter']">
-            <p>
-              The conference welcomes a wide range of <span className="font-bold text-gray-900">research-based, classroom-driven, creative, and community-focused contributions</span> that engage with any one of the seven domains of the conference theme <span style={gradientText} className="font-bold italic">"English on the Edge: Survive? Evolve? Thrive?"</span>.
-            </p>
-            <p>
-              To balance academic depth with experiential learning, <span className="font-bold text-gray-900">presentation formats are organised into two programme categories.</span> These categories are <span className="font-bold text-gray-900">organisational, not hierarchical.</span> All accepted presentations carry equal academic value. Each submission is evaluated independently on merit, relevance, and quality, regardless of category. Creative and practice-based contributions are valued on par with traditional academic papers.
-            </p>
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-px bg-primary"></div>
+                <span className="text-xs font-bold tracking-widest uppercase text-gray-500">What Can Be Presented?</span>
+              </div>
+
+              <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl lg:text-7xl text-white mb-8 leading-[1.1] tracking-tighter uppercase">
+                Submission <br/>
+                <span style={gradientText}>Categories</span>
+              </h2>
+
+              <div className="space-y-6 text-gray-400 text-lg leading-relaxed font-medium">
+                <p>
+                  The conference welcomes a wide range of <span className="text-white font-bold">research-based, classroom-driven, creative, and community-focused contributions</span> that engage with any one of the seven domains of the conference theme <span style={gradientText} className="font-bold italic">"English on the Edge: Survive? Evolve? Thrive?"</span>.
+                </p>
+                <p>
+                  To balance academic depth with experiential learning, <span className="text-white font-bold">presentation formats are organised into two programme categories.</span> These categories are <span className="text-white font-bold">organisational, not hierarchical.</span> All accepted presentations carry equal academic value.
+                </p>
+              </div>
+
+              <div className="mt-10 flex flex-wrap gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white font-black">A</div>
+                  <span className="text-gray-300 font-bold">Core Academic Formats</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white font-black">B</div>
+                  <span className="text-gray-300 font-bold">Highly Selective Slots</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative group"
+            >
+              <div className="relative rounded-[3rem] overflow-hidden bg-zinc-900 aspect-[4/3] shadow-2xl border border-white/5 transform group-hover:-translate-y-2 transition-all duration-700">
+                <img 
+                  src="https://www.image2url.com/r2/default/images/1776333421148-8c3aa905-9397-4398-a2e4-08d5e5ea0363.png" 
+                  alt="Academic presentation" 
+                  className="w-full h-full object-cover relative z-0 opacity-80"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              </div>
+
+              {/* Floating Badge */}
+              <div className="absolute -bottom-8 -left-8 bg-zinc-900 p-6 rounded-3xl shadow-xl border border-white/5 hidden md:block">
+                <p className="text-4xl font-black text-white mb-1">9+</p>
+                <p className="text-gray-500 text-xs font-bold uppercase tracking-wider">Unique Formats</p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* SECTION 4 — CATEGORY A */}
-      <section className="py-16 bg-white relative z-10">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="bg-gray-50 border border-gray-200 rounded-[2rem] p-8 mb-12">
-            <div className="flex items-center gap-4 flex-wrap">
-              <div className="bg-gradient-to-r from-[#e76366] to-[#8355eb] text-white rounded-full px-6 py-2.5 font-black text-base uppercase tracking-widest">
-                CATEGORY A
-              </div>
-              <h2 className="font-['Poppins'] font-black text-gray-900 text-2xl">
-                Core Academic & Community Formats
-              </h2>
-            </div>
-            <p className="text-gray-600 text-base mt-4 leading-relaxed font-['Inter']">
-              <span className="font-bold text-gray-900">One submission allowed per participant.</span> Category A represents the primary scholarly and practice-based programme of the conference and includes:
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {categoryA.map((item, index) => (
+      <section className="bg-white py-32 relative overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-16 items-center mb-24">
+            <div className="lg:w-1/2">
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: index * 0.1 }}
-                className="bg-white border-2 border-gray-200 rounded-[2rem] p-8 hover:border-transparent hover:shadow-[0_0_0_2px_#e76366,0_20px_60px_rgba(231,99,102,0.1)] transition-all duration-300 flex flex-col"
               >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="font-['Poppins'] font-black text-gray-900 text-xl">
-                      {item.name}
-                    </h3>
-                    <div className="bg-gray-100 text-gray-600 rounded-full px-4 py-1.5 text-xs font-bold inline-block mt-2">
-                      {item.duration}
-                    </div>
-                  </div>
-                  <div className="w-12 h-12 rounded-full shrink-0 flex items-center justify-center bg-gradient-to-br from-[#e76366] to-[#8355eb]">
-                    {item.icon}
-                  </div>
-                </div>
-                <p className="text-gray-600 text-sm leading-relaxed mt-5 flex-1 font-['Inter']">
-                  {item.body}
+                <p className="font-['Caveat'] text-2xl mb-4" style={gradientText}>Core Academic Formats</p>
+                <h2 className="font-['Poppins'] font-black text-gray-900 text-5xl md:text-7xl tracking-tighter mb-8 uppercase">
+                  Category <span style={gradientText}>A</span>
+                </h2>
+                <p className="text-gray-600 text-xl font-medium leading-relaxed">
+                  Academic and research-oriented presentations focusing on theoretical frameworks and empirical studies. <span className="text-gray-900 font-bold">One submission allowed per participant.</span>
                 </p>
               </motion.div>
-            ))}
+            </div>
+            <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {categoryA.map((item, idx) => (
+                <div key={idx} className="bg-gray-50 border border-gray-100 p-8 rounded-[2rem] hover:bg-white hover:shadow-2xl transition-all duration-500 group">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#e76366] to-[#8355eb] shadow-md flex items-center justify-center mb-6 text-white transition-all duration-500">
+                    {item.icon}
+                  </div>
+                  <h4 className="text-gray-900 font-black text-xl mb-2">{item.name}</h4>
+                  <p className="text-gray-500 text-sm font-bold uppercase tracking-widest mb-4">{item.duration}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -339,56 +310,39 @@ const CallForAbstractsPage = () => {
       </svg>
 
       {/* SECTION 5 — CATEGORY B */}
-      <section className="py-20 bg-black relative z-10">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="bg-zinc-900 border border-zinc-800 rounded-[2rem] p-8 mb-12">
-            <div className="flex items-center gap-4 flex-wrap">
-              <div className="bg-gradient-to-r from-[#e76366] to-[#8355eb] text-white rounded-full px-6 py-2.5 font-black text-base uppercase tracking-widest">
-                CATEGORY B
-              </div>
-              <h2 className="font-['Poppins'] font-black text-white text-2xl">
-                Special Interactive & Creative Formats
-              </h2>
-              <div className="ml-2 bg-zinc-800 border border-zinc-700 rounded-full px-4 py-1.5 text-gray-400 text-xs font-bold italic">
-                Highly selective; limited slots
-              </div>
-            </div>
-            <p className="text-gray-400 text-base leading-relaxed mt-4 font-['Inter']">
-              Category B includes <span className="text-white font-bold">high-engagement and participatory formats</span> that are limited due logistical constraints and will be scrutinised with additional feasibility criteria. Acceptance in Category B is <span className="text-white font-bold">competitive and subject to programme feasibility.</span> Formats under Category B include:
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {categoryB.map((item, index) => (
+      <section className="bg-black py-32 relative overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row-reverse gap-16 items-center">
+            <div className="lg:w-1/2">
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: index * 0.1 }}
-                className="bg-zinc-900 border border-zinc-800 rounded-[2rem] p-8 hover:border-[#8355eb]/60 hover:shadow-[0_0_40px_rgba(131,85,235,0.15)] transition-all duration-300 flex flex-col relative overflow-hidden group"
               >
-                <div className="absolute top-0 right-0 bg-gradient-to-r from-[#e76366] to-[#8355eb] text-white text-[9px] font-black uppercase tracking-widest py-1.5 px-4 rounded-bl-2xl rounded-tr-2xl z-10">
-                  {item.ribbon}
-                </div>
-
-                <div className="w-14 h-14 rounded-full mb-5 flex items-center justify-center bg-gradient-to-br from-[#e76366] to-[#8355eb]">
-                  {item.icon}
-                </div>
-
-                <h3 className="font-['Poppins'] font-black text-white text-xl">
-                  {item.name}
-                </h3>
-
-                <div className="bg-zinc-800 border border-zinc-700 rounded-full px-4 py-1.5 text-gray-300 text-xs font-bold inline-block mt-2 mb-5 self-start">
-                  {item.duration}
-                </div>
-
-                <p className="text-gray-400 text-sm leading-relaxed flex-1 font-['Inter']">
-                  {item.body}
+                <p className="font-['Caveat'] text-2xl mb-4" style={gradientText}>Interactive & Creative Formats</p>
+                <h2 className="font-['Poppins'] font-black text-white text-5xl md:text-7xl tracking-tighter mb-8 uppercase">
+                  Category <span style={gradientText}>B</span>
+                </h2>
+                <p className="text-gray-400 text-xl font-medium leading-relaxed">
+                  High-engagement and participatory formats that are limited due to logistical constraints. Acceptance is <span className="text-white font-bold">competitive and subject to programme feasibility.</span>
                 </p>
               </motion.div>
-            ))}
+            </div>
+            <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {categoryB.map((item, idx) => (
+                <div key={idx} className="bg-zinc-900 border border-zinc-800 p-8 rounded-[2rem] hover:border-zinc-600 transition-all group relative overflow-hidden">
+                  <div className="absolute top-0 right-0 bg-gradient-to-r from-[#e76366] to-[#8355eb] text-white text-[9px] font-black uppercase tracking-widest py-1.5 px-4 rounded-bl-2xl z-10">
+                    {item.ribbon}
+                  </div>
+                  <div className="w-12 h-12 rounded-xl bg-zinc-800 flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                    {item.icon}
+                  </div>
+                  <h4 className="text-white font-black text-xl mb-2">{item.name}</h4>
+                  <p className="text-gray-500 text-sm font-bold uppercase tracking-widest mb-4">{item.duration}</p>
+                  <p className="text-gray-400 text-sm leading-relaxed">{item.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

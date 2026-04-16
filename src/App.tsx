@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import ConceptNotePage from './pages/ConceptNotePage';
@@ -13,7 +13,6 @@ import ImportantDatesPage from './pages/ImportantDatesPage';
 import ContactInformationPage from './pages/ContactInformationPage';
 import EltaiPage from './pages/EltaiPage';
 import MITADTUniversityPage from './pages/MITADTUniversityPage';
-import ComingSoon from './pages/ComingSoon';
 
 export default function App() {
   return (
@@ -29,38 +28,38 @@ export default function App() {
         <Route path="/submit/review-policies" element={<SubmissionReviewPoliciesPage />} />
         <Route path="/submit/important-dates" element={<ImportantDatesPage />} />
 
-        {/* Programme Routes */}
-        <Route path="/programme/schedule" element={<ComingSoon title="Schedule" />} />
-        <Route path="/programme/sessions" element={<ComingSoon title="Parallel Sessions" />} />
-        <Route path="/programme/speakers" element={<ComingSoon title="Speakers" />} />
+        {/* Programme Routes - Restricted */}
+        <Route path="/programme/schedule" element={<Navigate to="/" replace />} />
+        <Route path="/programme/sessions" element={<Navigate to="/" replace />} />
+        <Route path="/programme/speakers" element={<Navigate to="/" replace />} />
 
-        {/* Highlights Routes */}
-        <Route path="/highlights/scholarships" element={<ComingSoon title="Scholarships" />} />
-        <Route path="/highlights/publications" element={<ComingSoon title="Publications" />} />
-        <Route path="/highlights/awards" element={<ComingSoon title="Awards" />} />
+        {/* Highlights Routes - Restricted */}
+        <Route path="/highlights/scholarships" element={<Navigate to="/" replace />} />
+        <Route path="/highlights/publications" element={<Navigate to="/" replace />} />
+        <Route path="/highlights/awards" element={<Navigate to="/" replace />} />
 
         {/* Register Routes */}
         <Route path="/register/registration-fees" element={<RegistrationFeesPage />} />
         <Route path="/register/cancellation-policy" element={<CancellationPolicyPage />} />
 
-        {/* Travel Routes */}
-        <Route path="/travel/reach" element={<ComingSoon title="How to Reach Us" />} />
-        <Route path="/travel/accommodation" element={<ComingSoon title="Accommodation" />} />
-        <Route path="/travel/visit" element={<ComingSoon title="Places to Visit" />} />
+        {/* Travel Routes - Restricted */}
+        <Route path="/travel/reach" element={<Navigate to="/" replace />} />
+        <Route path="/travel/accommodation" element={<Navigate to="/" replace />} />
+        <Route path="/travel/visit" element={<Navigate to="/" replace />} />
 
         {/* Organizers Routes */}
         <Route path="/organizers/eltai" element={<EltaiPage />} />
         <Route path="/organizers/mit-adt-university" element={<MITADTUniversityPage />} />
-        <Route path="/organizers/partners" element={<ComingSoon title="Organising Partners" />} />
-        <Route path="/organizers/committee" element={<ComingSoon title="Organising Committee" />} />
+        <Route path="/organizers/partners" element={<Navigate to="/" replace />} />
+        <Route path="/organizers/committee" element={<Navigate to="/" replace />} />
 
         {/* Contact Routes */}
         <Route path="/contact/contact-information" element={<ContactInformationPage />} />
-        <Route path="/contact/help" element={<ComingSoon title="Help Desk" />} />
-        <Route path="/contact/faq" element={<ComingSoon title="FAQ" />} />
+        <Route path="/contact/help" element={<Navigate to="/" replace />} />
+        <Route path="/contact/faq" element={<Navigate to="/" replace />} />
 
         {/* Catch all */}
-        <Route path="*" element={<ComingSoon title="Page Not Found" />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Layout>
   );

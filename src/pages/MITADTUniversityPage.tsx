@@ -6,6 +6,7 @@ import {
   Lightbulb, Star, Globe, Shield, BookOpen, CheckCircle, 
   Award, Briefcase, ExternalLink, ArrowRight 
 } from 'lucide-react';
+import PageBanner from '../components/PageBanner';
 
 const MITADTUniversityPage = () => {
   useEffect(() => {
@@ -21,105 +22,18 @@ const MITADTUniversityPage = () => {
 
   return (
     <div className="bg-black min-h-screen font-sans text-white selection:bg-primary selection:text-black overflow-x-hidden">
-      {/* BREADCRUMB */}
-      <nav className="pt-24 max-w-[1800px] mx-auto px-4 lg:px-8 py-4 relative z-20">
-        <div className="text-gray-500 text-sm font-medium flex items-center gap-2">
-          <Link to="/" className="hover:text-white transition-colors">Home</Link>
-          <span className="text-zinc-700">/</span>
-          <span className="text-zinc-500">Organizers</span>
-          <span className="text-zinc-700">/</span>
-          <span style={gradientText} className="font-bold">MIT ADT University</span>
-        </div>
-      </nav>
-
-      {/* HERO — FULL BLEED IMAGE */}
-      <section className="min-h-[70vh] relative overflow-hidden flex items-center justify-center">
-        {/* Layer 1 — University campus photo */}
-        <img 
-          src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2000&auto=format&fit=crop" 
-          alt="MIT ADT University Campus" 
-          className="absolute inset-0 w-full h-full object-cover object-center z-0"
-          style={{ filter: 'brightness(0.3)' }}
-          loading="lazy"
-          referrerPolicy="no-referrer"
-        />
-
-        {/* Layer 2 — Dark gradient overlay */}
-        <div 
-          className="absolute inset-0 z-[1]"
-          style={{
-            background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.98) 100%)'
-          }}
-        ></div>
-
-        {/* Layer 3 — Pink/purple glow blobs */}
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#e76366]/15 blur-[140px] pointer-events-none z-[2] -translate-x-1/4 -translate-y-1/4"></div>
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#8355eb]/15 blur-[120px] pointer-events-none z-[2] translate-x-1/4 translate-y-1/4"></div>
-
-        {/* Layer 4 — Grid texture */}
-        <div 
-          className="absolute inset-0 pointer-events-none z-[3]"
-          style={{
-            backgroundImage: 'repeating-linear-gradient(rgba(255,255,255,0.025) 0 1px, transparent 1px 100%), repeating-linear-gradient(90deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 100%)',
-            backgroundSize: '60px 60px'
-          }}
-        ></div>
-
-        {/* FOREGROUND */}
-        <div className="relative z-10 text-center px-4 w-full max-w-5xl mx-auto mt-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="bg-black/40 backdrop-blur-md border border-white/10 rounded-full px-5 py-2 inline-flex items-center gap-2"
-          >
-            <Building2 size={14} className="text-[#e76366]" />
-            <span className="font-['Caveat'] text-sm" style={gradientText}>HOST | 20TH INTERNATIONAL & 56TH ANNUAL ELTAI CONFERENCE</span>
-          </motion.div>
-
-          
-
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="font-['Poppins'] font-black text-white text-5xl md:text-7xl mt-6 tracking-tight"
-          >
-            MIT ADT University
-          </motion.h1>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-10 flex gap-4 justify-center flex-wrap"
-          >
-            <motion.div whileHover={{ scale: 1.05 }} className="bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-4 text-center min-w-[160px]">
-              <div className="font-black text-2xl" style={gradientText}>150+</div>
-              <div className="text-gray-400 text-xs mt-1 font-medium">Acres Green Campus</div>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} className="bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-4 text-center min-w-[160px]">
-              <div className="font-black text-2xl" style={gradientText}>NAAC 'A'</div>
-              <div className="text-gray-400 text-xs mt-1 font-medium">Accredited Grade</div>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} className="bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-4 text-center min-w-[160px]">
-              <div className="font-black text-2xl" style={gradientText}>17</div>
-              <div className="text-gray-400 text-xs mt-1 font-medium">Constituent Schools</div>
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="text-white/30 mt-12 mx-auto block w-fit"
-          >
-            <ChevronDown size={32} />
-          </motion.div>
-        </div>
-      </section>
+      <PageBanner 
+        title="MIT ADT University"
+        subtitle="Where Innovation Meets Holistic Education."
+        breadcrumb={[
+          { label: "Organizers", path: "/organizers" },
+          { label: "MIT ADT University" }
+        ]}
+        image="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2000&auto=format&fit=crop"
+      />
 
       {/* ABOUT SECTION — BENTO SPLIT */}
-      <section className="py-24 bg-black relative z-10">
+      <section className="py-24 bg-white relative z-10">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
@@ -131,20 +45,20 @@ const MITADTUniversityPage = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="font-['Caveat'] text-xl mb-3" style={gradientText}>About MIT ADT University</div>
-              <h2 className="font-['Poppins'] font-black text-white text-4xl md:text-5xl leading-tight">
-                Where <span className="italic text-white">Innovation</span> Meets <br/>
+              <h2 className="font-['Poppins'] font-black text-gray-900 text-4xl md:text-5xl leading-tight">
+                Where <span className="italic text-gray-900">Innovation</span> Meets <br/>
                 <span style={gradientText}>Holistic Education</span>
               </h2>
 
-              <div className="text-gray-400 text-lg leading-relaxed space-y-5 mt-8">
+              <div className="text-gray-600 text-lg leading-relaxed space-y-5 mt-8">
                 <p>
-                  MIT Art, Design and Technology University is honoured to host the <strong className="text-white">20th International and 56th Annual Conference of ELTAI.</strong> With the compelling theme <span className="italic" style={gradientText}>'English on the Edge: Survive? Evolve? Thrive?'</span>, the conference invites educators, researchers, scholars, writers, and learners to reflect on the evolving role of English in a rapidly transforming world shaped by automation, imagination, and innovation.
+                  MIT Art, Design and Technology University is honoured to host the <strong className="text-gray-900">20th International and 56th Annual Conference of ELTAI.</strong> With the compelling theme <span className="italic" style={gradientText}>'English on the Edge: Survive? Evolve? Thrive?'</span>, the conference invites educators, researchers, scholars, writers, and learners to reflect on the evolving role of English in a rapidly transforming world shaped by automation, imagination, and innovation.
                 </p>
                 <p>
-                  MIT Art, Design and Technology University is a UGC-recognised, state private and multi-disciplinary university under the prestigious MIT Group of Institutions. Accredited with <strong className="text-white">NAAC 'A' grade,</strong> it represents a progressive and holistic vision of higher education.
+                  MIT Art, Design and Technology University is a UGC-recognised, state private and multi-disciplinary university under the prestigious MIT Group of Institutions. Accredited with <strong className="text-gray-900">NAAC 'A' grade,</strong> it represents a progressive and holistic vision of higher education.
                 </p>
                 <p>
-                  Spread over a <strong className="text-white">150-acre campus</strong> with serene, green surroundings, the university has received the 'Best Campus Award' and the 'Best Private State University in India Award.' With <strong className="text-white">17 constituent Schools</strong> offering diverse programmes, MIT ADT University blends academic excellence with holistic growth and global outlook. Crowning the campus is the <strong className="text-white">Raj Kapoor Museum</strong> and the iconic <strong className="text-white">World Peace Dome,</strong> the world's largest dome, symbolising knowledge, unity, and global harmony.
+                  Spread over a <strong className="text-gray-900">150-acre campus</strong> with serene, green surroundings, the university has received the 'Best Campus Award' and the 'Best Private State University in India Award.' With <strong className="text-gray-900">17 constituent Schools</strong> offering diverse programmes, MIT ADT University blends academic excellence with holistic growth and global outlook. Crowning the campus is the <strong className="text-gray-900">Raj Kapoor Museum</strong> and the iconic <strong className="text-white">World Peace Dome,</strong> the world's largest dome, symbolising knowledge, unity, and global harmony.
                 </p>
               </div>
             </motion.div>
@@ -157,7 +71,7 @@ const MITADTUniversityPage = () => {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="rounded-[2rem] overflow-hidden aspect-[4/3] w-full relative group">
+              <div className="rounded-[2rem] overflow-hidden aspect-[4/3] w-full relative group shadow-2xl">
                 <img 
                   src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop" 
                   alt="MIT ADT Campus" 
@@ -167,11 +81,11 @@ const MITADTUniversityPage = () => {
                 
                 {/* Stat Cards Overlay */}
                 <div className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row gap-3">
-                  <div className="bg-black/80 backdrop-blur-md border border-white/10 rounded-2xl p-5 flex-1 text-center">
+                  <div className="bg-white/90 backdrop-blur-md border border-gray-100 rounded-2xl p-5 flex-1 text-center shadow-lg">
                     <div className="font-black text-3xl" style={gradientText}>150+</div>
-                    <div className="text-gray-400 text-xs mt-1 font-medium uppercase tracking-wider">Acres Green Campus</div>
+                    <div className="text-gray-500 text-xs mt-1 font-medium uppercase tracking-wider">Acres Green Campus</div>
                   </div>
-                  <div className="bg-gradient-to-r from-[#e76366] to-[#8355eb] rounded-2xl p-5 flex-1 text-center">
+                  <div className="bg-gradient-to-r from-[#e76366] to-[#8355eb] rounded-2xl p-5 flex-1 text-center shadow-lg">
                     <div className="text-white font-black text-3xl">NAAC 'A'</div>
                     <div className="text-white/80 text-xs mt-1 font-medium uppercase tracking-wider">Accredited Grade</div>
                   </div>
@@ -182,11 +96,6 @@ const MITADTUniversityPage = () => {
           </div>
         </div>
       </section>
-
-      {/* WAVE BLACK TO WHITE */}
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full block relative z-10" style={{ background: '#ffffff' }}>
-        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#000000" />
-      </svg>
 
       {/* SCHOOL OF HOLISTIC DEVELOPMENT */}
       <section className="py-24 bg-white relative z-10">

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ShieldCheck, FileSearch, Scale, Clock, CheckCircle2, Users, UserCheck, ShieldAlert, Mail, FilePlus, Info, Search, Calendar, ClipboardCheck, XCircle } from 'lucide-react';
+import PageBanner from '../components/PageBanner';
 
 const SubmissionReviewPoliciesPage = () => {
   useEffect(() => {
@@ -93,42 +94,15 @@ const SubmissionReviewPoliciesPage = () => {
 
   return (
     <div className="bg-black min-h-screen font-sans text-white selection:bg-primary selection:text-black overflow-x-hidden">
-      {/* BREADCRUMB */}
-      <nav className="pt-24 max-w-[1800px] mx-auto px-4 lg:px-8 py-4 relative z-20">
-        <div className="text-gray-500 text-sm font-medium flex items-center gap-2">
-          <Link to="/" className="hover:text-white transition-colors">Home</Link>
-          <span className="text-zinc-700">/</span>
-          <span className="text-zinc-500">Submit</span>
-          <span className="text-zinc-700">/</span>
-          <span style={gradientText} className="font-bold">Policies</span>
-        </div>
-      </nav>
-
-      {/* HERO SECTION */}
-      <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute top-0 left-1/2 w-[800px] h-[800px] bg-[#8355eb] opacity-10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-        
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto py-12">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <h1 className="font-['Poppins'] font-black text-5xl md:text-7xl text-white leading-tight mb-4 tracking-tighter">
-              Submission <span style={gradientText}>Policies</span>
-            </h1>
-            <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium">
-              Key regulations and requirements for abstract submission.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Wave divider: Black -> White */}
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full block relative z-10" style={{ background: '#000' }}>
-        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#f8fafc" />
-      </svg>
+      <PageBanner 
+        title="Submission Policies"
+        subtitle="Key regulations and requirements for abstract submission."
+        breadcrumb={[
+          { label: "Submit", path: "/submit" },
+          { label: "Policies" }
+        ]}
+        image="https://www.image2url.com/r2/default/images/1776335381048-9ce9d1a0-ae63-4868-b47a-3dfded4674e4.png"
+      />
 
       {/* CORE POLICIES SECTION */}
       <section className="bg-[#f8fafc] py-24 relative z-10 overflow-hidden">

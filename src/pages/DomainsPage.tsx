@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, ArrowRight, Shield, RotateCw, Sun } from 'lucide-react';
+import PageBanner from '../components/PageBanner';
 
 const DomainsPage = () => {
   useEffect(() => {
@@ -67,7 +68,7 @@ const DomainsPage = () => {
       id: 1,
       title: "Future of English Education",
       description: "As English departments shrink in universities and English hours diminish in school timetables, this domain revisits the values and purposes that must remain non-negotiable across all levels of education. It examines the structural, cultural, and intellectual pressures shaping English in higher education and the parallel curriculum, workload, and policy pressures shaping English in schools.",
-      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+      image: "https://www.image2url.com/r2/default/images/1776330987723-e12329d8-7c53-4b3a-9e7c-13c81b9c7140.png",
       provocations: [
         "What is worth defending, whether in a university department or a crowded school timetable?",
         "How do we articulate English education's value when institutions demand metrics, not meaning?",
@@ -79,7 +80,7 @@ const DomainsPage = () => {
       id: 2,
       title: "English Policy and Governance",
       description: "Policies decide which subjects survive, which shrink, and which evolve. This domain examines how national policy frameworks, school reforms, higher education governance, regulatory bodies, and ideological debates shape the destiny of English education in both universities and schools.",
-      image: "https://images.unsplash.com/photo-1704650334656-83e72f3ed5d9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "https://www.image2url.com/r2/default/images/1776329747877-026dcfe4-4ce8-4368-a156-0dd3aaff4dfc.png",
       provocations: [
         "How do language and education policies elevate or erode English studies and school English learning?",
         "How do political narratives about nationalism, multilingualism, or employability shape curricular decisions?",
@@ -91,7 +92,7 @@ const DomainsPage = () => {
       id: 3,
       title: "English Teaching in the AI Era",
       description: "As AI becomes co-reader, co-writer, and co-teacher, this domain explores how English teaching must evolve. It considers how AI reshapes pedagogy, teacher identity, learner engagement, integrity, and trust.",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop",
+      image: "https://www.image2url.com/r2/default/images/1776329984410-793270e6-5cb2-4c4b-aaa5-5abf4ac6c342.png",
       provocations: [
         "What remains decisively human in English teaching at school and university levels?",
         "How does AI change the nature of classroom interaction, mentorship, and learner motivation?",
@@ -103,7 +104,7 @@ const DomainsPage = () => {
       id: 4,
       title: "English Curricula for a Changing World",
       description: "New literacies, digital cultures, and evolving learner identities demand curricula that reflect the real worlds that children, adolescents, and adults inhabit. This domain invites parallel conversations about curriculum renewal in schools and universities.",
-      image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=800&auto=format&fit=crop",
+      image: "https://www.image2url.com/r2/default/images/1776330082023-a6189860-5a87-4e51-ae69-f60c2e1a0a6f.png",
       provocations: [
         "What competencies should a modern curriculum prioritise at foundational, intermediate, and advanced levels?",
         "How do we balance literary inheritance with innovation in multimodal and multilingual contexts?",
@@ -115,7 +116,7 @@ const DomainsPage = () => {
       id: 5,
       title: "Human-Centred, AI-Informed English Assessment",
       description: "Assessment must evolve as technological and digital tools reshape reading, writing, and meaning-making. This domain explores how evaluation can remain human-centred while acknowledging technological realities in classrooms, from primary to postgraduate education.",
-      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=800&auto=format&fit=crop",
+      image: "https://www.image2url.com/r2/default/images/1776330258743-da37fe27-180a-4aea-934f-849e899f0f6e.png",
       provocations: [
         "What counts as 'authentic work' when AI tools can convincingly mimic student voice across levels?",
         "Should school assignments and university assessments prioritise processes or products?",
@@ -127,7 +128,7 @@ const DomainsPage = () => {
       id: 6,
       title: "Literature and Digital Humanities",
       description: "Where imagination meets digital culture, new possibilities emerge for meaning-making. This domain brings together school teachers using multimodal storytelling with university scholars working in digital humanities, exploring how literature can thrive across contexts.",
-      image: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=800&auto=format&fit=crop",
+      image: "https://www.image2url.com/r2/default/images/1776330369761-8b91f352-5e02-4058-9b35-ce5387c7f63b.png",
       provocations: [
         "How does literature help children, adolescents, and adults dream, reflect, and imagine in an automated world?",
         "What new forms of storytelling arise when narrative meets data, gaming, or visual culture?",
@@ -139,7 +140,7 @@ const DomainsPage = () => {
       id: 7,
       title: "English Beyond Classrooms",
       description: "Learning unfolds across communities, public spaces, and digital networks – from ELTAI's India Reads Movement to school reading clubs to university outreach projects. This domain explores how English flourishes where people gather, create, and learn together. It also welcomes work emerging from non-formal and community learning spaces such as libraries, NGOs, street-connected learning programmes, public reading initiatives, and alternative schooling environments where English functions as a bridge to expression, dignity, and opportunity.",
-      image: "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=800&auto=format&fit=crop",
+      image: "https://www.image2url.com/r2/default/images/1776330565479-af8ed9e8-454b-4091-8141-18e457bf088e.png",
       provocations: [
         "What can schools, colleges, and communities learn from each other's literacy practices?",
         "How can public spaces – libraries, parks, streets – become sites of engagement with learning and reading?",
@@ -151,53 +152,69 @@ const DomainsPage = () => {
 
   return (
     <div className="bg-black min-h-screen font-sans text-white selection:bg-primary selection:text-black overflow-x-hidden">
-      {/* Breadcrumb */}
-      <nav className="pt-24 max-w-[1800px] mx-auto px-4 lg:px-8 py-4">
-        <div className="text-gray-500 text-sm font-medium flex items-center gap-2">
-          <Link to="/" className="hover:text-white transition-colors">Home</Link>
-          <span className="text-zinc-700">/</span>
-          <Link to="/theme" className="hover:text-white transition-colors">Theme</Link>
-          <span className="text-zinc-700">/</span>
-          <span style={gradientText} className="font-bold">Domains</span>
+      {/* HERO SECTION */}
+      <section className="relative h-[60vh] md:h-[80vh] flex flex-col justify-center items-center overflow-hidden pt-20">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <motion.img 
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            src="https://www.image2url.com/r2/default/images/1776321806823-c794601e-529e-4262-b1e2-1706941aebed.png" 
+            alt="Conference Domains" 
+            className="w-full h-full object-cover opacity-60"
+            referrerPolicy="no-referrer"
+          />
+          {/* Deep Gradient Blending */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-black"></div>
+          
+          {/* Ambient Glows */}
+          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#e76366]/20 blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#8355eb]/20 blur-[120px] translate-x-1/2 translate-y-1/2"></div>
         </div>
-      </nav>
 
-      {/* SECTION 1 — HERO */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        {/* Radial gradient glow */}
-        <div className="absolute top-0 left-1/2 w-[800px] h-[800px] bg-[#e76366] opacity-10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-8 text-center">
+          {/* Breadcrumb */}
+          <motion.nav 
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.5 }}
+            className="mb-8 flex justify-center items-center gap-2 text-sm font-medium text-gray-400"
           >
-            <p className="font-['Caveat'] text-2xl tracking-widest mb-6" style={gradientText}>
-              Conference Focus
-            </p>
-            <h1 className="font-['Poppins'] font-black text-5xl md:text-7xl text-white leading-tight mb-6">
-              Domains
-            </h1>
-            <p className="text-gray-400 text-lg md:text-xl mt-4 max-w-4xl mx-auto leading-relaxed">
-              The conference is organised into seven interconnected domains, grouped under three overarching perspectives – <span style={gradientText} className="font-bold">Survive, Evolve, and Thrive</span> – each representing a sphere of inquiry into the futures of English language and literature across educational institutions. These domains invite educators, scholars, researchers, writers, publishers, policymakers, creative professionals, and community practitioners to reflect on what must endure, what must transform, and what can flourish in English education today.
-            </p>
-          </motion.div>
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="text-zinc-700">/</span>
+            <Link to="/theme" className="hover:text-white transition-colors">Theme</Link>
+            <span className="text-zinc-700">/</span>
+            <span style={gradientText} className="font-bold">Domains</span>
+          </motion.nav>
+
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl md:text-8xl lg:text-9xl font-heading font-black tracking-tighter uppercase mb-6 leading-[0.9]"
+          >
+            Conference <br/> 
+            <span style={gradientText}>Domains</span>
+          </motion.h1>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-gray-300 text-xl md:text-2xl max-w-3xl mx-auto font-medium"
+          >
+            Seven interconnected domains grouped under three overarching perspectives – Survive, Evolve, and Thrive.
+          </motion.p>
         </div>
 
-        <motion.div 
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-600"
-        >
-          <ChevronDown size={32} />
-        </motion.div>
+        {/* BLENDED WAVE DIVIDER */}
+        <div className="absolute bottom-0 left-0 w-full z-20 translate-y-[1px]">
+          <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full block">
+            <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff" />
+          </svg>
+        </div>
       </section>
-
-      {/* Wave divider: Black -> White */}
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full block" style={{background:'#000'}}>
-        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
-      </svg>
 
       {/* SECTION 2 — PILLARS & DOMAINS GRID */}
       <section className="bg-white py-32 relative overflow-hidden">
@@ -205,7 +222,7 @@ const DomainsPage = () => {
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
           {/* Watermark */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] select-none">
-            <span className="font-['Poppins'] font-black text-[25vw] leading-none tracking-tighter text-black block">
+            <span className="font-heading font-black text-[25vw] leading-none tracking-tighter text-black block uppercase">
               PERSPECTIVES
             </span>
           </div>
@@ -235,18 +252,21 @@ const DomainsPage = () => {
         </div>
 
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center mb-20">
+          <div className="text-center mb-24">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <p className="font-['Caveat'] text-xl mb-2" style={gradientText}>The Three Pillars</p>
-              <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl text-black uppercase tracking-tight">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="w-12 h-px bg-primary"></div>
+                <span className="text-xs font-bold tracking-widest uppercase text-gray-400">The Three Pillars</span>
+                <div className="w-12 h-px bg-primary"></div>
+              </div>
+              <h2 className="text-4xl md:text-6xl font-heading font-black text-black uppercase tracking-tighter leading-tight">
                 Conference <span style={gradientText}>Perspectives</span>
               </h2>
-              <div className="h-1.5 w-24 mx-auto rounded-full bg-gradient-to-r from-[#e76366] to-[#8355eb] mt-6"></div>
             </motion.div>
           </div>
 
@@ -283,7 +303,7 @@ const DomainsPage = () => {
 
                   {/* Title Section */}
                   <div className="mb-10 relative z-10">
-                    <h2 className="font-['Poppins'] font-black text-4xl lg:text-5xl text-white mb-2 tracking-tighter uppercase italic group-hover:scale-105 transition-transform duration-500">
+                    <h2 className="font-heading font-black text-4xl lg:text-5xl text-white mb-2 tracking-tighter uppercase italic group-hover:scale-105 transition-transform duration-500">
                       {pillar.title}
                     </h2>
                     <p className="text-gray-400 font-bold uppercase tracking-[0.2em] text-[10px] lg:text-xs">
@@ -326,88 +346,87 @@ const DomainsPage = () => {
 
       {/* SECTION 3 — THE CORE INQUIRY */}
       <section className="bg-black py-32 relative overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-900/50 via-black to-black pointer-events-none"></div>
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#e76366]/10 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#8355eb]/10 to-transparent rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
         
         <div className="relative z-10 max-w-[1400px] mx-auto px-4 lg:px-8">
-          <div className="text-center mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            {/* Left Content */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
             >
-              <p className="font-['Caveat'] text-2xl mb-4" style={gradientText}>The Core Inquiry</p>
-              <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl lg:text-6xl text-white mb-6 tracking-tighter">
-                OVERLAPPING <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e76366] to-[#8355eb]">LENSES</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-px bg-primary"></div>
+                <span className="text-xs font-bold tracking-widest uppercase text-gray-500">The Core Inquiry</span>
+              </div>
+
+              <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl lg:text-7xl text-white mb-8 leading-[1.1] tracking-tighter uppercase">
+                Overlapping <br/>
+                <span style={gradientText}>Lenses</span>
               </h2>
-              <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto font-medium leading-relaxed">
-                These three questions guide the core inquiry of this conference. They function as overlapping lenses rather than linear stages.
+
+              <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-12 font-medium">
+                These three questions guide the core inquiry of this conference. They function as overlapping lenses rather than linear stages, challenging us to rethink our relationship with the English language in an automated world.
               </p>
-            </motion.div>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            {/* Survive Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              whileHover={{ y: -10 }}
-              className="relative group"
-            >
-              <div className="absolute -inset-1 bg-gradient-to-br from-[#e76366] to-transparent opacity-20 group-hover:opacity-60 blur-xl transition duration-500 rounded-[2.5rem]"></div>
-              <div className="relative bg-zinc-900/80 backdrop-blur-2xl border border-white/10 p-10 lg:p-12 rounded-[2.5rem] h-full flex flex-col items-center text-center shadow-2xl overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#e76366]/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#e76366]/20 to-transparent flex items-center justify-center mb-8 text-[#e76366] border border-[#e76366]/20 group-hover:scale-110 transition-transform duration-500 shadow-lg">
-                  <Shield size={40} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-['Poppins'] font-black text-4xl text-white mb-4 italic tracking-tight">Survive?</h3>
-                <div className="h-1 w-12 bg-[#e76366] rounded-full mb-6"></div>
-                <p className="text-gray-400 text-lg leading-relaxed font-medium">What must endure in the face of structural and cultural pressures?</p>
+              <div className="grid grid-cols-1 gap-6">
+                {[
+                  { title: "Survive?", icon: <Shield size={24} />, color: "#e76366", desc: "What must endure in the face of structural pressures?" },
+                  { title: "Evolve?", icon: <RotateCw size={24} />, color: "#b05aac", desc: "What must transform as pedagogy and technology intersect?" },
+                  { title: "Thrive?", icon: <Sun size={24} />, color: "#8355eb", desc: "What can flourish when imagination meets new possibilities?" }
+                ].map((item, i) => (
+                  <motion.div 
+                    key={i}
+                    whileHover={{ x: 10 }}
+                    className="flex items-center gap-6 bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/10 transition-all duration-300"
+                  >
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style={{ backgroundColor: `${item.color}20`, color: item.color, border: `1px solid ${item.color}40` }}>
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-white font-black text-xl italic">{item.title}</h3>
+                      <p className="text-gray-500 text-sm font-medium">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
 
-            {/* Evolve Card */}
+            {/* Right Image */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              whileHover={{ y: -10 }}
+              transition={{ duration: 0.8 }}
               className="relative group"
             >
-              <div className="absolute -inset-1 bg-gradient-to-br from-[#b05aac] to-transparent opacity-20 group-hover:opacity-60 blur-xl transition duration-500 rounded-[2.5rem]"></div>
-              <div className="relative bg-zinc-900/80 backdrop-blur-2xl border border-white/10 p-10 lg:p-12 rounded-[2.5rem] h-full flex flex-col items-center text-center shadow-2xl overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#b05aac]/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#b05aac]/20 to-transparent flex items-center justify-center mb-8 text-[#b05aac] border border-[#b05aac]/20 group-hover:scale-110 transition-transform duration-500 shadow-lg">
-                  <RotateCw size={40} strokeWidth={1.5} />
+              <div className="relative rounded-[3rem] overflow-hidden bg-zinc-900 aspect-[4/5] shadow-2xl border border-white/5 transform group-hover:-translate-y-2 transition-all duration-700">
+                <img 
+                  src="https://www.image2url.com/r2/default/images/1776318550019-340d0891-639f-4aaf-bac4-4cbf2e4088b4.webp" 
+                  alt="Future of education" 
+                  className="w-full h-full object-cover relative z-0 opacity-80"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                
+                {/* Floating Content on Image */}
+                <div className="absolute bottom-10 left-10 right-10">
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
+                    <p className="text-white font-medium text-lg leading-relaxed italic">
+                      "In the intersection of tradition and technology, we find the edge where English truly lives."
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-['Poppins'] font-black text-4xl text-white mb-4 italic tracking-tight">Evolve?</h3>
-                <div className="h-1 w-12 bg-[#b05aac] rounded-full mb-6"></div>
-                <p className="text-gray-400 text-lg leading-relaxed font-medium">What must transform as pedagogy and technology intersect?</p>
               </div>
-            </motion.div>
 
-            {/* Thrive Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              whileHover={{ y: -10 }}
-              className="relative group"
-            >
-              <div className="absolute -inset-1 bg-gradient-to-br from-[#8355eb] to-transparent opacity-20 group-hover:opacity-60 blur-xl transition duration-500 rounded-[2.5rem]"></div>
-              <div className="relative bg-zinc-900/80 backdrop-blur-2xl border border-white/10 p-10 lg:p-12 rounded-[2.5rem] h-full flex flex-col items-center text-center shadow-2xl overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#8355eb]/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#8355eb]/20 to-transparent flex items-center justify-center mb-8 text-[#8355eb] border border-[#8355eb]/20 group-hover:scale-110 transition-transform duration-500 shadow-lg">
-                  <Sun size={40} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-['Poppins'] font-black text-4xl text-white mb-4 italic tracking-tight">Thrive?</h3>
-                <div className="h-1 w-12 bg-[#8355eb] rounded-full mb-6"></div>
-                <p className="text-gray-400 text-lg leading-relaxed font-medium">What can flourish when imagination meets new possibilities?</p>
-              </div>
+              {/* Decorative Orbs */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#e76366]/20 blur-[80px] rounded-full -z-10"></div>
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#8355eb]/20 blur-[80px] rounded-full -z-10"></div>
             </motion.div>
           </div>
         </div>
@@ -527,34 +546,6 @@ const DomainsPage = () => {
         </div>
       </section>
 
-      {/* SECTION 5 — CALL TO ACTION */}
-      <section className="bg-black py-32 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#8355eb] opacity-10 rounded-full blur-[100px] pointer-events-none"></div>
-        
-        <div className="relative z-10 text-center max-w-3xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl text-white mb-6">
-              Ready to Contribute?
-            </h2>
-            <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-10">
-              Select a domain that aligns with your research and submit your abstract to be part of this transformative dialogue.
-            </p>
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="text-white rounded-full px-10 py-4 font-black text-lg shadow-[0_0_30px_rgba(131,85,235,0.3)] flex items-center gap-2 mx-auto"
-              style={{ background: 'linear-gradient(90deg, #e76366, #8355eb)' }}
-            >
-              Submit Abstract <ArrowRight size={20} />
-            </motion.button>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 };

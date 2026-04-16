@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
 import { MapPin, Phone, Mail, Globe, Twitter, Facebook, Instagram, Youtube, Linkedin, ChevronDown, ExternalLink, ArrowRight } from 'lucide-react';
+import PageBanner from '../components/PageBanner';
 
 const ContactInformationPage = () => {
   useEffect(() => {
@@ -17,145 +18,15 @@ const ContactInformationPage = () => {
 
   return (
     <div className="bg-black min-h-screen font-sans text-white selection:bg-primary selection:text-black overflow-x-hidden">
-      {/* BREADCRUMB */}
-      <nav className="pt-24 max-w-[1800px] mx-auto px-4 lg:px-8 py-4 relative z-20">
-        <div className="text-gray-500 text-sm font-medium flex items-center gap-2">
-          <Link to="/" className="hover:text-white transition-colors">Home</Link>
-          <span className="text-zinc-700">/</span>
-          <span className="text-zinc-500">Contact</span>
-          <span className="text-zinc-700">/</span>
-          <span style={gradientText} className="font-bold">Contact Information</span>
-        </div>
-      </nav>
-
-      {/* HERO — FULL BLEED IMAGE */}
-      <section className="min-h-[70vh] relative overflow-hidden flex items-center justify-center">
-        {/* Layer 1 — Background photo */}
-        <img 
-          src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=2000&auto=format&fit=crop" 
-          alt="Contact Background" 
-          className="absolute inset-0 w-full h-full object-cover object-center z-0"
-          style={{ filter: 'brightness(0.35)' }}
-          loading="lazy"
-          referrerPolicy="no-referrer"
-        />
-
-        {/* Layer 2 — Dark gradient overlay */}
-        <div 
-          className="absolute inset-0 z-[1]"
-          style={{
-            background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.95) 100%)'
-          }}
-        ></div>
-
-        {/* Layer 3 — Pink/purple glow blobs */}
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[rgba(231,99,102,0.2)] blur-[140px] pointer-events-none z-[2] -translate-x-1/4 -translate-y-1/4"></div>
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[rgba(131,85,235,0.2)] blur-[120px] pointer-events-none z-[2] translate-x-1/4 translate-y-1/4"></div>
-
-        {/* Layer 4 — Grid texture */}
-        <div 
-          className="absolute inset-0 pointer-events-none z-[3]"
-          style={{ 
-            backgroundImage: 'repeating-linear-gradient(rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 60px)' 
-          }}
-        ></div>
-
-        {/* Layer 5 — Watermark */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[4] w-full text-center">
-          <span className="font-['Poppins'] font-black text-[16vw] leading-none tracking-tighter opacity-[0.04]" style={gradientText}>
-            CONTACT
-          </span>
-        </div>
-
-        {/* FOREGROUND */}
-        <div className="relative z-10 text-center px-4 w-full max-w-5xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: {},
-              visible: {
-                transition: {
-                  staggerChildren: 0.1
-                }
-              }
-            }}
-          >
-            <motion.div 
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-              }}
-              className="bg-black/40 backdrop-blur-md border border-white/10 rounded-full px-5 py-2 inline-flex items-center gap-2"
-            >
-              <Mail size={14} className="text-[#e76366]" />
-              <span className="font-['Caveat'] text-sm" style={gradientText}>Get in Touch</span>
-            </motion.div>
-
-            <motion.h1 
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-              }}
-              className="font-['Poppins'] font-black text-white text-6xl md:text-8xl mt-4 leading-none tracking-tighter"
-            >
-              Contact <br className="md:hidden" />
-              <span style={gradientText}>Information</span>
-            </motion.h1>
-
-            <motion.div 
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-              }}
-              className="mt-12 flex gap-4 justify-center flex-wrap"
-            >
-              <motion.div 
-                whileHover={{ scale: 1.05, borderColor: 'rgba(255,255,255,0.3)' }}
-                transition={{ duration: 0.3 }}
-                className="bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-4 text-center w-full sm:w-auto"
-              >
-                <MapPin size={20} className="mx-auto text-[#e76366]" />
-                <div className="text-white font-bold text-sm mt-2">Chennai, India</div>
-              </motion.div>
-
-              <motion.div 
-                whileHover={{ scale: 1.05, borderColor: 'rgba(255,255,255,0.3)' }}
-                transition={{ duration: 0.3 }}
-                className="bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-4 text-center w-full sm:w-auto"
-              >
-                <Phone size={20} className="mx-auto text-[#8355eb]" />
-                <div className="text-white font-bold text-sm mt-2">+91 93444-25159</div>
-              </motion.div>
-
-              <motion.div 
-                whileHover={{ scale: 1.05, borderColor: 'rgba(255,255,255,0.3)' }}
-                transition={{ duration: 0.3 }}
-                className="bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-4 text-center w-full sm:w-auto"
-              >
-                <Mail size={20} className="mx-auto text-[#e76366]" />
-                <div className="text-white font-bold text-sm mt-2">indiaeltai@gmail.com</div>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { duration: 0.6 } }
-              }}
-            >
-              <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                className="text-white/40 mt-12 mx-auto block w-fit"
-              >
-                <ChevronDown size={32} />
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      <PageBanner 
+        title="Contact Us"
+        subtitle="Get in touch with us for any inquiries or support."
+        breadcrumb={[
+          { label: "Contact", path: "/contact" },
+          { label: "Contact Information" }
+        ]}
+        image="https://www.image2url.com/r2/default/images/1776342811932-0c59c87d-fb0f-4f18-af6b-af5d33bf34e4.png"
+      />
 
       {/* MAIN CONTENT — SPLIT LAYOUT */}
       <section 
@@ -360,7 +231,7 @@ const ContactInformationPage = () => {
       <section className="py-32 bg-black relative overflow-hidden z-10">
         {/* BACKGROUND LAYERS */}
         <img 
-          src="https://images.unsplash.com/photo-1560523159-6b681a1e1852?q=80&w=2000&auto=format&fit=crop" 
+          src="https://www.image2url.com/r2/default/images/1776343004910-541cc9e8-f3e1-40ff-ae7f-82de9bfd0dd3.png" 
           alt="Conference Background" 
           className="absolute inset-0 w-full h-full object-cover z-0"
           style={{ filter: 'brightness(0.08) saturate(0.5)' }}

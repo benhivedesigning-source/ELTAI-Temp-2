@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
 import { Globe, CheckCircle, XCircle, Ban, UserX, Clock, Shield, AlertCircle, Info, ArrowRight } from 'lucide-react';
+import PageBanner from '../components/PageBanner';
 
 const CancellationPolicyPage = () => {
   const location = useLocation();
@@ -95,84 +96,75 @@ const CancellationPolicyPage = () => {
 
   return (
     <div className="bg-black min-h-screen font-sans text-white overflow-x-hidden">
-      {/* SVG Gradient Definition for Icons */}
-      <svg width="0" height="0" className="absolute">
-        <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop stopColor="#e76366" offset="0%" />
-          <stop stopColor="#8355eb" offset="100%" />
-        </linearGradient>
-      </svg>
-
-      {/* BREADCRUMB */}
-      <nav className="pt-24 max-w-[1800px] mx-auto px-4 lg:px-8 py-4">
-        <div className="text-gray-500 text-sm font-medium flex items-center gap-2">
-          <Link to="/" className="hover:text-white transition-colors">Home</Link>
-          <span className="text-zinc-700">/</span>
-          <Link to="/register" className="hover:text-white transition-colors">Register</Link>
-          <span className="text-zinc-700">/</span>
-          <span style={gradientText}>Cancellation Policy</span>
-        </div>
-      </nav>
-
-      {/* SECTION 1 — HERO */}
-      <section className="min-h-[45vh] flex items-center justify-center bg-black text-center relative overflow-hidden">
-        {/* Radial gradient glow */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
-          <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-[rgba(231,99,102,0.12)] rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[rgba(131,85,235,0.12)] rounded-full blur-[120px] translate-x-1/3 translate-y-1/3"></div>
-        </div>
-
-        {/* 5 floating shapes */}
-        <motion.div className="absolute top-20 left-[10%] w-24 h-24 rounded-full bg-[#e76366] opacity-5 z-0" animate={{ y: [0, -20, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} />
-        <motion.div className="absolute bottom-32 right-[15%] w-40 h-40 rounded-full bg-[#8355eb] opacity-5 z-0" animate={{ y: [0, -20, 0] }} transition={{ duration: 6, delay: 1, repeat: Infinity, ease: "easeInOut" }} />
-        <motion.div className="absolute top-1/3 right-[20%] w-32 h-32 rounded-full bg-[#e76366] opacity-8 z-0" animate={{ y: [0, -20, 0] }} transition={{ duration: 7, delay: 2, repeat: Infinity, ease: "easeInOut" }} />
-        <motion.div className="absolute bottom-20 left-[20%] w-56 h-56 rounded-full bg-[#8355eb] opacity-5 z-0" animate={{ y: [0, -20, 0] }} transition={{ duration: 8, delay: 0.5, repeat: Infinity, ease: "easeInOut" }} />
-        <motion.div className="absolute top-1/2 left-1/2 w-48 h-48 rounded-full bg-[#e76366] opacity-5 z-0" animate={{ y: [0, -20, 0] }} transition={{ duration: 5.5, delay: 1.5, repeat: Infinity, ease: "easeInOut" }} />
-
-        {/* Centered content */}
-        <div className="relative z-10 px-4">
-          <p className="font-['Caveat'] text-xl tracking-widest" style={gradientText}>
-            Register
-          </p>
-          <h1 className="font-['Poppins'] font-black text-white text-5xl md:text-7xl mt-2">
-            Cancellation
-          </h1>
-          <h1 className="font-['Poppins'] font-black text-5xl md:text-7xl" style={gradientText}>
-            Policy
-          </h1>
-        </div>
-      </section>
-
-      {/* WAVE: Black to White */}
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full block" style={{background:'#000'}}>
-        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff" />
-      </svg>
+      <PageBanner 
+        title="Cancellation Policy"
+        subtitle="Review our cancellation and refund policies for the conference."
+        breadcrumb={[
+          { label: "Register", path: "/register" },
+          { label: "Cancellation Policy" }
+        ]}
+        image="https://www.image2url.com/r2/default/images/1776339333795-0927f6dd-f544-4b7f-9e11-183d554b7b42.png"
+      />
 
       {/* SECTION 2 — POLICY CARDS */}
-      <section className="py-24 bg-white">
-        <p className="font-['Caveat'] text-center text-lg mb-4" style={gradientText}>
-          Cancellation & Refund Policy
-        </p>
-        <div className="max-w-3xl mx-auto px-4 mt-10 flex flex-col gap-5">
+      <section className="py-24 bg-[#f8fafc] relative overflow-hidden z-10">
+        {/* Background Decorative Elements */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#8355eb 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#e76366]/5 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#8355eb]/5 to-transparent rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
+
+        <div className="text-center mb-20 relative z-10 px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="font-['Caveat'] text-2xl mb-4" style={gradientText}>
+              Terms & Conditions
+            </p>
+            <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl text-gray-900 tracking-tight uppercase">
+              Cancellation <span style={gradientText}>Policy</span>
+            </h2>
+            <div className="h-1.5 w-24 mx-auto rounded-full bg-gradient-to-r from-[#e76366] to-[#8355eb] mt-6"></div>
+          </motion.div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
           {policies.map((policy, index) => (
             <motion.div
               key={policy.id}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white border border-gray-200 rounded-[1.5rem] p-6 flex items-start gap-5 hover:border-gray-300 hover:shadow-lg transition-all duration-300"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="relative group h-full"
             >
-              <div className="w-10 h-10 rounded-full shrink-0 flex items-center justify-center font-['Poppins'] font-black text-white text-sm" style={{ background: 'linear-gradient(135deg, #e76366, #8355eb)' }}>
-                {policy.id}
-              </div>
-              <div className="flex-1">
-                <div className="mb-2 [&>svg]:stroke-[url(#icon-gradient)]">
-                  {React.cloneElement(policy.icon as React.ReactElement, { 
-                    style: (policy.icon as React.ReactElement).props.color ? {} : { stroke: 'url(#icon-gradient)' }
-                  })}
+              {/* Animated Glow Behind Card */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#e76366] to-[#8355eb] rounded-[2rem] opacity-0 group-hover:opacity-20 blur-lg transition duration-500"></div>
+              
+              <div className="relative bg-white border border-gray-100 group-hover:border-transparent rounded-[2rem] p-8 flex flex-col h-full overflow-hidden shadow-sm group-hover:shadow-2xl transition-all duration-500">
+                {/* Decorative background element */}
+                <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-[#e76366]/5 to-[#8355eb]/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                
+                <div className="relative z-10 flex items-center justify-between mb-8">
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center font-['Poppins'] font-black text-white text-xl shadow-[0_0_15px_rgba(231,99,102,0.2)] group-hover:shadow-[0_0_30px_rgba(131,85,235,0.4)] transition-all duration-500 transform group-hover:rotate-6" style={{ background: 'linear-gradient(135deg, #e76366, #8355eb)' }}>
+                    {policy.id}
+                  </div>
+                  <div className="w-12 h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:bg-white group-hover:border-[#8355eb]/20 transition-colors duration-500 shadow-sm flex items-center justify-center">
+                    {React.cloneElement(policy.icon as React.ReactElement, { 
+                      className: "text-gray-500 group-hover:text-[#8355eb] transition-colors duration-500",
+                      size: 24
+                    })}
+                  </div>
                 </div>
-                {policy.content}
+                
+                <div className="relative z-10 flex-1">
+                  <div className="text-gray-700 group-hover:text-gray-900 transition-colors duration-500">
+                    {policy.content}
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -180,11 +172,23 @@ const CancellationPolicyPage = () => {
       </section>
 
       {/* SECTION 3 — REFUND TIMELINE */}
-      <section className="py-16 bg-white">
-        <div className="max-w-3xl mx-auto px-4">
-          <p className="font-['Caveat'] text-center text-lg mb-10" style={gradientText}>
-            Refund Timeline
-          </p>
+      <section className="py-16 bg-[#f8fafc] relative z-10">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="font-['Caveat'] text-2xl mb-4" style={gradientText}>
+                Process
+              </p>
+              <h2 className="font-['Poppins'] font-black text-3xl md:text-4xl text-gray-900 tracking-tight uppercase">
+                Refund <span style={gradientText}>Timeline</span>
+              </h2>
+            </motion.div>
+          </div>
 
           {/* Timeline Container */}
           <div className="relative flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-0">

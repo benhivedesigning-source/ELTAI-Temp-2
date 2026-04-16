@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Home, Lightbulb, FileText, Calendar, Star, UserPlus, Plane, Users, Mail } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -16,7 +17,14 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setExpandedMenu(null);
   }, [location]);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      setExpandedMenu(null);
+    }
+  }, [isMobileMenuOpen]);
 
   const navLinks = [
     { name: 'Home', path: '/', icon: <Home size={16} /> },
@@ -62,6 +70,22 @@ const Navbar = () => {
     ] },
   ];
 
+  const restrictedPaths = [
+    '/programme/schedule',
+    '/programme/sessions',
+    '/programme/speakers',
+    '/highlights/scholarships',
+    '/highlights/publications',
+    '/highlights/awards',
+    '/travel/reach',
+    '/travel/accommodation',
+    '/travel/visit',
+    '/organizers/partners',
+    '/organizers/committee',
+    '/contact/help',
+    '/contact/faq'
+  ];
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 border-b-2 ${isScrolled ? 'bg-black/95 backdrop-blur-md py-4 shadow-lg shadow-black/20 border-zinc-800' : 'bg-transparent py-6 border-transparent'}`}>
       <div className="w-full px-4 xl:px-8 flex items-center justify-between max-w-[1800px] mx-auto">
@@ -90,11 +114,22 @@ const Navbar = () => {
               {link.subItems && (
                 <div className="absolute top-full left-0 mt-[-8px] w-64 bg-black/95 backdrop-blur-md border border-zinc-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left scale-95 group-hover:scale-100">
                   <div className="py-2">
-                    {link.subItems.map((subItem, j) => (
-                      <Link key={j} to={subItem.path} className="block px-4 py-2.5 text-white hover:text-primary hover:bg-white/5 transition-colors text-[11px] xl:text-[12px]">
-                        {subItem.name}
-                      </Link>
-                    ))}
+                    {link.subItems.map((subItem, j) => {
+                      const isRestricted = restrictedPaths.includes(subItem.path);
+                      if (isRestricted) {
+                        return (
+                          <div key={j} className="flex items-center justify-between px-4 py-2.5 text-zinc-600 cursor-not-allowed text-[11px] xl:text-[12px] group/item">
+                            <span>{subItem.name}</span>
+                            <span className="text-[8px] bg-zinc-800 px-1.5 py-0.5 rounded text-zinc-500 uppercase font-black">Soon</span>
+                          </div>
+                        );
+                      }
+                      return (
+                        <Link key={j} to={subItem.path} className="block px-4 py-2.5 text-white hover:text-primary hover:bg-white/5 transition-colors text-[11px] xl:text-[12px]">
+                          {subItem.name}
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -133,28 +168,67 @@ const Navbar = () => {
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="lg:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-t border-zinc-800 p-6 flex flex-col gap-4 shadow-2xl max-h-[80vh] overflow-y-auto"
+          className="lg:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-t border-zinc-800 p-6 flex flex-col gap-4 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto"
         >
-          {navLinks.map((link, i) => (
-            <div key={i} className="flex flex-col">
-              <Link to={link.path || '#'} className={`text-lg font-heading font-bold flex items-center justify-between transition-colors uppercase ${(location.pathname === link.path || (link.name === 'Register' && location.pathname.includes('/register'))) ? 'text-primary' : 'text-white hover:text-primary'}`}>
-                <div className="flex items-center gap-3">
-                  {link.icon && React.cloneElement(link.icon as React.ReactElement, { size: 20 })}
-                  {link.name}
-                </div>
-                {link.dropdown && <ChevronDown size={20} />}
-              </Link>
-              {link.subItems && (
-                <div className="flex flex-col gap-3 pl-8 mt-3 border-l-2 border-zinc-800 ml-2">
-                  {link.subItems.map((subItem, j) => (
-                    <Link key={j} to={subItem.path} className="text-gray-400 hover:text-primary transition-colors text-sm uppercase font-bold">
-                      {subItem.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+          {navLinks.map((link, i) => {
+            const isExpanded = expandedMenu === link.name;
+            return (
+              <div key={i} className="flex flex-col">
+                <Link 
+                  to={link.path || '#'} 
+                  onClick={(e) => {
+                    if (link.dropdown) {
+                      e.preventDefault();
+                      setExpandedMenu(isExpanded ? null : link.name);
+                    } else {
+                      setIsMobileMenuOpen(false);
+                    }
+                  }}
+                  className={`text-lg font-heading font-bold flex items-center justify-between transition-colors uppercase ${(location.pathname === link.path || (link.name === 'Register' && location.pathname.includes('/register'))) ? 'text-primary' : 'text-white hover:text-primary'}`}
+                >
+                  <div className="flex items-center gap-3">
+                    {link.icon && React.cloneElement(link.icon as React.ReactElement, { size: 20 })}
+                    {link.name}
+                  </div>
+                  {link.dropdown && <ChevronDown size={20} className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />}
+                </Link>
+                <AnimatePresence>
+                  {link.dropdown && isExpanded && link.subItems && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="flex flex-col gap-3 pl-8 mt-3 border-l-2 border-zinc-800 ml-2 py-2">
+                        {link.subItems.map((subItem, j) => {
+                          const isRestricted = restrictedPaths.includes(subItem.path);
+                          if (isRestricted) {
+                            return (
+                              <div key={j} className="text-zinc-600 cursor-not-allowed text-sm uppercase font-bold flex items-center justify-between pr-4">
+                                {subItem.name}
+                                <span className="text-[10px] bg-zinc-800 px-2 py-0.5 rounded text-zinc-500 uppercase font-black">Soon</span>
+                              </div>
+                            );
+                          }
+                          return (
+                            <Link 
+                              key={j} 
+                              to={subItem.path} 
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="text-gray-400 hover:text-primary transition-colors text-sm uppercase font-bold"
+                            >
+                              {subItem.name}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 pt-4 border-t border-zinc-800">
             <motion.button 
               whileHover={{ scale: 1.02 }}
