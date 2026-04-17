@@ -29,7 +29,7 @@ const MITADTUniversityPage = () => {
           { label: "Organizers", path: "/organizers" },
           { label: "MIT ADT University" }
         ]}
-        image="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2000&auto=format&fit=crop"
+        image="https://www.image2url.com/r2/default/images/1776343708397-88e842a2-3e3b-4a46-ba73-d5da5da947de.webp"
       />
 
       {/* ABOUT SECTION — BENTO SPLIT */}
@@ -73,7 +73,7 @@ const MITADTUniversityPage = () => {
             >
               <div className="rounded-[2rem] overflow-hidden aspect-[4/3] w-full relative group shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop" 
+                  src="https://www.image2url.com/r2/default/images/1776343910210-85b4081c-4932-4264-a96d-ded109f05805.png" 
                   alt="MIT ADT Campus" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
@@ -188,7 +188,7 @@ const MITADTUniversityPage = () => {
               {/* RIGHT */}
               <div className="rounded-[2rem] overflow-hidden relative aspect-[3/4] shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop" 
+                  src="https://www.image2url.com/r2/default/images/1776344411188-fba1bd62-310f-4fdb-b9fc-c58860d41edf.jpg" 
                   alt="Students" 
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -226,7 +226,7 @@ const MITADTUniversityPage = () => {
             >
               <div className="rounded-[2rem] overflow-hidden relative aspect-[4/3] w-full border border-zinc-800">
                 <img 
-                  src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800&auto=format&fit=crop" 
+                  src="https://www.image2url.com/r2/default/images/1776343957258-964db634-8a35-4a25-926e-0df7a1cf6618.png" 
                   alt="Humanities" 
                   className="w-full h-full object-cover"
                   style={{ filter: 'brightness(0.85)' }}
@@ -329,7 +329,7 @@ const MITADTUniversityPage = () => {
           initial={{ scale: 1 }}
           whileInView={{ scale: 1.1 }}
           transition={{ duration: 10, ease: "linear" }}
-          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2000&auto=format&fit=crop" 
+          src="https://www.image2url.com/r2/default/images/1776344093643-4ef63c0a-e751-4eee-8452-e674da2cca8d.png" 
           alt="Students" 
           className="absolute inset-0 w-full h-full object-cover object-center z-0"
           style={{ filter: 'brightness(0.3)' }}

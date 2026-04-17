@@ -576,7 +576,7 @@ const Home = () => {
           <img 
             src="https://www.image2url.com/r2/default/images/1776315989653-9a56a3fc-0281-441a-902b-dd4a9205a82b.webp" 
             alt="Conference Stage" 
-            className="w-full h-full object-cover opacity-80"
+            className="w-full h-full object-cover opacity-100"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black"></div>
         </div>
