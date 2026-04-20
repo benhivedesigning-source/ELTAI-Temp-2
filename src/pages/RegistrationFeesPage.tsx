@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
 import { CheckCircle, UserPlus, Info, ArrowRight, Download, Zap, Star } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
+import Ordinal from '../components/Ordinal';
 
 const RegistrationFeesPage = () => {
   const [selectedPhase, setSelectedPhase] = useState<'earlybird' | 'regular' | 'onthespot'>('earlybird');
@@ -41,7 +42,7 @@ const RegistrationFeesPage = () => {
     <div className="bg-black min-h-screen font-sans text-white overflow-x-hidden">
       <PageBanner 
         title="Registration Fees"
-        subtitle="Secure your spot at the 20th International & 56th Annual ELTAI Conference."
+        subtitle={<Ordinal text="Secure your spot at the 20th International & 56th Annual ELTAI Conference." />}
         breadcrumb={[
           { label: "Register", path: "/register" },
           { label: "Registration Fees" }
@@ -154,7 +155,7 @@ const RegistrationFeesPage = () => {
                         className="inline-block bg-gray-50 border border-gray-100 rounded-full px-3 py-1 shadow-sm"
                       >
                         <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">
-                          {phase.date}
+                          <Ordinal text={phase.date} />
                         </p>
                       </motion.div>
                     </div>

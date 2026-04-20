@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { BookOpen, Users, Globe, Award, ArrowRight, ChevronDown, User, Calendar, CheckCircle, Network, Building } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
+import Ordinal from '../components/Ordinal';
 
 const EltaiPage = () => {
   useEffect(() => {
@@ -64,7 +65,7 @@ const EltaiPage = () => {
                   <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                     <div className="text-xs text-gray-400 mb-1">Founded On</div>
                     <div className="text-lg font-bold text-gray-900 flex items-center gap-2">
-                      <Calendar size={16} className="text-[#e76366]" /> 7th August 1969
+                      <Calendar size={16} className="text-[#e76366]" /> <Ordinal text="7th August 1969" />
                     </div>
                   </div>
                   <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">

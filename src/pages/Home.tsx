@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, Calendar, MapPin, Users, Building2, Download, Clock } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Link } from 'react-router-dom';
+import Ordinal from '../components/Ordinal';
 
 const STATS = [
   { number: '1,500+', label: 'Attendees' },
@@ -63,7 +64,7 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="text-xl md:text-2xl text-white mb-4 font-medium"
             >
-              The 20th International and 56th Annual Conference of ELTAI
+              <Ordinal text="The 20th International and 56th Annual Conference of ELTAI" />
             </motion.p>
             
             <motion.div 
@@ -104,7 +105,7 @@ const Home = () => {
               </div>
               <div>
                 <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase mb-1">DATES</p>
-                <p className="text-white font-bold text-sm leading-tight mb-1">07th - 10th October 2026</p>
+                <p className="text-white font-bold text-sm leading-tight mb-1"><Ordinal text="7th – 10th October 2026" /></p>
                 <p className="text-gray-400 text-xs">(Wednesday - Saturday)</p>
               </div>
             </div>
@@ -276,7 +277,7 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-gray-900 mb-6 tracking-tighter uppercase leading-tight">
-                THE 20TH INTERNATIONAL AND 56TH ANNUAL ELTAI CONFERENCE
+                <Ordinal text="THE 20TH INTERNATIONAL AND 56TH ANNUAL ELTAI CONFERENCE" />
               </h3>
               
               <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6 font-medium">
@@ -284,7 +285,7 @@ const Home = () => {
               </p>
               
               <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-10 font-medium">
-                Hosted by the School of Humanities and the School of Holistic Development, MIT Art, Design &amp; Technology University, Pune, from 07th to 10th October 2026. As ELTAI continues its legacy of nurturing teachers, promoting reading cultures, and advancing English education across diverse contexts, ELTAI 2026 invites you to come together in Pune, the Oxford of the East, to reflect, reimagine, and reaffirm our shared commitment to the future of English education.
+                Hosted by the School of Humanities and the School of Holistic Development, MIT Art, Design &amp; Technology University, Pune, from <Ordinal text="7th to 10th October 2026" />. As ELTAI continues its legacy of nurturing teachers, promoting reading cultures, and advancing English education across diverse contexts, ELTAI 2026 invites you to come together in Pune, the Oxford of the East, to reflect, reimagine, and reaffirm our shared commitment to the future of English education.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
@@ -465,19 +466,19 @@ const Home = () => {
               <div className="flex flex-col items-center cursor-pointer group">
                 <span className="text-black text-sm font-bold mb-2">Day 01</span>
                 <div className="px-8 py-3 rounded-full bg-primary text-white font-black text-lg">
-                  23 JAN
+                  7 OCT
                 </div>
               </div>
               <div className="flex flex-col items-center cursor-pointer group">
                 <span className="text-gray-400 text-sm font-bold mb-2 group-hover:text-gray-600 transition-colors">Day 02</span>
                 <div className="px-8 py-3 rounded-full border border-gray-200 text-gray-400 font-black text-lg group-hover:border-gray-300 transition-all">
-                  24 JAN
+                  8 OCT
                 </div>
               </div>
               <div className="flex flex-col items-center cursor-pointer group">
                 <span className="text-gray-400 text-sm font-bold mb-2 group-hover:text-gray-600 transition-colors">Day 03</span>
                 <div className="px-8 py-3 rounded-full border border-gray-200 text-gray-400 font-black text-lg group-hover:border-gray-300 transition-all">
-                  25 JAN
+                  9 OCT
                 </div>
               </div>
             </motion.div>
@@ -588,7 +589,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-primary font-bold tracking-widest text-sm mb-6 uppercase"
           >
-            07-10 OCTOBER 2026 • PUNE, INDIA
+            7–10 OCTOBER 2026 • PUNE, INDIA
           </motion.p>
           
           <motion.h2 
@@ -608,7 +609,7 @@ const Home = () => {
             transition={{ delay: 0.2 }}
             className="text-gray-200 text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            Be part of the 20th International and 56th Annual ELTAI Conference. Connect with educators, researchers, and thought leaders shaping the future of English education.
+            <Ordinal text="Be part of the 20th International and 56th Annual ELTAI Conference." /> Connect with educators, researchers, and thought leaders shaping the future of English education.
           </motion.p>
           
           <motion.div 

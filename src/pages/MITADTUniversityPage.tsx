@@ -7,6 +7,7 @@ import {
   Award, Briefcase, ExternalLink, ArrowRight 
 } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
+import Ordinal from '../components/Ordinal';
 
 const MITADTUniversityPage = () => {
   useEffect(() => {
@@ -52,7 +53,7 @@ const MITADTUniversityPage = () => {
 
               <div className="text-gray-600 text-lg leading-relaxed space-y-5 mt-8">
                 <p>
-                  MIT Art, Design and Technology University is honoured to host the <strong className="text-gray-900">20th International and 56th Annual Conference of ELTAI.</strong> With the compelling theme <span className="italic" style={gradientText}>'English on the Edge: Survive? Evolve? Thrive?'</span>, the conference invites educators, researchers, scholars, writers, and learners to reflect on the evolving role of English in a rapidly transforming world shaped by automation, imagination, and innovation.
+                  MIT Art, Design and Technology University is honoured to host the <strong className="text-gray-900"><Ordinal text="20th International and 56th Annual Conference of ELTAI." /></strong> With the compelling theme <span className="italic" style={gradientText}>'English on the Edge: Survive? Evolve? Thrive?'</span>, the conference invites educators, researchers, scholars, writers, and learners to reflect on the evolving role of English in a rapidly transforming world shaped by automation, imagination, and innovation.
                 </p>
                 <p>
                   MIT Art, Design and Technology University is a UGC-recognised, state private and multi-disciplinary university under the prestigious MIT Group of Institutions. Accredited with <strong className="text-gray-900">NAAC 'A' grade,</strong> it represents a progressive and holistic vision of higher education.
