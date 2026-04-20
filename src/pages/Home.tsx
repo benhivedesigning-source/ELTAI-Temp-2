@@ -252,8 +252,8 @@ const Home = () => {
                      <svg viewBox="0 0 100 100" className="w-full h-full text-black uppercase text-[11px] font-bold tracking-widest bg-white rounded-full">
                        <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
                        <text>
-                         <textPath href="#circlePath" startOffset="0%">
-                           STAY TUNED • STAY TUNED • STAY TUNED • 
+                         <textPath href="#circlePath" startOffset="0%" style={{letterSpacing:'2px'}}>
+                          • STAY TUNED • STAY TUNED
                          </textPath>
                        </text>
                      </svg>

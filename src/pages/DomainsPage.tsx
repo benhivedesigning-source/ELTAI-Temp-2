@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, ArrowRight, Shield, RotateCw, Sun } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
@@ -8,10 +8,6 @@ const DomainsPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const { scrollYProgress } = useScroll();
-  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const gradientText = {
     background: 'linear-gradient(90deg, #e76366, #8355eb)',
@@ -30,7 +26,7 @@ const DomainsPage = () => {
 
   const staggerItem = {
     hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } }
+    show: { opacity: 1, y: 0, transition: { duration: 0.7 } }
   };
 
   const pillars = [
@@ -159,10 +155,7 @@ const DomainsPage = () => {
       {/* HERO SECTION */}
       <section className="relative h-[60vh] md:h-[80vh] flex flex-col justify-center items-center overflow-hidden pt-20">
         {/* Background Image */}
-        <motion.div 
-          style={{ y: heroY, opacity: heroOpacity }}
-          className="absolute inset-0 z-0"
-        >
+        <div className="absolute inset-0 z-0">
           <motion.img 
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
@@ -178,7 +171,7 @@ const DomainsPage = () => {
           {/* Ambient Glows */}
           <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#e76366]/20 blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#8355eb]/20 blur-[120px] translate-x-1/2 translate-y-1/2"></div>
-        </motion.div>
+        </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-8 text-center">
           {/* Breadcrumb */}
@@ -228,14 +221,11 @@ const DomainsPage = () => {
         {/* Background decorative elements */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
           {/* Watermark */}
-          <motion.div 
-            style={{ y: useTransform(scrollYProgress, [0.1, 0.4], [100, -100]) }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] select-none"
-          >
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] select-none">
             <span className="font-heading font-black text-[25vw] leading-none tracking-tighter text-black block uppercase">
               PERSPECTIVES
             </span>
-          </motion.div>
+          </div>
           
           {/* Grid Pattern */}
           <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
@@ -383,13 +373,7 @@ const DomainsPage = () => {
                 These three questions guide the core inquiry of this conference. They function as overlapping lenses rather than linear stages, challenging us to rethink our relationship with the English language in an automated world.
               </p>
 
-              <motion.div 
-                variants={staggerContainer}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="grid grid-cols-1 gap-6"
-              >
+              <div className="grid grid-cols-1 gap-6">
                 {[
                   { title: "Survive?", icon: <Shield size={24} />, color: "#e76366", desc: "What must endure in the face of structural pressures?" },
                   { title: "Evolve?", icon: <RotateCw size={24} />, color: "#b05aac", desc: "What must transform as pedagogy and technology intersect?" },
@@ -397,8 +381,7 @@ const DomainsPage = () => {
                 ].map((item, i) => (
                   <motion.div 
                     key={i}
-                    variants={staggerItem}
-                    whileHover={{ x: 10, scale: 1.02, backgroundColor: "rgba(255,255,255,0.08)" }}
+                    whileHover={{ x: 10 }}
                     className="flex items-center gap-6 bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/10 transition-all duration-300"
                   >
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style={{ backgroundColor: `${item.color}20`, color: item.color, border: `1px solid ${item.color}40` }}>
@@ -410,7 +393,7 @@ const DomainsPage = () => {
                     </div>
                   </motion.div>
                 ))}
-              </motion.div>
+              </div>
             </motion.div>
 
             {/* Right Image */}
@@ -532,18 +515,11 @@ const DomainsPage = () => {
                           Guiding Provocations
                         </h4>
 
-                        <motion.div 
-                          variants={staggerContainer}
-                          initial="hidden"
-                          whileInView="show"
-                          viewport={{ once: true, margin: "-50px" }}
-                          className="grid grid-cols-1 gap-4"
-                        >
+                        <div className="grid grid-cols-1 gap-4">
                           {domain.provocations.map((q, i) => (
                             <motion.div 
                               key={i}
-                              variants={staggerItem}
-                              whileHover={{ x: 10, scale: 1.01 }}
+                              whileHover={{ x: 10 }}
                               className="bg-zinc-50 hover:bg-white p-6 rounded-2xl border border-zinc-100 hover:border-zinc-200 hover:shadow-xl transition-all duration-300 group/item flex gap-5 items-center"
                             >
                               <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center shrink-0 group-hover/item:bg-primary transition-all duration-300 shadow-lg">
@@ -554,7 +530,7 @@ const DomainsPage = () => {
                               </p>
                             </motion.div>
                           ))}
-                        </motion.div>
+                        </div>
                       </div>
                     </motion.div>
                   </div>
