@@ -98,7 +98,7 @@ const ConceptNotePage = () => {
               </div>
               
               <h2 className="font-heading font-black text-4xl md:text-5xl text-gray-900 mb-10 leading-[1.1] tracking-tighter uppercase italic">
-                A Defining <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e76366] to-[#8355eb]">Crossroads</span>
+                A Defining <span className=" pr-2 text-transparent bg-clip-text bg-gradient-to-r from-[#e76366] to-[#8355eb]" >Crossroads</span>
               </h2>
 
               <div className="relative mb-12">
