@@ -95,7 +95,11 @@ const SubmissionReviewPoliciesPage = () => {
   return (
     <div className="bg-black min-h-screen font-sans text-white selection:bg-primary selection:text-black overflow-x-hidden">
       <PageBanner 
-        title="Submission Policies"
+       title={
+  <>
+    Submission <span className="ml-1">Policies</span>
+  </>
+}
         subtitle="Key regulations and requirements for abstract submission."
         breadcrumb={[
           { label: "Submit", path: "/submit" },
@@ -104,7 +108,7 @@ const SubmissionReviewPoliciesPage = () => {
         image="https://www.image2url.com/r2/default/images/1776335381048-9ce9d1a0-ae63-4868-b47a-3dfded4674e4.png"
       />
 
-      {/* CORE POLICIES SECTION */}
+      {/* Core Policies Section */}
       <section className="bg-[#f8fafc] py-24 relative z-10 overflow-hidden">
         {/* Subtle Background Pattern */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#8355eb 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
@@ -162,15 +166,13 @@ const SubmissionReviewPoliciesPage = () => {
             ))}
           </div>
 
-          {/* REVIEW POLICIES SECTION */}
+          {/* Review Policies Section */}
           <div className="mt-32">
             <div className="mb-16">
-              <h2 className="font-['Poppins'] font-black text-5xl text-gray-900 mb-4 uppercase tracking-tighter">
-                REVIEW <span style={gradientText}>POLICIES</span>
+              <h2 className="font-['Poppins'] font-black text-5xl text-gray-900 mb-4 capitalize tracking-tighter">
+                Review <span className="ml-1" style={gradientText}>Policies</span>
               </h2>
-              <p className="text-gray-600 text-lg font-medium">
-                Our commitment to a fair, quality-controlled, and transparent review process.
-              </p>
+            
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -190,12 +192,14 @@ const SubmissionReviewPoliciesPage = () => {
                 <div className="absolute inset-0 border border-white/10 rounded-[2.5rem] z-10 group-hover:border-white/20 transition-colors duration-500"></div>
 
                 <div className="relative z-20 space-y-12">
-                  <div className="flex flex-col sm:flex-row items-start gap-6">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#e76366] to-[#8355eb] flex items-center justify-center shrink-0 shadow-[0_0_30px_rgba(231,99,102,0.4)] group-hover:scale-110 transition-transform duration-500">
-                      <Search className="text-white" size={32} />
+                  <div className="flex flex-col gap-8">
+                    <div className="flex items-center gap-6">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#e76366] to-[#8355eb] flex items-center justify-center shrink-0 shadow-[0_0_30px_rgba(231,99,102,0.4)] group-hover:scale-110 transition-transform duration-500">
+                        <Search className="text-white" size={32} />
+                      </div>
+                      <h3 className="text-3xl font-black text-white tracking-tight">Double-Blind Peer Review</h3>
                     </div>
-                    <div>
-                      <h3 className="text-3xl font-black text-white mb-4 tracking-tight">Double-Blind Peer Review</h3>
+                    <div className="sm:pl-[88px]">
                       <p className="text-gray-400 leading-relaxed text-lg">
                         All abstracts undergo <span className="text-white font-bold">double-blind peer review</span> by experienced reviewers. Neither the presenters nor the reviewers will know each other's identities.
                       </p>
@@ -204,12 +208,14 @@ const SubmissionReviewPoliciesPage = () => {
 
                   <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 
-                  <div className="flex flex-col sm:flex-row items-start gap-6">
-                    <div className="w-16 h-16 rounded-2xl bg-zinc-800/80 border border-white/10 flex items-center justify-center shrink-0 shadow-xl backdrop-blur-md group-hover:scale-110 transition-transform duration-500">
-                      <Calendar className="text-[#8355eb]" size={32} />
+                  <div className="flex flex-col gap-8">
+                    <div className="flex items-center gap-6">
+                      <div className="w-16 h-16 rounded-2xl bg-zinc-800/80 border border-white/10 flex items-center justify-center shrink-0 shadow-xl backdrop-blur-md group-hover:scale-110 transition-transform duration-500">
+                        <Calendar className="text-[#8355eb]" size={32} />
+                      </div>
+                      <h3 className="text-3xl font-black text-white tracking-tight">Notification Timeline</h3>
                     </div>
-                    <div>
-                      <h3 className="text-3xl font-black text-white mb-4 tracking-tight">Notification Timeline</h3>
+                    <div className="sm:pl-[88px]">
                       <p className="text-gray-300 leading-relaxed mb-6 text-lg">
                         Presenters will normally be notified of the review outcome within <span className="text-[#8355eb] font-bold">15 days</span> of submission.
                       </p>
@@ -282,7 +288,7 @@ const SubmissionReviewPoliciesPage = () => {
                     </div>
                     
                     <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 mb-8">
-                      <p className="text-red-400 font-bold text-sm uppercase tracking-wider">An abstract will be rejected if:</p>
+                      <p className="text-red-400 font-bold text-sm capitalize tracking-wider">An abstract will be rejected if:</p>
                     </div>
 
                     <ul className="space-y-5">

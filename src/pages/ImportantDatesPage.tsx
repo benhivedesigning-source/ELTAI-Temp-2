@@ -50,7 +50,7 @@ const ImportantDatesPage = () => {
       type: "regular",
       date: "15th August 2026",
       title: "Regular Submission Deadline",
-      extra: "Submissions accepted until 6:00 pm IST",
+      extra: "Submissions accepted until 06:00 pm IST",
       dotColor: "bg-gradient-to-r from-[#e76366] to-[#8355eb]",
       pillBg: "bg-gradient-to-r from-[#e76366] to-[#8355eb]",
       hoverBorder: "hover:border-[#e76366]",
@@ -62,7 +62,7 @@ const ImportantDatesPage = () => {
       type: "late",
       date: "15th Aug – 31st August 2026",
       title: "Late Submission Window",
-      extra: "Late submissions accepted until 31st August, 6:00 pm IST",
+      extra: "Late submissions accepted until 31st August, 06:00 pm IST",
       dotColor: "bg-gradient-to-r from-[#e76366] to-[#8355eb]",
       pillBg: "bg-gradient-to-r from-[#e76366] to-[#8355eb]",
       hoverBorder: "hover:border-amber-500",
@@ -91,7 +91,7 @@ const ImportantDatesPage = () => {
       type: "presenter-reg",
       date: "25th September 2026",
       title: "Presenter Registration Deadline",
-      extra: "Deadline for presenters to register (by 6:00 pm IST)",
+      extra: "Deadline for presenters to register (by 06:00 pm IST)",
       dotColor: "bg-gradient-to-r from-[#e76366] to-[#8355eb]",
       pillBg: "bg-gradient-to-r from-[#e76366] to-[#8355eb]",
       hoverBorder: "hover:border-[#8355eb]",
@@ -103,7 +103,7 @@ const ImportantDatesPage = () => {
       type: "early-bird",
       date: "25th September 2026",
       title: "Early-Bird Registration Deadline",
-      extra: "Discounted rates apply until 6:00 pm IST",
+      extra: "Discounted rates apply until 06:00 pm IST",
       dotColor: "bg-gradient-to-r from-[#e76366] to-[#8355eb]",
       pillBg: "bg-gradient-to-r from-[#e76366] to-[#8355eb]",
       hoverBorder: "hover:border-green-500",
@@ -119,7 +119,7 @@ const ImportantDatesPage = () => {
       type: "regular-reg",
       date: "26th Sep – 6th October 2026",
       title: "Regular Registration Window",
-      extra: "Online registration closes on 6th October, 6:00 pm IST",
+      extra: "Online registration closes on 6th October, 06:00 pm IST",
       dotColor: "bg-gradient-to-r from-[#e76366] to-[#8355eb]",
       pillBg: "bg-gradient-to-r from-[#e76366] to-[#8355eb]",
       hoverBorder: "hover:border-[#e76366]",
@@ -178,7 +178,11 @@ const ImportantDatesPage = () => {
   return (
     <div className="bg-black min-h-screen font-sans text-white selection:bg-primary selection:text-black overflow-x-hidden">
       <PageBanner
-        title="Important Dates"
+        title={
+  <>
+    Important <span className="ml-1">Dates</span>
+  </>
+}
         subtitle="Stay on track with our conference timeline and key deadlines."
         breadcrumb={[
           { label: "Submit", path: "/submit" },
@@ -187,7 +191,7 @@ const ImportantDatesPage = () => {
         image="https://www.image2url.com/r2/default/images/1776339630799-a79ba149-9c86-4023-a491-83084d39c3d5.png"
       />
 
-      {/* VERTICAL TIMELINE — MAGAZINE STYLE */}
+      {/* Vertical Timeline — Magazine Style */}
       <section className="w-full bg-white py-32 relative z-10 overflow-hidden">
         {/* Background Glows */}
         <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-[#e76366]/5 rounded-full blur-[120px] pointer-events-none"></div>
@@ -202,19 +206,17 @@ const ImportantDatesPage = () => {
             >
               <div className="flex items-center justify-center gap-4 mb-6">
                 <div className="w-12 h-px bg-primary"></div>
-                <span className="text-xs font-bold tracking-widest uppercase text-gray-400">
+                <span className="text-xs font-bold tracking-widest capitalize text-gray-400">
                   Timeline
                 </span>
                 <div className="w-12 h-px bg-primary"></div>
               </div>
-              <h2 className="text-4xl md:text-6xl font-heading font-black text-gray-900 mb-6 tracking-tighter uppercase leading-tight">
-                Every <span style={gradientText}>Deadline</span>
-              </h2>
+              
             </motion.div>
           </div>
 
           <div className="relative">
-            {/* TIMELINE SPINE WITH GLOW */}
+            {/* Timeline Spine With Glow */}
             <div className="absolute left-[2rem] md:left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 bg-gray-200">
               <motion.div
                 initial={{ height: 0 }}
@@ -227,7 +229,7 @@ const ImportantDatesPage = () => {
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-4 h-4 rounded-full bg-[#8355eb] shadow-[0_0_10px_#8355eb]"></div>
             </div>
 
-            {/* NODES */}
+            {/* Nodes */}
             <div className="flex flex-col gap-16 md:gap-24 py-10">
               {timelineNodes.map((node, index) => {
                 const isOdd = index % 2 === 0;
@@ -238,7 +240,7 @@ const ImportantDatesPage = () => {
                     key={node.id}
                     className="relative flex items-center w-full group"
                   >
-                    {/* DOT ON SPINE */}
+                    {/* Dot On Spine */}
                     <div className="absolute left-[2rem] md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                       {node.isHero ? (
                         <div className="relative flex items-center justify-center">
@@ -264,7 +266,7 @@ const ImportantDatesPage = () => {
                       )}
                     </div>
 
-                    {/* CONNECTOR LINE */}
+                    {/* Connector Line */}
                     <div className="absolute left-[2rem] top-1/2 -translate-y-1/2 w-10 h-[2px] bg-gradient-to-r from-gray-200 to-transparent md:hidden z-10"></div>
                     {isOdd && (
                       <div className="hidden md:block absolute right-1/2 top-1/2 -translate-y-1/2 w-16 h-[2px] bg-gradient-to-l from-gray-200 to-transparent z-10 group-hover:from-[#e76366] transition-colors duration-500"></div>
@@ -273,7 +275,7 @@ const ImportantDatesPage = () => {
                       <div className="hidden md:block absolute left-1/2 top-1/2 -translate-y-1/2 w-16 h-[2px] bg-gradient-to-r from-gray-200 to-transparent z-10 group-hover:from-[#8355eb] transition-colors duration-500"></div>
                     )}
 
-                    {/* CARD CONTAINER */}
+                    {/* Card Container */}
                     <div
                       className={`w-full md:w-1/2 flex relative z-30 ${isEven ? "justify-start pl-[5rem] md:pl-20 md:ml-auto" : "justify-start md:justify-end pl-[5rem] md:pl-0 md:pr-20"}`}
                     >
@@ -308,7 +310,7 @@ const ImportantDatesPage = () => {
                               </div>
                               <div className="flex-1">
                                 <div
-                                  className={`text-[10px] font-black uppercase tracking-widest mb-1 text-gray-400 ${node.isHero ? "group-hover/card:text-[#e76366]" : ""}`}
+                                  className={`text-[10px] font-black capitalize tracking-widest mb-1 text-gray-400 ${node.isHero ? "group-hover/card:text-[#e76366]" : ""}`}
                                 >
                                   Step {(index + 1).toString().padStart(2, "0")}
                                 </div>
@@ -374,19 +376,19 @@ const ImportantDatesPage = () => {
         />
       </svg>
 
-      {/* CTA */}
+      {/* Cta */}
       <section className="py-24 bg-black relative overflow-hidden z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none w-full text-center">
           <span
             className="font-['Poppins'] font-black text-[16vw] leading-none tracking-tighter opacity-[0.03]"
             style={gradientText}
           >
-            REGISTER
+            Register
           </span>
         </div>
 
         <div className="relative z-10 text-center max-w-xl mx-auto px-4">
-          <span className="font-['Caveat'] text-2xl block" style={gradientText}>
+          <span className="font-['Poppins'] text-2xl block" style={gradientText}>
             Don't Miss Out
           </span>
           <h2 className="font-['Poppins'] font-black text-white text-5xl md:text-6xl mt-2">
@@ -403,7 +405,7 @@ const ImportantDatesPage = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 to="/register/registration-fees"
-                className="group relative block bg-gradient-to-r from-[#e76366] to-[#8355eb] rounded-full px-10 py-4 font-black text-white text-xl transition-all duration-300 overflow-hidden"
+                className="group relative block bg-gradient-to-r from-[#e76366] to-[#8355eb] rounded-full px-10 py-4 font-black text-white text-lg transition-all duration-300 overflow-hidden"
               >
                 {/* Glow effect on hover */}
                 <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -417,7 +419,7 @@ const ImportantDatesPage = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 to="/submit/call-for-abstracts"
-                className="block border-2 border-white/20 rounded-full px-10 py-4 font-black text-white text-xl hover:bg-white/10 hover:border-white/40 transition-all duration-300"
+                className="block border-2 border-white/20 rounded-full px-10 py-4 font-black text-white text-lg hover:bg-white/10 hover:border-white/40 transition-all duration-300"
               >
                 Submit Abstract
               </Link>

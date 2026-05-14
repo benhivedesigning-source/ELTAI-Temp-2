@@ -97,7 +97,11 @@ const CancellationPolicyPage = () => {
   return (
     <div className="bg-black min-h-screen font-sans text-white overflow-x-hidden">
       <PageBanner 
-        title="Cancellation Policy"
+        title={
+  <>
+    Cancellation <span className="ml-1">Policy</span>
+  </>
+}
         subtitle="Review our cancellation and refund policies for the conference."
         breadcrumb={[
           { label: "Register", path: "/register" },
@@ -106,7 +110,7 @@ const CancellationPolicyPage = () => {
         image="https://www.image2url.com/r2/default/images/1776339333795-0927f6dd-f544-4b7f-9e11-183d554b7b42.png"
       />
 
-      {/* SECTION 2 — POLICY CARDS */}
+      {/* Section 2 — Policy Cards */}
       <section className="py-24 bg-[#f8fafc] relative overflow-hidden z-10">
         {/* Background Decorative Elements */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#8355eb 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
@@ -120,10 +124,10 @@ const CancellationPolicyPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="font-['Caveat'] text-2xl mb-4" style={gradientText}>
+            <p className="font-['Poppins'] text-2xl mb-4" style={gradientText}>
               Terms & Conditions
             </p>
-            <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl text-gray-900 tracking-tight uppercase">
+            <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl text-gray-900 tracking-tight capitalize">
               Cancellation <span style={gradientText}>Policy</span>
             </h2>
             <div className="h-1.5 w-24 mx-auto rounded-full bg-gradient-to-r from-[#e76366] to-[#8355eb] mt-6"></div>
@@ -171,7 +175,7 @@ const CancellationPolicyPage = () => {
         </div>
       </section>
 
-      {/* SECTION 3 — REFUND TIMELINE */}
+      {/* Section 3 — Refund Timeline */}
       <section className="py-16 bg-[#f8fafc] relative z-10">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-16">
@@ -181,10 +185,8 @@ const CancellationPolicyPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <p className="font-['Caveat'] text-2xl mb-4" style={gradientText}>
-                Process
-              </p>
-              <h2 className="font-['Poppins'] font-black text-3xl md:text-4xl text-gray-900 tracking-tight uppercase">
+             
+              <h2 className="font-['Poppins'] font-black text-3xl md:text-4xl text-gray-900 tracking-tight capitalize">
                 Refund <span style={gradientText}>Timeline</span>
               </h2>
             </motion.div>
@@ -206,7 +208,7 @@ const CancellationPolicyPage = () => {
               </div>
               <div>
                 <h4 className="font-['Poppins'] font-black text-gray-900 text-base leading-tight">
-                  On or Before<br className="hidden md:block" /> 15 September 2026
+                  On or Before<br className="hidden md:block" /> 15<sup>th</sup> September 2026
                 </h4>
                 <div className="mt-3">
                   <span className="bg-green-100 text-green-700 border border-green-200 rounded-full px-3 py-1 text-xs font-bold">
@@ -223,7 +225,7 @@ const CancellationPolicyPage = () => {
               </div>
               <div>
                 <h4 className="font-['Poppins'] font-black text-gray-900 text-base leading-tight">
-                  After<br className="hidden md:block" /> 15 September 2026
+                  After<br className="hidden md:block" /> 15<sup>th</sup> September 2026
                 </h4>
                 <div className="mt-3">
                   <span className="bg-red-100 text-red-600 border border-red-200 rounded-full px-3 py-1 text-xs font-bold">
@@ -259,18 +261,18 @@ const CancellationPolicyPage = () => {
         <path d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" fill="#000000" />
       </svg>
 
-      {/* SECTION 4 — CONTACT NOTE */}
+      {/* Section 4 — Contact Note */}
       <section className="py-20 bg-black relative overflow-hidden">
         {/* Watermark */}
         <div className="absolute z-0 pointer-events-none opacity-[0.03] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <span className="font-['Poppins'] font-black text-[18vw] whitespace-nowrap" style={gradientText}>
-            POLICY
+            Policy
           </span>
         </div>
 
         {/* Foreground */}
         <div className="relative z-10 text-center max-w-xl mx-auto px-4">
-          <p className="font-['Caveat'] text-xl" style={gradientText}>
+          <p className="font-['Poppins'] text-xl" style={gradientText}>
             Cancellation & Refund Policy
           </p>
           <h2 className="font-['Poppins'] font-black text-white text-4xl md:text-5xl mt-2">

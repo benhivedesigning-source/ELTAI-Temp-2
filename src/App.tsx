@@ -13,12 +13,14 @@ import ImportantDatesPage from './pages/ImportantDatesPage';
 import ContactInformationPage from './pages/ContactInformationPage';
 import EltaiPage from './pages/EltaiPage';
 import MITADTUniversityPage from './pages/MITADTUniversityPage';
+import GalleryPage from './pages/GalleryPage';
 
 export default function App() {
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/theme/domains" element={<DomainsPage />} />
         <Route path="/theme/concept-note" element={<ConceptNotePage />} />
         

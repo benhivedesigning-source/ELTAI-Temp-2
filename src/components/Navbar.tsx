@@ -44,6 +44,7 @@ const Navbar = () => {
       { name: 'Speakers', path: '/programme/speakers' }
     ] },
     { name: 'Highlights', dropdown: true, icon: <Star size={16} />, subItems: [
+      { name: 'Gallery', path: '/gallery' },
       { name: 'Scholarships', path: '/highlights/scholarships' },
       { name: 'Publications', path: '/highlights/publications' },
       { name: 'Awards', path: '/highlights/awards' }
@@ -88,44 +89,41 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 border-b-2 ${isScrolled ? 'bg-black/95 backdrop-blur-md py-4 shadow-lg shadow-black/20 border-zinc-800' : 'bg-transparent py-6 border-transparent'}`}>
-      <div className="w-full px-4 xl:px-8 flex items-center justify-between max-w-[1800px] mx-auto">
+      <div className="w-full px-4 xl:px-8 flex items-center justify-center gap-6 xl:gap-10 max-w-[1800px] mx-auto">
         {/* Left Logo (ELT@I) */}
-        <div className="flex justify-start">
+        <div className="flex items-center shrink-0">
           <Link to="/" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-10 p-1 xl:h-12 xl:p-1.5' : 'h-12 p-1.5 xl:h-16 xl:p-2'}`}>
             <img src="https://conf2026.eltai.in/assets/ELTAI-DxCx19mA.png" alt="ELT@I Logo" className="h-full w-auto object-contain" />
           </Link>
         </div>
         
         {/* Center Menu */}
-        <div className="hidden lg:flex flex-none items-center justify-center gap-2 xl:gap-3 font-bold text-[10px] xl:text-[13px] tracking-wide uppercase pl-[45px]">
+        <div className="hidden lg:flex items-center justify-center gap-2 xl:gap-3 font-bold text-[12px] xl:text-[15px] tracking-wide capitalize">
           {navLinks.map((link, i) => (
             <div key={i} className="relative group">
               <Link 
                 to={link.path || '#'} 
-                className={`flex items-center gap-1 xl:gap-0 transition-colors py-4 ${(location.pathname === link.path || (link.name === 'Register' && location.pathname.includes('/register'))) ? 'text-primary' : 'text-white hover:text-primary'}`}
+                className={`flex items-center transition-colors py-4 ${(location.pathname === link.path || (link.name === 'Register' && location.pathname.includes('/register'))) ? 'text-primary' : 'text-white hover:text-primary'}`}
               >
-                <span className="flex items-center [&>svg]:w-3 [&>svg]:h-3 xl:[&>svg]:w-4 xl:[&>svg]:h-4">
-                  {link.icon}
-                </span>
                 <span className="whitespace-nowrap">{link.name}</span>
                 {link.dropdown && <ChevronDown className="w-3 h-3 xl:w-4 xl:h-4 transition-transform duration-300 group-hover:rotate-180" strokeWidth={3} />}
               </Link>
               {/* Dropdown Menu */}
               {link.subItems && (
-                <div className="absolute top-full left-0 mt-[-8px] w-64 bg-black/95 backdrop-blur-md border border-zinc-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left scale-95 group-hover:scale-100">
+                <div className="absolute top-full left-0 mt-[-8px] w-64 bg-black/95 backdrop-blur-md border border-zinc-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
                   <div className="py-2">
                     {link.subItems.map((subItem, j) => {
                       const isRestricted = restrictedPaths.includes(subItem.path);
                       if (isRestricted) {
                         return (
-                          <div key={j} className="flex items-center justify-between px-4 py-2.5 text-zinc-600 cursor-not-allowed text-[11px] xl:text-[12px] group/item">
+                          <div key={j} className="flex items-center justify-between px-4 py-2.5 text-zinc-600 cursor-not-allowed text-[13px] xl:text-[14px] group/item">
                             <span>{subItem.name}</span>
-                            <span className="text-[8px] bg-zinc-800 px-1.5 py-0.5 rounded text-zinc-500 uppercase font-black">Soon</span>
+                            <span className="text-[10px] bg-zinc-800 px-1.5 py-0.5 rounded text-zinc-500 capitalize font-black">Soon</span>
                           </div>
                         );
                       }
                       return (
-                        <Link key={j} to={subItem.path} className="block px-4 py-2.5 text-white hover:text-primary hover:bg-white/5 transition-colors text-[11px] xl:text-[12px]">
+                        <Link key={j} to={subItem.path} className="block px-4 py-2.5 text-white hover:text-primary hover:bg-white/5 transition-colors text-[13px] xl:text-[14px]">
                           {subItem.name}
                         </Link>
                       );
@@ -138,13 +136,22 @@ const Navbar = () => {
         </div>
 
         {/* Right Section */}
-        <div className="hidden lg:flex flex-1 items-center justify-end gap-2 xl:gap-4 shrink-0">
+        <div className="hidden lg:flex items-center gap-2 xl:gap-4 shrink-0">
+          <div className="relative group/submit">
+            <motion.button 
+              className="bg-zinc-900 text-zinc-500 px-4 py-2 xl:px-6 xl:py-2 rounded-full font-bold cursor-not-allowed text-[9px] xl:text-[11px] capitalize text-center leading-tight border border-zinc-800 whitespace-nowrap flex flex-col items-center"
+            >
+              Submit
+              <span className="text-[8px] bg-zinc-800 px-1.5 py-0.5 rounded text-zinc-600 capitalize font-black mt-0.5">Soon</span>
+            </motion.button>
+          </div>
+          
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-primary text-white px-3 py-1.5 xl:px-5 xl:py-1.5 rounded-full font-bold hover:bg-white hover:text-black transition-colors duration-300 text-[9px] xl:text-[11px] uppercase text-center leading-tight shadow-[0_0_15px_rgba(231,99,102,0.2)] whitespace-nowrap"
+            className="bg-primary text-white px-4 py-2 xl:px-6 xl:py-2 rounded-full font-bold hover:bg-white hover:text-black transition-colors duration-300 text-[9px] xl:text-[11px] capitalize text-center leading-tight shadow-[0_0_15px_rgba(231,99,102,0.2)] whitespace-nowrap"
           >
-            Register<br/>Now
+            Register Now
           </motion.button>
           
           <div className="w-px h-6 xl:h-8 bg-zinc-700"></div>
@@ -156,7 +163,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="lg:hidden flex-1 flex justify-end">
+        <div className="lg:hidden flex items-center justify-end">
           <button className="text-white hover:text-primary transition-colors ml-4" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -184,10 +191,9 @@ const Navbar = () => {
                       setIsMobileMenuOpen(false);
                     }
                   }}
-                  className={`text-lg font-heading font-bold flex items-center justify-between transition-colors uppercase ${(location.pathname === link.path || (link.name === 'Register' && location.pathname.includes('/register'))) ? 'text-primary' : 'text-white hover:text-primary'}`}
+                  className={`text-lg font-heading font-bold flex items-center justify-center gap-3 transition-colors capitalize ${(location.pathname === link.path || (link.name === 'Register' && location.pathname.includes('/register'))) ? 'text-primary' : 'text-white hover:text-primary'}`}
                 >
-                  <div className="flex items-center gap-3">
-                    {link.icon && React.cloneElement(link.icon as React.ReactElement, { size: 20 })}
+                  <div className="flex items-center">
                     {link.name}
                   </div>
                   {link.dropdown && <ChevronDown size={20} className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />}
@@ -200,14 +206,14 @@ const Navbar = () => {
                       exit={{ height: 0, opacity: 0 }}
                       className="overflow-hidden"
                     >
-                      <div className="flex flex-col gap-3 pl-8 mt-3 border-l-2 border-zinc-800 ml-2 py-2">
+                      <div className="flex flex-col gap-3 mt-3 ml-2 py-2">
                         {link.subItems.map((subItem, j) => {
                           const isRestricted = restrictedPaths.includes(subItem.path);
                           if (isRestricted) {
                             return (
-                              <div key={j} className="text-zinc-600 cursor-not-allowed text-sm uppercase font-bold flex items-center justify-between pr-4">
+                              <div key={j} className="text-zinc-600 cursor-not-allowed text-base capitalize font-bold flex items-center justify-start gap-2">
                                 {subItem.name}
-                                <span className="text-[10px] bg-zinc-800 px-2 py-0.5 rounded text-zinc-500 uppercase font-black">Soon</span>
+                                <span className="text-[10px] bg-zinc-800 px-2 py-0.5 rounded text-zinc-500 capitalize font-black">Soon</span>
                               </div>
                             );
                           }
@@ -216,7 +222,7 @@ const Navbar = () => {
                               key={j} 
                               to={subItem.path} 
                               onClick={() => setIsMobileMenuOpen(false)}
-                              className="text-gray-400 hover:text-primary transition-colors text-sm uppercase font-bold"
+                              className="text-gray-400 hover:text-primary transition-colors text-base capitalize font-bold text-left"
                             >
                               {subItem.name}
                             </Link>
@@ -230,10 +236,19 @@ const Navbar = () => {
             );
           })}
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 pt-4 border-t border-zinc-800">
+            <div className="w-full sm:w-auto flex-grow relative">
+              <motion.button 
+                className="bg-zinc-900 text-zinc-600 px-6 py-3 rounded-full font-bold text-lg w-full flex items-center justify-center gap-3 cursor-not-allowed border border-zinc-800"
+              >
+                Submit Now
+                <span className="text-[10px] bg-zinc-800 px-2.5 py-1 rounded text-zinc-500 capitalize font-black">Soon</span>
+              </motion.button>
+            </div>
+            
             <motion.button 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-primary text-white px-6 py-3 rounded-full font-bold text-lg w-full sm:w-auto flex-grow shadow-[0_0_20px_rgba(231,99,102,0.3)] uppercase leading-tight"
+              className="bg-primary text-white px-6 py-3 rounded-full font-bold text-lg w-full sm:w-auto flex-grow shadow-[0_0_20px_rgba(231,99,102,0.3)] capitalize leading-tight"
             >
               Register Now
             </motion.button>

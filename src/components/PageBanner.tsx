@@ -29,10 +29,10 @@ const PageBanner: React.FC<PageBannerProps> = ({
         <img 
           src={image} 
           alt={title} 
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-60"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/60"></div>
         {/* Decorative Glows */}
         <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#e76366]/10 blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#8355eb]/10 blur-[100px] translate-x-1/2 translate-y-1/2"></div>
@@ -65,7 +65,7 @@ const PageBanner: React.FC<PageBannerProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-heading font-black tracking-tighter uppercase mb-4 leading-tight"
+          className="text-4xl md:text-6xl lg:text-7xl font-heading font-black tracking-tighter capitalize mb-4 leading-tight"
         >
           {title}
         </motion.h1>
@@ -75,7 +75,7 @@ const PageBanner: React.FC<PageBannerProps> = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto font-medium"
+            className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto font-medium text-center"
           >
             {subtitle}
           </motion.p>

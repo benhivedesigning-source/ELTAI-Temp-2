@@ -41,7 +41,11 @@ const RegistrationFeesPage = () => {
   return (
     <div className="bg-black min-h-screen font-sans text-white overflow-x-hidden">
       <PageBanner 
-        title="Registration Fees"
+        title={
+  <>
+    Registration <span className="ml-1">Fees</span>
+  </>
+}
         subtitle={<Ordinal text="Secure your spot at the 20th International & 56th Annual ELTAI Conference." />}
         breadcrumb={[
           { label: "Register", path: "/register" },
@@ -50,253 +54,130 @@ const RegistrationFeesPage = () => {
         image="https://www.image2url.com/r2/default/images/1776340001521-fa0c9c37-a32f-42df-b315-899bc9a4ea3f.png"
       />
 
-      {/* SECTION 2 — PHASE TOGGLE */}
-      <section className="py-32 bg-white relative overflow-hidden z-10">
-        {/* Deep background atmospheric glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(231,99,102,0.05)_0%,rgba(0,0,0,0)_70%)] pointer-events-none"></div>
-
-        <div className="max-w-5xl mx-auto px-4 relative z-10">
-          <div className="text-center mb-24">
+      {/* REGISTRATION FEES TABLE */}
+      <section className="py-32 bg-zinc-50 relative z-10 overflow-hidden">
+        {/* Decorative background gradients */}
+        <div className="absolute top-0 right-0 -mr-40 -mt-40 w-[800px] h-[800px] bg-gradient-to-br from-[#e76366]/5 to-[#8355eb]/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-[800px] h-[800px] bg-gradient-to-tr from-[#8355eb]/5 to-[#e76366]/5 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div className="max-w-[1200px] mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 border border-gray-100 mb-6 shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-100 mb-6 shadow-sm"
             >
-              <span className="w-2 h-2 rounded-full bg-[#e76366] animate-pulse"></span>
-              <span className="text-xs font-black uppercase tracking-widest text-gray-500">Registration Timeline</span>
+              <span className="w-2 h-2 rounded-full bg-[#8355eb] animate-pulse"></span>
+              <span className="text-xs font-black capitalize tracking-widest text-gray-500">Pricing Tiers</span>
             </motion.div>
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-heading font-black text-gray-900 mb-6 tracking-tighter uppercase leading-tight"
-            >
-              Select Your <span style={gradientText}>Phase</span>
-            </motion.h2>
-          </div>
-
-          {/* Timeline Interactive Toggle */}
-          <div className="relative max-w-4xl mx-auto px-4 sm:px-16">
-            {/* Connecting Line Background */}
-            <div className="absolute top-6 left-16 right-16 h-1.5 bg-gray-100 rounded-full overflow-hidden border border-gray-200">
-              <motion.div 
-                className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#e76366] to-[#8355eb]"
-                initial={false}
-                animate={{ 
-                  width: selectedPhase === 'earlybird' ? '0%' : selectedPhase === 'regular' ? '50%' : '100%' 
-                }}
-                transition={{ type: "spring", stiffness: 60, damping: 15 }}
-              />
-            </div>
-
-            <div className="flex justify-between relative z-10">
-              {[
-                { id: 'earlybird', label: 'Early-bird', date: 'Ends 30th June 2026', icon: <Zap size={24} /> },
-                { id: 'regular', label: 'Regular', date: 'Starts 1st July 2026', icon: <CheckCircle size={24} /> },
-                { id: 'onthespot', label: 'On-the-spot', date: 'Available at Venue', icon: <Star size={24} /> }
-              ].map((phase, idx) => {
-                const isActive = selectedPhase === phase.id;
-                const phasesList = ['earlybird', 'regular', 'onthespot'];
-                const currentIndex = phasesList.indexOf(selectedPhase);
-                const isPast = currentIndex > idx;
-                
-                return (
-                  <div 
-                    key={phase.id} 
-                    className="flex flex-col items-center relative group cursor-pointer w-32" 
-                    onClick={() => setSelectedPhase(phase.id as any)}
-                  >
-                    {/* Node */}
-                    <motion.div 
-                      animate={{ 
-                        scale: isActive ? 1.15 : 1,
-                        backgroundColor: isActive ? '#ffffff' : isPast ? '#e76366' : '#f9fafb',
-                        borderColor: isActive ? '#e76366' : isPast ? '#e76366' : '#f3f4f6'
-                      }}
-                      className={`w-20 h-20 rounded-2xl rotate-45 flex items-center justify-center border-2 relative z-10 transition-colors duration-300 ${
-                        isActive ? 'shadow-[0_0_40px_rgba(231,99,102,0.2)] text-[#e76366]' : 
-                        isPast ? 'text-white shadow-[0_0_20px_rgba(231,99,102,0.1)]' : 
-                        'text-gray-400 group-hover:border-gray-300 group-hover:text-gray-600 group-hover:bg-white'
-                      }`}
-                    >
-                      {/* Un-rotate the icon so it stands straight */}
-                      <div className="-rotate-45">
-                        {phase.icon}
-                      </div>
-
-                      {/* Pulsing ring for active state */}
-                      {isActive && (
-                        <motion.div 
-                          className="absolute inset-[-4px] rounded-2xl border border-[#e76366]/30"
-                          animate={{ scale: [1, 1.3], opacity: [0.8, 0] }}
-                          transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
-                        />
-                      )}
-                    </motion.div>
-
-                    {/* Label */}
-                    <div className="absolute top-28 w-48 text-center pointer-events-none">
-                      <motion.h3 
-                        animate={{ 
-                          color: isActive ? '#111827' : '#6b7280',
-                          scale: isActive ? 1.05 : 1
-                        }}
-                        className="font-black uppercase tracking-widest text-sm mb-2 transition-colors"
-                      >
-                        {phase.label}
-                      </motion.h3>
-                      <motion.div 
-                        animate={{ 
-                          opacity: isActive ? 1 : 0.6,
-                          y: isActive ? 0 : -5
-                        }}
-                        className="inline-block bg-gray-50 border border-gray-100 rounded-full px-3 py-1 shadow-sm"
-                      >
-                        <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">
-                          <Ordinal text={phase.date} />
-                        </p>
-                      </motion.div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          
-          {/* Spacer to account for absolute positioned labels */}
-          <div className="h-40"></div>
-        </div>
-      </section>
-
-      {/* WAVE: White to Black */}
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full block" style={{background:'#ffffff'}}>
-        <path d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" fill="#000000" />
-      </svg>
-
-      {/* SECTION 3 — PRICING CARDS */}
-      <section className="py-32 bg-black relative z-10 overflow-hidden">
-        {/* Animated background grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
-
-        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
-          <div className="flex flex-col gap-6">
-            {Object.entries(pricing).map(([key, cat], idx) => {
-              return (
-                <motion.div
-                  key={key}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  whileHover={{ x: 10, transition: { duration: 0.3 } }}
-                  className="relative rounded-[2rem] p-[1px] overflow-hidden group"
-                >
-                  {/* Animated Gradient Border */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 group-hover:from-[#e76366] group-hover:to-[#8355eb] transition-all duration-500 opacity-30 group-hover:opacity-100"></div>
-                  
-                  {/* Card Content Container */}
-                  <div className="relative bg-zinc-950/90 backdrop-blur-xl rounded-[calc(2rem-1px)] p-6 lg:p-8 flex flex-col lg:flex-row lg:items-center gap-8">
-                    
-                    {/* Left: Title and Icon */}
-                    <div className="lg:w-[35%] flex items-center gap-5">
-                      <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-[#e76366]/50 transition-colors shrink-0">
-                        <Star className="w-6 h-6 text-gray-400 group-hover:text-[#e76366] transition-colors" />
-                      </div>
-                      <h3 className="font-heading font-bold text-white text-lg lg:text-xl leading-snug tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#e76366] group-hover:to-[#8355eb] transition-all duration-300 uppercase">
-                        {cat.title}
-                      </h3>
-                    </div>
-
-                    {/* Middle: Prices */}
-                    <div className="flex-1 flex flex-col sm:flex-row gap-4 lg:gap-6">
-                      {/* Member Price */}
-                      <div className="flex-1 relative bg-white/5 rounded-2xl p-5 border border-white/5 group-hover:border-white/10 transition-colors overflow-hidden">
-                        <div className="absolute top-0 left-0 w-1 h-full bg-[#e76366] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <p className="text-gray-500 text-[10px] font-black uppercase tracking-widest mb-1">ELTAI Members*</p>
-                        <div className="flex items-baseline gap-1">
-                          <span className="text-white text-3xl font-black tracking-tighter">₹{cat.members[selectedPhase]}</span>
-                          <span className="text-gray-500 text-[10px] font-medium">/ person</span>
-                        </div>
-                      </div>
-
-                      {/* Non-Member Price */}
-                      <div className="flex-1 relative bg-white/5 rounded-2xl p-5 border border-white/5 group-hover:border-white/10 transition-colors overflow-hidden">
-                        <div className="absolute top-0 left-0 w-1 h-full bg-[#8355eb] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <p className="text-gray-500 text-[10px] font-black uppercase tracking-widest mb-1">Non-Members**</p>
-                        <div className="flex items-baseline gap-1">
-                          <span className="text-white text-3xl font-black tracking-tighter">₹{cat.nonMembers[selectedPhase]}</span>
-                          <span className="text-gray-500 text-[10px] font-medium">/ person</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Right: Button */}
-                    <div className="lg:w-[15%] shrink-0">
-                      <button className="w-full font-black py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group/btn bg-white text-black hover:bg-gradient-to-r hover:from-[#e76366] hover:to-[#8355eb] hover:text-white shadow-lg hover:shadow-[#e76366]/20">
-                        Select
-                        <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
-                      </button>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* WAVE: Black to White */}
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full block" style={{background:'#000'}}>
-        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff" />
-      </svg>
-
-      {/* SECTION 4 — NOTES */}
-      <section className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="font-['Poppins'] font-black text-gray-900 text-3xl mb-8">
-            Note
-          </h2>
-
-          <div className="bg-gray-50 border-l-4 border-[#e76366] rounded-r-2xl p-6 mb-5">
-            <div className="flex items-center gap-2 mb-3">
-              <Info size={18} color="#e76366" />
-              <h3 className="font-['Poppins'] font-black text-gray-900 text-lg">
-                <span style={gradientText}>*</span> ELTAI Members
-              </h3>
-            </div>
-            <p className="text-gray-600 text-base leading-relaxed">
-              The registration fee for ELTAI Members includes the conference kit, lunch and refreshments, and the certificate for all four days of the conference.
+            <h2 className="text-4xl md:text-5xl font-heading font-black text-gray-900 mb-6 tracking-tighter capitalize">
+              Registration <span style={gradientText}>Fees</span>
+            </h2>
+            <p className="text-gray-600 font-medium max-w-2xl mx-auto text-lg leading-relaxed">
+              Choose the category that best fits your role.
             </p>
           </div>
 
-          <div className="bg-gray-50 border-l-4 border-[#8355eb] rounded-r-2xl p-6">
-            <div className="flex items-center gap-2 mb-3">
-              <Info size={18} color="#8355eb" />
-              <h3 className="font-['Poppins'] font-black text-gray-900 text-lg">
-                <span style={gradientText}>**</span> Non-Members
-              </h3>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="overflow-x-auto bg-white p-2 sm:p-4 rounded-[2.5rem] shadow-xl shadow-zinc-200/50 border border-zinc-100 ring-1 ring-zinc-900/5"
+          >
+            <table className="w-full text-left border-collapse border border-zinc-200 rounded-3xl overflow-hidden">
+              <thead>
+                <tr className="bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 text-white text-xs font-bold capitalize tracking-wider">
+                  <th className="p-6 whitespace-nowrap">Registration Categories</th>
+                  <th className="p-6 text-center whitespace-nowrap">Early-bird</th>
+                  <th className="p-6 text-center whitespace-nowrap">Regular</th>
+                  <th className="p-6 text-center whitespace-nowrap">On-the-spot</th>
+                </tr>
+              </thead>
+              <tbody className="bg-white">
+                {Object.entries(pricing).map(([key, cat], idx) => (
+                  <React.Fragment key={key}>
+                    {/* Members Row */}
+                    <tr className="border-b border-zinc-100 hover:bg-zinc-50 transition-colors">
+                      <td className="p-6 align-top">
+                        <div className="flex items-start gap-4">
+                          <div className="p-2 bg-gray-100 rounded-xl mt-1">
+                            <Star className="w-5 h-5 text-gray-600" />
+                          </div>
+                          <div>
+                            <div className="font-bold text-gray-900 mb-1 font-heading">Category {idx + 1}</div>
+                            <div className="text-gray-700 font-medium mb-2 leading-relaxed max-w-sm">{cat.title}</div>
+                            <div className="text-amber-600 font-bold text-sm flex items-center gap-1">
+                              ELTAI Members <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="p-6 text-center font-black text-slate-900 text-lg whitespace-nowrap">₹{cat.members.earlybird} <span className="text-xs font-bold text-gray-400">*</span></td>
+                      <td className="p-6 text-center font-black text-slate-900 text-lg whitespace-nowrap">₹{cat.members.regular} <span className="text-xs font-bold text-gray-400">*</span></td>
+                      <td className="p-6 text-center font-black text-slate-900 text-lg whitespace-nowrap">₹{cat.members.onthespot} <span className="text-xs font-bold text-gray-400">*</span></td>
+                    </tr>
+                    {/* Non-Members Row */}
+                    <tr className="border-b border-zinc-200 hover:bg-zinc-50 transition-colors">
+                      <td className="p-6 pl-20 align-top">
+                          <div className="text-gray-900 font-bold mb-0.5 font-heading">Non-Members</div>
+                          <div className="text-gray-500 text-xs italic">(includes annual membership of ELTAI)</div>
+                      </td>
+                      <td className="p-6 text-center font-black text-slate-900 text-lg whitespace-nowrap">₹{cat.nonMembers.earlybird} <span className="text-xs font-bold text-gray-400">**</span></td>
+                      <td className="p-6 text-center font-black text-slate-900 text-lg whitespace-nowrap">₹{cat.nonMembers.regular} <span className="text-xs font-bold text-gray-400">**</span></td>
+                      <td className="p-6 text-center font-black text-slate-900 text-lg whitespace-nowrap">₹{cat.nonMembers.onthespot} <span className="text-xs font-bold text-gray-400">**</span></td>
+                    </tr>
+                  </React.Fragment>
+                ))}
+              </tbody>
+            </table>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Section 4 — Notes */}
+      <section className="pb-32 pt-10 bg-zinc-50 relative z-10">
+        <div className="max-w-[1200px] mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm text-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <Info size={16} color="#e76366" />
+                <h3 className="font-['Poppins'] font-black text-gray-900">
+                  <span className="text-[#e76366]">*</span> ELTAI Members
+                </h3>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                The registration fee for ELTAI Members includes the conference kit, lunch and refreshments, and the certificate for all four days of the conference.
+              </p>
             </div>
-            <p className="text-gray-600 text-base leading-relaxed">
-              The registration fee for Non-Members includes an annual membership of ELTAI, the conference kit, lunch and refreshments, and the certificate for all four days of the conference.
-            </p>
+
+            <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm text-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <Info size={16} color="#8355eb" />
+                <h3 className="font-['Poppins'] font-black text-gray-900">
+                  <span className="text-[#8355eb]">**</span> Non-Members
+                </h3>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                The registration fee for Non-Members includes an annual membership of ELTAI, the conference kit, lunch and refreshments, and the certificate for all four days of the conference.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 5 — CTA */}
-      <section className="py-24 bg-black relative overflow-hidden">
-        {/* Watermark */}
+      {/* Section 5 — Cta 
+      <section className="py-24 bg-black relative overflow-hidden"> */}
+        {/* Watermark 
         <div className="absolute z-0 pointer-events-none opacity-[0.03] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <span className="font-['Poppins'] font-black text-[18vw] whitespace-nowrap" style={gradientText}>
-            REGISTER
+            Register
           </span>
-        </div>
+        </div>*/}
 
-        {/* Foreground */}
+        {/* Foreground 
         <div className="relative z-10 text-center max-w-xl mx-auto px-4">
-          <p className="font-['Caveat'] text-xl" style={gradientText}>
+          <p className="font-['Poppins'] text-xl" style={gradientText}>
             Conference Registration Fee
           </p>
           <h2 className="font-['Poppins'] font-black text-white text-4xl md:text-5xl mt-2">
@@ -306,17 +187,17 @@ const RegistrationFeesPage = () => {
           <div className="mt-10 flex gap-4 justify-center flex-wrap">
             <motion.button
               whileHover={{ scale: 1.05 }}
-              className="rounded-full px-10 py-4 font-black text-white text-xl"
+              className="rounded-full px-10 py-4 font-black text-white text-lg"
               style={{ background: 'linear-gradient(90deg, #e76366, #8355eb)' }}
             >
               Register Now →
             </motion.button>
-            <button className="border-2 border-white/20 text-white rounded-full px-10 py-4 font-black text-xl hover:bg-white/10 transition-colors">
+            <button className="border-2 border-white/20 text-white rounded-full px-10 py-4 font-black text-lg hover:bg-white/10 transition-colors">
               Download Brochure
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

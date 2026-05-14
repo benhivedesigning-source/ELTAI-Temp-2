@@ -19,26 +19,30 @@ const ContactInformationPage = () => {
   return (
     <div className="bg-black min-h-screen font-sans text-white selection:bg-primary selection:text-black overflow-x-hidden">
       <PageBanner 
-        title="Contact Us"
+      title={
+  <>
+    Contact <span>Us</span>
+  </>
+}
         subtitle="Get in touch with us for any inquiries or support."
         breadcrumb={[
           { label: "Contact", path: "/contact" },
           { label: "Contact Information" }
         ]}
-        image="https://www.image2url.com/r2/default/images/1776342811932-0c59c87d-fb0f-4f18-af6b-af5d33bf34e4.png"
+        image="https://www.image2url.com/r2/default/images/1777447275382-4695e266-4c60-4b56-9479-7a005fa0bd39.png"
       />
 
-      {/* MAIN CONTENT — SPLIT LAYOUT */}
+      {/* Main Content — Split Layout */}
       <section 
         className="py-24 bg-black relative"
         style={{
           background: 'radial-gradient(ellipse at center, rgba(131,85,235,0.06) 0%, transparent 70%)'
         }}
       >
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-4xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             
-            {/* LEFT COLUMN */}
+            {/* Left Column */}
             <div>
               <div className="bg-zinc-900/80 backdrop-blur border border-zinc-800 rounded-[1.5rem] p-5 inline-block mb-8">
                 <img 
@@ -50,9 +54,9 @@ const ContactInformationPage = () => {
                 />
               </div>
 
-              <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl leading-tight text-white mt-2 tracking-tight">
-                Let's Start a <br className="hidden md:block" />
-                <span style={gradientText}>Conversation</span>
+              <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl leading-tight text-white mt-2 tracking-tight !text-left">
+                Let's Start a<br className="hidden md:block" />
+                <span className="inline-block" style={gradientText}>Conversation</span>
               </h2>
 
               <p className="text-gray-400 text-lg leading-relaxed mt-5 max-w-md">
@@ -64,7 +68,7 @@ const ContactInformationPage = () => {
                   href="mailto:indiaeltai@gmail.com"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
-                  className="bg-gradient-to-r from-[#e76366] to-[#8355eb] rounded-full px-7 py-3.5 font-black text-white text-base flex items-center gap-2 shadow-[0_0_25px_rgba(231,99,102,0.3)]"
+                  className="bg-gradient-to-r from-[#e76366] to-[#8355eb] rounded-full px-7 py-3.5 font-black text-white text-sm flex items-center gap-2 shadow-[0_0_25px_rgba(231,99,102,0.3)]"
                 >
                   <Mail size={18} className="text-white" />
                   Send a Message
@@ -74,7 +78,7 @@ const ContactInformationPage = () => {
                   href="https://www.eltai.in" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="border-2 border-zinc-700 text-white rounded-full px-7 py-3.5 font-black text-base flex items-center gap-2 hover:border-white/40 hover:bg-white/5 transition-all duration-300"
+                  className="border-2 border-zinc-700 text-white rounded-full px-7 py-3.5 font-black text-sm flex items-center gap-2 hover:border-white/40 hover:bg-white/5 transition-all duration-300"
                 >
                   <Globe size={18} className="text-white" />
                   Visit Website
@@ -83,8 +87,8 @@ const ContactInformationPage = () => {
 
               <div className="border-t border-zinc-800 my-10"></div>
 
-              <div className="font-['Caveat'] text-lg mb-5" style={gradientText}>
-                FOLLOW US ON
+              <div className="font-['Poppins'] text-lg mb-5" style={gradientText}>
+                Follow Us On
               </div>
 
               <div className="flex gap-4 flex-wrap">
@@ -107,7 +111,7 @@ const ContactInformationPage = () => {
               </div>
             </div>
 
-            {/* RIGHT COLUMN */}
+            {/* Right Column */}
             <div className="flex flex-col gap-5">
               {[
                 {
@@ -155,14 +159,14 @@ const ContactInformationPage = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.12 }}
-                  className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-[1.5rem] p-7 flex items-start gap-5 hover:border-[#e76366]/50 hover:shadow-[0_0_40px_rgba(231,99,102,0.12)] hover:bg-zinc-900 transition-all duration-300"
+                  className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-[1.5rem] p-7 flex items-start gap-4 hover:border-[#e76366]/50 hover:shadow-[0_0_40px_rgba(231,99,102,0.12)] hover:bg-zinc-900 transition-all duration-300"
                 >
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#e76366] to-[#8355eb] shrink-0 flex items-center justify-center shadow-[0_0_20px_rgba(231,99,102,0.2)]">
                     <card.icon size={20} className="text-white" />
                   </div>
-                  <div>
-                    <h3 className="font-['Poppins'] font-bold text-white text-lg">{card.title}</h3>
-                    <div className="text-gray-400 text-base mt-1 leading-relaxed">
+                  <div className="text-left">
+                    <h3 className="font-['Poppins'] font-bold text-white text-lg leading-tight mb-1 !text-left">{card.title}</h3>
+                    <div className="text-gray-400 text-base leading-relaxed">
                       {card.detail}
                     </div>
                   </div>
@@ -174,14 +178,14 @@ const ContactInformationPage = () => {
         </div>
       </section>
 
-      {/* MAP STRIP */}
+      {/* Map Strip */}
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full block relative z-10" style={{ background: '#000' }}>
         <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff" />
       </svg>
 
       <section className="py-20 bg-white relative z-10">
-        <div className="text-center mb-12 px-4">
-          <div className="font-['Caveat'] text-lg mb-3" style={gradientText}>Find Us</div>
+        <div className="max-w-4xl mx-auto px-4 mb-12 text-center">
+          <div className="font-['Poppins'] text-lg mb-3" style={gradientText}>Find Us</div>
           <h2 className="font-['Poppins'] font-black text-gray-900 text-4xl tracking-tight">
             Our <span style={gradientText}>Office</span>
           </h2>
@@ -213,7 +217,7 @@ const ContactInformationPage = () => {
                 href="https://maps.google.com/?q=SIDCO+Nagar+Villivakkam+Chennai" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-100 hover:bg-gray-200 rounded-full px-5 py-2.5 text-gray-700 font-bold text-sm flex items-center gap-2 transition-colors shrink-0"
+                className="bg-gray-100 hover:bg-gray-200 rounded-full px-5 py-2.5 text-gray-700 font-bold text-xs flex items-center gap-2 transition-colors shrink-0"
               >
                 <ExternalLink size={14} />
                 Open in Maps
@@ -223,18 +227,18 @@ const ContactInformationPage = () => {
         </div>
       </section>
 
-      {/* CTA — TEXTURED BG */}
+      {/* Cta — Textured Bg */}
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full block relative z-10" style={{ background: '#ffffff' }}>
         <path d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" fill="#000000" />
       </svg>
 
       <section className="py-32 bg-black relative overflow-hidden z-10">
-        {/* BACKGROUND LAYERS */}
+        {/* Background Layers */}
         <img 
           src="https://www.image2url.com/r2/default/images/1776343004910-541cc9e8-f3e1-40ff-ae7f-82de9bfd0dd3.png" 
           alt="Conference Background" 
           className="absolute inset-0 w-full h-full object-cover z-0"
-          style={{ filter: 'brightness(0.08) saturate(0.5)' }}
+          style={{ filter: 'brightness(0.14) saturate(0.14)' }}
           loading="lazy"
           referrerPolicy="no-referrer"
         />
@@ -244,13 +248,9 @@ const ContactInformationPage = () => {
           style={{ background: 'radial-gradient(ellipse at center, rgba(131,85,235,0.25) 0%, transparent 65%)' }}
         ></div>
 
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[2] w-full text-center">
-          <span className="font-['Poppins'] font-black text-[18vw] leading-none tracking-tighter opacity-[0.04]" style={gradientText}>
-            HELLO
-          </span>
-        </div>
+        
 
-        {/* FOREGROUND */}
+        {/* Foreground */}
         <div className="relative z-10 text-center max-w-xl mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -268,7 +268,7 @@ const ContactInformationPage = () => {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
               }}
-              className="font-['Caveat'] text-xl" 
+              className="font-['Poppins'] text-xl" 
               style={gradientText}
             >
               Get in Touch
@@ -281,8 +281,8 @@ const ContactInformationPage = () => {
               }}
               className="font-['Poppins'] font-black text-white text-5xl md:text-6xl mt-2 tracking-tight"
             >
-              Questions? <br className="md:hidden" />
-              <span style={gradientText}>We're Here.</span>
+              Questions ? <br className="md:hidden" />
+              <span className="inline-block" style={gradientText}>We're Here.</span>
             </motion.h2>
 
             <motion.div

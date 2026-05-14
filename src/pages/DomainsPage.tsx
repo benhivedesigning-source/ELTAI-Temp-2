@@ -116,7 +116,7 @@ const DomainsPage = () => {
       id: 5,
       title: "Human-Centred, AI-Informed English Assessment",
       description: "Assessment must evolve as technological and digital tools reshape reading, writing, and meaning-making. This domain explores how evaluation can remain human-centred while acknowledging technological realities in classrooms, from primary to postgraduate education.",
-      image: "https://www.image2url.com/r2/default/images/1776330258743-da37fe27-180a-4aea-934f-849e899f0f6e.png",
+      image: "https://www.image2url.com/r2/default/images/1777360864660-a07ff44f-54cc-4b51-8b82-eb0a18a96028.png",
       provocations: [
         "What counts as 'authentic work' when AI tools can convincingly mimic student voice across levels?",
         "Should school assignments and university assessments prioritise processes or products?",
@@ -152,8 +152,8 @@ const DomainsPage = () => {
 
   return (
     <div className="bg-black min-h-screen font-sans text-white selection:bg-primary selection:text-black overflow-x-hidden">
-      {/* HERO SECTION */}
-      <section className="relative h-[60vh] md:h-[80vh] flex flex-col justify-center items-center overflow-hidden pt-20">
+      {/* Hero Section */}
+      <section className="relative h-[350px] md:h-[450px] flex flex-col justify-center items-center overflow-hidden pt-20 pb-20">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <motion.img 
@@ -166,7 +166,7 @@ const DomainsPage = () => {
             referrerPolicy="no-referrer"
           />
           {/* Deep Gradient Blending */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-black"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/60"></div>
           
           {/* Ambient Glows */}
           <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#e76366]/20 blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
@@ -192,23 +192,22 @@ const DomainsPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-8xl lg:text-9xl font-heading font-black tracking-tighter uppercase mb-6 leading-[0.9]"
+            className="text-4xl md:text-6xl lg:text-7xl font-heading font-black tracking-tighter capitalize mb-4 leading-tight"
           >
-            Conference <br/> 
-            <span style={gradientText}>Domains</span>
+            Conference <span style={gradientText}className="ml-1">Domains</span>
           </motion.h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-gray-300 text-xl md:text-2xl max-w-3xl mx-auto font-medium"
+            className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto font-medium"
           >
             Seven interconnected domains grouped under three overarching perspectives – Survive, Evolve, and Thrive.
           </motion.p>
         </div>
 
-        {/* BLENDED WAVE DIVIDER */}
+        {/* Blended Wave Divider */}
         <div className="absolute bottom-0 left-0 w-full z-20 translate-y-[1px]">
           <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full block">
             <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff" />
@@ -216,16 +215,10 @@ const DomainsPage = () => {
         </div>
       </section>
 
-      {/* SECTION 2 — PILLARS & DOMAINS GRID */}
-      <section className="bg-white py-32 relative overflow-hidden">
+      {/* Section 2 — Pillars & Domains Grid */}
+      <section className="bg-white pt-16 md:pt-20 pb-32 relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-          {/* Watermark */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] select-none">
-            <span className="font-heading font-black text-[25vw] leading-none tracking-tighter text-black block uppercase">
-              PERSPECTIVES
-            </span>
-          </div>
           
           {/* Grid Pattern */}
           <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
@@ -252,21 +245,20 @@ const DomainsPage = () => {
         </div>
 
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center mb-24">
+          <div className="text-center mb-24 max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="flex items-center justify-center gap-4 mb-6">
-                <div className="w-12 h-px bg-primary"></div>
-                <span className="text-xs font-bold tracking-widest uppercase text-gray-400">The Three Pillars</span>
-                <div className="w-12 h-px bg-primary"></div>
-              </div>
-              <h2 className="text-4xl md:text-6xl font-heading font-black text-black uppercase tracking-tighter leading-tight">
-                Conference <span style={gradientText}>Perspectives</span>
+              
+              <h2 className="text-5xl md:text-7xl font-heading font-black text-black capitalize tracking-tighter leading-tight mb-8">
+                <span style={gradientText}>Domains</span>
               </h2>
+              <p className="text-gray-600 text-lg md:text-xl leading-relaxed font-medium text-justify">
+                The conference is organised into seven interconnected domains, grouped under three overarching perspectives – Survive, Evolve, and Thrive – each representing a sphere of inquiry into the futures of English language and literature across educational institutions. These domains invite educators, scholars, researchers, writers, publishers, policymakers, creative professionals, and community practitioners to reflect on what must endure, what must transform, and what can flourish in English education today.
+              </p>
             </motion.div>
           </div>
 
@@ -283,7 +275,7 @@ const DomainsPage = () => {
                 {/* Card Shadow/Glow */}
                 <div className={`absolute -inset-2 bg-gradient-to-br ${pillar.gradient} opacity-0 group-hover:opacity-20 blur-2xl transition-all duration-700 rounded-[2.5rem]`}></div>
                 
-                <div className="relative bg-zinc-900 rounded-[2.5rem] p-8 lg:p-10 flex flex-col items-center text-center shadow-2xl border border-zinc-800 group-hover:border-zinc-700 transition-all duration-500 h-full overflow-hidden">
+                <div className="relative bg-zinc-900 rounded-[2.5rem] p-8 lg:p-10 flex flex-col items-start text-left shadow-2xl border border-zinc-800 group-hover:border-zinc-700 transition-all duration-500 h-full overflow-hidden">
                   {/* Background Number */}
                   <div className="absolute -top-10 -right-10 text-[12rem] font-black text-white/[0.02] pointer-events-none group-hover:text-white/[0.05] transition-colors duration-700 leading-none">
                     {index + 1}
@@ -302,17 +294,17 @@ const DomainsPage = () => {
                   </div>
 
                   {/* Title Section */}
-                  <div className="mb-10 relative z-10">
-                    <h2 className="font-heading font-black text-4xl lg:text-5xl text-white mb-2 tracking-tighter uppercase italic group-hover:scale-105 transition-transform duration-500">
+                  <div className="mb-8 relative z-10">
+                    <h2 className="font-heading font-black text-4xl lg:text-5xl text-white mb-2 tracking-tighter capitalize group-hover:scale-105 transition-transform duration-500">
                       {pillar.title}
                     </h2>
-                    <p className="text-gray-400 font-bold uppercase tracking-[0.2em] text-[10px] lg:text-xs">
+                    <p className="text-gray-400 font-bold capitalize tracking-[0.2em] text-[10px] lg:text-xs">
                       {pillar.subtitle}
                     </p>
                   </div>
 
                   {/* Domains List */}
-                  <div className="w-full space-y-4 mt-auto relative z-10">
+                  <div className="w-full space-y-4 relative z-10">
                     {pillar.domains.map((domain) => (
                       <motion.div
                         key={domain.id}
@@ -344,15 +336,15 @@ const DomainsPage = () => {
         <path d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" fill="#000000"/>
       </svg>
 
-      {/* SECTION 3 — THE CORE INQUIRY */}
-      <section className="bg-black py-32 relative overflow-hidden">
-        {/* Background Decorative Elements */}
+      {/* Section 3 — The Core Inquiry
+      <section className="bg-black py-32 relative overflow-hidden"> */}
+        {/* Background Decorative Elements 
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#e76366]/10 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#8355eb]/10 to-transparent rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
         
         <div className="relative z-10 max-w-[1400px] mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            {/* Left Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center"> */}
+            {/* Left Content 
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -361,15 +353,15 @@ const DomainsPage = () => {
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-px bg-primary"></div>
-                <span className="text-xs font-bold tracking-widest uppercase text-gray-500">The Core Inquiry</span>
+                <span className="text-xs font-bold tracking-widest capitalize text-gray-500">The Core Inquiry</span>
               </div>
 
-              <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl lg:text-7xl text-white mb-8 leading-[1.1] tracking-tighter uppercase">
+              <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl lg:text-7xl text-white mb-8 leading-[1.1] tracking-tighter capitalize">
                 Overlapping <br/>
                 <span style={gradientText}>Lenses</span>
               </h2>
 
-              <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-12 font-medium">
+              <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-12 font-medium text-justify">
                 These three questions guide the core inquiry of this conference. They function as overlapping lenses rather than linear stages, challenging us to rethink our relationship with the English language in an automated world.
               </p>
 
@@ -394,9 +386,9 @@ const DomainsPage = () => {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
+            </motion.div> */}
 
-            {/* Right Image */}
+            {/* Right Image 
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -412,9 +404,9 @@ const DomainsPage = () => {
                   loading="lazy"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div> */}
                 
-                {/* Floating Content on Image */}
+                {/* Floating Content on Image 
                 <div className="absolute bottom-10 left-10 right-10">
                   <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
                     <p className="text-white font-medium text-lg leading-relaxed italic">
@@ -422,17 +414,17 @@ const DomainsPage = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
-              {/* Decorative Orbs */}
+              {/* Decorative Orbs 
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#e76366]/20 blur-[80px] rounded-full -z-10"></div>
               <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#8355eb]/20 blur-[80px] rounded-full -z-10"></div>
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* SECTION 4 — DETAILED DOMAINS */}
+      {/* Section 4 — Detailed Domains */}
       <section className="bg-white py-32 relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden opacity-[0.03]">
@@ -468,7 +460,7 @@ const DomainsPage = () => {
                         className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                         referrerPolicy="no-referrer"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-30 group-hover:opacity-20 transition-opacity duration-500"></div>
                     </motion.div>
                     
                     {/* Decorative Elements */}
@@ -481,8 +473,7 @@ const DomainsPage = () => {
                         {domain.id}
                       </div>
                       <div>
-                        <p className="text-gray-400 text-[10px] font-black uppercase tracking-widest">Domain</p>
-                        <p className="text-black font-bold text-lg">Focus</p>
+                        <p className="text-gray-400 text-sm font-black capitalize tracking-widest">Domain</p>
                       </div>
                     </div>
                   </div>
@@ -495,22 +486,19 @@ const DomainsPage = () => {
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, delay: 0.2 }}
                     >
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="h-px w-12 bg-primary"></div>
-                        <p className="font-['Caveat'] text-2xl" style={gradientText}>Domain {domain.id}</p>
-                      </div>
+                      
                       
                       <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-8 leading-[1.1] tracking-tighter">
                         {domain.title}
                       </h2>
                       
-                      <p className="text-gray-600 text-lg md:text-xl leading-relaxed mb-12 font-medium">
+                      <p className="text-gray-600 text-lg md:text-xl leading-relaxed mb-12 font-medium text-justify">
                         {domain.description}
                       </p>
 
                       {/* Provocations Section */}
                       <div className="space-y-6">
-                        <h4 className="text-gray-900 font-black text-xs uppercase tracking-[0.3em] flex items-center gap-3">
+                        <h4 className="text-gray-900 font-black text-xs capitalize tracking-[0.3em] flex items-center gap-3">
                           <span className="w-2 h-2 rounded-full bg-primary"></span>
                           Guiding Provocations
                         </h4>
@@ -523,7 +511,7 @@ const DomainsPage = () => {
                               className="bg-zinc-50 hover:bg-white p-6 rounded-2xl border border-zinc-100 hover:border-zinc-200 hover:shadow-xl transition-all duration-300 group/item flex gap-5 items-center"
                             >
                               <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center shrink-0 group-hover/item:bg-primary transition-all duration-300 shadow-lg">
-                                <span className="text-white font-black text-lg">?</span>
+                                <ArrowRight className="text-white w-5 h-5" />
                               </div>
                               <p className="text-gray-700 text-base font-bold leading-snug">
                                 {q}

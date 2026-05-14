@@ -4,88 +4,6 @@ import { Link } from 'react-router-dom';
 import { Link as LinkIcon, AlignLeft, CheckCircle, ClipboardList, ChevronDown, Clock, ArrowRight } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
 
-const GuidelineCard = ({ item, index, isCategoryB }: { item: any, index: number, isCategoryB: boolean, key?: React.Key }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`group relative overflow-hidden rounded-[2.5rem] p-8 transition-all duration-500 hover:shadow-2xl ${
-        isCategoryB 
-          ? 'bg-zinc-900 border border-zinc-800 hover:border-[#8355eb]/50' 
-          : 'bg-white border border-zinc-100 shadow-sm hover:border-[#e76366]/30'
-      }`}
-    >
-      {/* Background Accent */}
-      <div className={`absolute -right-12 -top-12 w-48 h-48 rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-700 ${
-        isCategoryB ? 'bg-[#8355eb]' : 'bg-[#e76366]'
-      }`}></div>
-
-      <div className="relative z-10 flex flex-col h-full">
-        <div className="flex items-start justify-between mb-8">
-          <div className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest ${
-            isCategoryB 
-              ? 'bg-[#8355eb]/10 text-[#8355eb] border border-[#8355eb]/20' 
-              : 'bg-[#e76366]/10 text-[#e76366] border border-[#e76366]/20'
-          }`}>
-            {item.duration}
-          </div>
-          {isCategoryB && item.ribbon && (
-            <div className="bg-gradient-to-r from-[#e76366] to-[#8355eb] text-white text-[9px] font-black uppercase tracking-widest py-1 px-3 rounded-lg">
-              {item.ribbon}
-            </div>
-          )}
-        </div>
-
-        <h3 className={`font-['Poppins'] font-black text-2xl mb-4 tracking-tight leading-tight ${
-          isCategoryB ? 'text-white' : 'text-gray-900'
-        }`}>
-          {item.name}
-        </h3>
-
-        <div className="space-y-6 flex-1">
-          <div>
-            <p className={`text-[10px] font-black uppercase tracking-widest mb-2 ${
-              isCategoryB ? 'text-gray-500' : 'text-gray-400'
-            }`}>Purpose</p>
-            <p className={`text-sm leading-relaxed ${
-              isCategoryB ? 'text-gray-400' : 'text-gray-600'
-            }`}>{item.purpose}</p>
-          </div>
-
-          <div>
-            <p className={`text-[10px] font-black uppercase tracking-widest mb-2 ${
-              isCategoryB ? 'text-gray-500' : 'text-gray-400'
-            }`}>Best Suitable For</p>
-            <p className={`text-sm leading-relaxed font-medium ${
-              isCategoryB ? 'text-gray-300' : 'text-gray-800'
-            }`}>{item.suitable}</p>
-          </div>
-
-          <div className={`pt-6 border-t ${isCategoryB ? 'border-zinc-800' : 'border-zinc-100'}`}>
-            <p className={`text-[10px] font-black uppercase tracking-widest mb-3 ${
-              isCategoryB ? 'text-gray-500' : 'text-gray-400'
-            }`}>Guidelines</p>
-            <p className={`text-xs leading-relaxed italic ${
-              isCategoryB ? 'text-gray-500' : 'text-gray-500'
-            }`}>{item.guidelines}</p>
-          </div>
-        </div>
-
-        {item.accepted && (
-          <div className={`mt-8 pt-4 flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider ${
-            isCategoryB ? 'text-[#8355eb]' : 'text-[#e76366]'
-          }`}>
-            <CheckCircle size={14} />
-            {item.accepted}
-          </div>
-        )}
-      </div>
-    </motion.div>
-  );
-};
-
 const SubmissionGuidelinesPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -113,7 +31,7 @@ const SubmissionGuidelinesPage = () => {
       duration: "75-min interactive",
       purpose: "To showcase work visually and through dialogue",
       suitable: "Classroom projects; action research; work-in-progress; DH experiments; reading initiatives",
-      guidelines: "Poster size A0 landscape (33.1 × 46.8 inches) preferred. Design must be clear and visually engaging. Posters must be displayed during scheduled sessions, and presenters must be present for discussion."
+      guidelines: "Poster size A0 landscape (33.1 × 46.8 inches) preferred. Design must be clear and visually engaging. Posters must be displayed during scheduled sessions, and presenters must be present for discussion. Accepted posters may be archived on the ELTAI website."
     },
     {
       name: "Digital Humanities Demonstration",
@@ -159,7 +77,7 @@ const SubmissionGuidelinesPage = () => {
       duration: "5 mins per poem",
       purpose: "To express the theme artistically",
       suitable: "Original or translated poetry",
-      guidelines: "Max. 30 lines. Must relate to theme or domains. English only or with translation."
+      guidelines: "Max. 30 lines. Must relate to theme or domains. English only. Non-English poems must include English translation."
     },
     {
       name: "Storytelling",
@@ -184,7 +102,11 @@ const SubmissionGuidelinesPage = () => {
   return (
     <div className="bg-black min-h-screen font-sans text-white selection:bg-primary selection:text-black overflow-x-hidden">
       <PageBanner 
-        title="Submission Guidelines"
+        title={
+  <>
+    Submission <span className="ml-1">Guidelines</span>
+  </>
+}
         subtitle="Review the detailed guidelines for each presentation category."
         breadcrumb={[
           { label: "Submit", path: "/submit" },
@@ -193,91 +115,157 @@ const SubmissionGuidelinesPage = () => {
         image="https://www.image2url.com/r2/default/images/1776335278286-3065b2af-9ae5-4564-8522-27cd6a15fc54.png"
       />
 
-      {/* PRESENTATION GUIDELINES */}
+      {/* Presentation Guidelines */}
       <section className="py-32 bg-zinc-50 relative z-10 overflow-hidden">
         {/* Background Decorative Elements */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#e76366]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-[#8355eb]/5 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
 
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row items-end justify-between gap-8 mb-24">
+          <div className="text-center mb-24">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="max-w-2xl"
+              className="max-w-4xl mx-auto"
             >
-              <p className="font-['Caveat'] text-3xl mb-4" style={gradientText}>Presentation Formats</p>
-              <h2 className="font-['Poppins'] font-black text-gray-900 text-5xl md:text-8xl tracking-tighter uppercase leading-[0.9]">
-                How to <br />
-                <span style={gradientText}>Present?</span>
+              <h2 className="font-['Poppins'] font-black text-gray-900 text-3xl md:text-5xl lg:text-6xl tracking-tighter capitalize leading-tight">
+                Presentation Guidelines: <span className="text-black">How to Present?</span>
               </h2>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="lg:text-right"
-            >
-              <p className="text-gray-500 font-bold uppercase tracking-widest text-sm mb-2">Selection Process</p>
-              <p className="text-gray-400 max-w-xs lg:ml-auto leading-relaxed">
-                We offer two categories of presentation formats to accommodate diverse research and creative contributions.
-              </p>
             </motion.div>
           </div>
 
-          {/* CATEGORY A */}
+          {/* Category A */}
           <div className="mb-32">
             <div className="flex items-center gap-6 mb-12">
               <div className="h-px flex-1 bg-zinc-200"></div>
               <div className="flex flex-col items-center">
-                <span className="font-['Poppins'] font-black text-4xl text-gray-900 tracking-tighter">CATEGORY A</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mt-1">Core Academic Formats</span>
+                <span className="font-['Poppins'] font-black text-4xl text-gray-900 tracking-tighter capitalize">Category A</span>
+                <span className="text-[10px] font-black capitalize tracking-[0.3em] text-gray-400 mt-1">Core Academic Formats</span>
               </div>
               <div className="h-px flex-1 bg-zinc-200"></div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {categoryA.map((item, index) => (
-                <GuidelineCard key={index} item={item} index={index} isCategoryB={false} />
-              ))}
-            </div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="overflow-x-auto rounded-3xl border border-zinc-200 shadow-xl bg-white"
+            >
+              <table className="w-full text-left border-collapse min-w-[1000px]">
+                <thead>
+                  <tr className="bg-zinc-50 border-bottom border-zinc-200">
+                    <th className="p-6 text-[10px] font-black capitalize tracking-widest text-[#e76366]">Format</th>
+                    <th className="p-6 text-[10px] font-black capitalize tracking-widest text-gray-400">Duration</th>
+                    <th className="p-6 text-[10px] font-black capitalize tracking-widest text-gray-400">Purpose</th>
+                    <th className="p-6 text-[10px] font-black capitalize tracking-widest text-gray-400">Suitability</th>
+                    <th className="p-6 text-[10px] font-black capitalize tracking-widest text-gray-400">Guidelines</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-zinc-100">
+                  {categoryA.map((item, index) => (
+                    <tr key={index} className="group hover:bg-zinc-50/50 transition-colors">
+                      <td className="p-6 align-top">
+                        <p className="font-['Poppins'] font-black text-lg text-gray-900 leading-tight mb-2 capitalize">{item.name}</p>
+                      </td>
+                      <td className="p-6 align-top">
+                        <span className="inline-block px-3 py-1 bg-zinc-100 text-gray-600 font-bold text-[10px] capitalize rounded-full whitespace-nowrap">
+                          {item.duration}
+                        </span>
+                      </td>
+                      <td className="p-6 align-top">
+                        <p className="text-sm text-gray-600 leading-relaxed max-w-xs">{item.purpose}</p>
+                      </td>
+                      <td className="p-6 align-top">
+                        <p className="text-sm text-gray-800 font-medium leading-relaxed max-w-xs">{item.suitable}</p>
+                      </td>
+                      <td className="p-6 align-top">
+                        <p className="text-sm text-gray-600 leading-relaxed max-w-xs">{item.guidelines}</p>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </motion.div>
           </div>
 
-          {/* CATEGORY B */}
+          {/* Category B */}
           <div>
             <div className="flex items-center gap-6 mb-12">
-              <div className="h-px flex-1 bg-zinc-800"></div>
+              <div className="h-px flex-1 bg-zinc-200"></div>
               <div className="flex flex-col items-center">
-                <span className="font-['Poppins'] font-black text-4xl text-gray-900 tracking-tighter">CATEGORY B</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#8355eb] mt-1">Highly Selective Slots</span>
+                <span className="font-['Poppins'] font-black text-4xl text-gray-900 tracking-tighter capitalize">Category B</span>
+                <span className="text-[10px] font-black capitalize tracking-[0.3em] text-[#8355eb] mt-1">Highly Selective Slots</span>
               </div>
-              <div className="h-px flex-1 bg-zinc-800"></div>
+              <div className="h-px flex-1 bg-zinc-200"></div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {categoryB.map((item, index) => (
-                <GuidelineCard key={index} item={item} index={index} isCategoryB={true} />
-              ))}
-            </div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="overflow-x-auto rounded-3xl border border-zinc-200 shadow-xl bg-white"
+            >
+              <table className="w-full text-left border-collapse min-w-[1000px]">
+                <thead>
+                  <tr className="bg-zinc-50 border-bottom border-zinc-200">
+                    <th className="p-6 text-[10px] font-black capitalize tracking-widest text-[#8355eb]">Format</th>
+                    <th className="p-6 text-[10px] font-black capitalize tracking-widest text-gray-400">Duration</th>
+                    <th className="p-6 text-[10px] font-black capitalize tracking-widest text-gray-400">Purpose</th>
+                    <th className="p-6 text-[10px] font-black capitalize tracking-widest text-gray-400">Suitability</th>
+                    <th className="p-6 text-[10px] font-black capitalize tracking-widest text-gray-400">Guidelines</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-zinc-100">
+                  {categoryB.map((item, index) => (
+                    <tr key={index} className="group hover:bg-zinc-50/50 transition-colors">
+                      <td className="p-6 align-top">
+                        <div className="flex items-center gap-3 mb-2">
+                          <p className="font-['Poppins'] font-black text-lg text-gray-900 leading-tight capitalize">{item.name}</p>
+                          {item.ribbon && (
+                            <span className="px-2 py-0.5 bg-gradient-to-r from-[#e76366] to-[#8355eb] text-white text-[8px] font-black capitalize rounded shrink-0 whitespace-nowrap">
+                              {item.ribbon}
+                            </span>
+                          )}
+                        </div>
+                      </td>
+                      <td className="p-6 align-top">
+                        <span className="inline-block px-3 py-1 bg-zinc-100 text-gray-600 font-bold text-[10px] capitalize rounded-full whitespace-nowrap">
+                          {item.duration}
+                        </span>
+                      </td>
+                      <td className="p-6 align-top">
+                        <p className="text-sm text-gray-600 leading-relaxed max-w-xs">{item.purpose}</p>
+                      </td>
+                      <td className="p-6 align-top">
+                        <p className="text-sm text-gray-800 font-medium leading-relaxed max-w-xs">{item.suitable}</p>
+                      </td>
+                      <td className="p-6 align-top">
+                        <p className="text-sm text-gray-600 leading-relaxed max-w-xs">{item.guidelines}</p>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* DETAILED SUBMISSION GUIDELINES */}
+      {/* Detailed Submission Guidelines */}
       <section className="py-32 bg-white relative z-10">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             
-            {/* LEFT: MAIN INFO & TEMPLATES */}
+            {/* Left: Main Info & Templates */}
             <div className="lg:col-span-7 space-y-16">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl text-gray-900 mb-8 tracking-tighter uppercase">
-                  How to <span style={gradientText}>Submit?</span>
+                <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl text-gray-900 mb-8 tracking-tighter capitalize">
+                  How to <span className="text-black">Submit?</span>
                 </h2>
                 <p className="text-gray-600 text-lg leading-relaxed mb-8">
                   All abstracts must engage with the conference theme <span className="font-bold text-gray-900">“English on the Edge: Survive? Evolve? Thrive?”</span> and align with at least one of the seven conference domains.
@@ -318,7 +306,7 @@ const SubmissionGuidelinesPage = () => {
                     </ul>
                     <div className="mt-4 p-3 bg-red-50 rounded-xl border border-red-100 flex items-center gap-3">
                       <Clock className="text-red-500 shrink-0" size={16} />
-                      <p className="text-[10px] text-red-600 font-bold uppercase tracking-wider">Auto-truncation enabled beyond limits</p>
+                      <p className="text-[10px] text-red-600 font-bold capitalize tracking-wider">Auto-truncation enabled beyond limits</p>
                     </div>
                   </div>
                 </div>
@@ -352,7 +340,7 @@ const SubmissionGuidelinesPage = () => {
               </motion.div>
             </div>
 
-            {/* RIGHT: REQUIREMENTS LIST */}
+            {/* Right: Requirements List */}
             <div className="lg:col-span-5">
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
@@ -361,8 +349,8 @@ const SubmissionGuidelinesPage = () => {
                 className="sticky top-32"
               >
                 <div className="bg-zinc-50 rounded-[3rem] p-12 border border-zinc-100">
-                  <h3 className="font-['Poppins'] font-black text-3xl text-gray-900 mb-8 tracking-tight uppercase">
-                    Submission <br /> <span style={gradientText}>Requirements</span>
+                  <h3 className="font-['Poppins'] font-black text-3xl text-gray-900 mb-8 tracking-tight capitalize">
+                    Submission <br /> <span className="text-black">Requirements</span>
                   </h3>
                   
                   <div className="space-y-6">
@@ -383,7 +371,7 @@ const SubmissionGuidelinesPage = () => {
                     ))}
 
                     <div className="pt-8 mt-8 border-t border-zinc-200">
-                      <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">For Creative/Digital Formats</p>
+                      <p className="text-[10px] font-black capitalize tracking-widest text-gray-400 mb-4">For Creative/Digital Formats</p>
                       <div className="space-y-4">
                         <div className="flex items-start gap-4">
                           <div className="w-2 h-2 rounded-full bg-primary mt-2"></div>
@@ -408,9 +396,9 @@ const SubmissionGuidelinesPage = () => {
         <path d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" fill="#000000" />
       </svg>
 
-      {/* DEADLINE — DRAMATIC FULL BLEED */}
-      <section className="py-32 bg-black relative overflow-hidden z-10">
-        {/* BACKGROUND */}
+      {/* Deadline — Dramatic Full Bleed */}
+      <section className="py-24 bg-black relative overflow-hidden z-10">
+        {/* Background */}
         <div className="absolute inset-0 z-0 flex items-center justify-center">
           <motion.div 
             animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
@@ -419,32 +407,29 @@ const SubmissionGuidelinesPage = () => {
           ></motion.div>
         </div>
 
-        {/* FOREGROUND */}
-        <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
+        {/* Foreground */}
+        <div className="relative z-10 text-center max-w-3xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <p className="font-['Caveat'] text-4xl mb-6" style={gradientText}>Submission Deadline</p>
-            <h2 className="font-['Poppins'] font-black text-white text-6xl md:text-9xl tracking-tighter uppercase mb-16 leading-none">
-              Final <br />
-              <span style={gradientText}>Call</span>
-            </h2>
+            <p className="font-['Poppins'] text-3xl mb-10" style={gradientText}>Submission Deadline</p>
+            
           </motion.div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-stretch">
             <motion.div 
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:col-span-3 bg-zinc-900 border border-zinc-800 rounded-[3rem] p-12 text-left relative overflow-hidden group"
+              className="lg:col-span-3 bg-zinc-900 border border-zinc-800 rounded-[2rem] p-6 md:p-8 text-left relative overflow-hidden group"
             >
-              <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#e76366] to-[#8355eb]"></div>
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-[#e76366] to-[#8355eb]"></div>
               
-              <p className="text-gray-500 text-xs font-black uppercase tracking-[0.3em] mb-8">Submission Portal</p>
+              <p className="text-gray-500 text-[10px] font-black capitalize tracking-[0.3em] mb-4">Submission Portal</p>
               
-              <h3 className="text-white font-['Poppins'] font-black text-3xl md:text-4xl mb-6 leading-tight">
+              <h3 className="text-white font-['Poppins'] font-black text-xl md:text-2xl mb-4 leading-tight">
                 All abstracts must be <br /> submitted online
               </h3>
               
@@ -452,10 +437,10 @@ const SubmissionGuidelinesPage = () => {
                 href="https://conf2026.eltai.in" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 font-black text-xl md:text-2xl group/link"
+                className="inline-flex items-center gap-2 font-black text-lg md:text-xl group/link"
               >
                 <span style={gradientText} className="underline decoration-[#e76366] underline-offset-8">conf2026.eltai.in</span>
-                <ArrowRight className="text-[#8355eb] group-hover/link:translate-x-2 transition-transform" />
+                <ArrowRight className="text-[#8355eb] group-hover/link:translate-x-2 transition-transform" size={18} />
               </a>
             </motion.div>
 
@@ -463,24 +448,24 @@ const SubmissionGuidelinesPage = () => {
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:col-span-2 bg-gradient-to-br from-[#e76366] to-[#8355eb] rounded-[3rem] p-12 text-left flex flex-col justify-between shadow-[0_20px_50px_rgba(231,99,102,0.3)]"
+              className="lg:col-span-2 bg-gradient-to-br from-[#e76366] to-[#8355eb] rounded-[2rem] p-6 md:p-8 text-center flex flex-col items-center justify-between shadow-[0_15px_40px_rgba(231,99,102,0.25)]"
             >
-              <div>
-                <Clock className="text-white/40 mb-8" size={48} />
-                <p className="text-white/60 text-xs font-black uppercase tracking-[0.3em] mb-2 text-center">Deadline</p>
+              <div className="flex flex-col items-center w-full">
+                <Clock className="text-white/40 mb-4 mx-auto" size={32} />
+                <p className="text-white/60 text-[10px] font-black capitalize tracking-[0.3em] mb-2 text-center">Deadline</p>
                 <div className="text-center">
-                  <span className="font-['Poppins'] font-black text-white text-4xl md:text-5xl leading-none block mb-2">
-                    15 AUG
+                  <span className="font-['Poppins'] font-black text-white text-2xl md:text-3xl leading-none block mb-1">
+                    15<sup className="text-[0.65em] leading-none ml-[0.05em] select-none lowercase">th</sup> August
                   </span>
-                  <span className="font-['Poppins'] font-black text-white/80 text-2xl block">
+                  <span className="font-['Poppins'] font-black text-white/80 text-lg block">
                     2026
                   </span>
                 </div>
               </div>
 
-              <div className="mt-12 pt-8 border-t border-white/20 text-center">
-                <p className="text-white font-black text-3xl">10:00 PM</p>
-                <p className="text-white/60 text-[10px] font-bold uppercase tracking-widest">Indian Standard Time</p>
+              <div className="mt-6 pt-6 border-t border-white/20 text-center w-full flex flex-col items-center justify-center">
+                <p className="text-white font-black text-xl text-center">06:00 pm</p>
+                <p className="text-white/60 text-[9px] font-bold capitalize tracking-widest text-center">Indian Standard Time</p>
               </div>
             </motion.div>
           </div>
@@ -492,9 +477,7 @@ const SubmissionGuidelinesPage = () => {
             transition={{ delay: 0.5 }}
             className="mt-16"
           >
-            <p className="text-gray-500 text-sm italic">
-              * Late submissions will not be considered for review. Please ensure your abstract is complete before the deadline.
-            </p>
+            
           </motion.div>
         </div>
       </section>

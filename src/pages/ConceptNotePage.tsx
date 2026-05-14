@@ -34,11 +34,15 @@ const ConceptNotePage = () => {
   return (
     <div className="bg-black min-h-screen font-sans text-white selection:bg-primary selection:text-black overflow-x-hidden">
       <PageBanner 
-        title="Concept Note"
-        subtitle="English on the Edge: Survive? Evolve? Thrive?"
+        title={
+  <>
+    Concept <span className="ml-1">Note</span>
+  </>
+}
+        subtitle="English on the Edge : Survive ? Evolve ? Thrive ?"
         breadcrumb={[
           { label: "Theme", path: "/theme" },
-          { label: "Concept Note" }
+          { label: "Concept   Note" }
         ]}
         image="https://www.image2url.com/r2/default/images/1776257653770-c1ca765c-55f8-42a2-aeae-3bf47a3b03ca.webp"
       />
@@ -79,7 +83,7 @@ const ConceptNotePage = () => {
                   className="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-2xl border border-zinc-100 z-20"
                 >
                   <p className="text-primary font-black text-3xl mb-1">2026</p>
-                  <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">Conference Year</p>
+                  <p className="text-gray-500 text-[10px] font-bold capitalize tracking-widest">Conference Year</p>
                 </motion.div>
               </div>
             </motion.div>
@@ -94,47 +98,23 @@ const ConceptNotePage = () => {
             >
               <div className="flex items-center gap-4 mb-8">
                 <div className="h-px w-12 bg-primary"></div>
-                <p className="font-['Caveat'] text-3xl" style={gradientText}>Opening Statement</p>
+                <p className="font-['Poppins'] text-3xl" style={gradientText}>Concept Note</p>
               </div>
-              
-              <h2 className="font-heading font-black text-4xl md:text-5xl text-gray-900 mb-10 leading-[1.1] tracking-tighter uppercase italic">
-                A Defining <span className=" pr-2 text-transparent bg-clip-text bg-gradient-to-r from-[#e76366] to-[#8355eb]" >Crossroads</span>
-              </h2>
 
               <div className="relative mb-12">
                 <Quote size={64} className="absolute -top-10 -left-10 text-primary/10 -z-10" />
-                <p className="text-gray-700 text-xl md:text-2xl leading-relaxed font-medium italic border-l-4 border-primary/20 pl-8">
-                  "The teaching of English language and literature – across schools,
+                <p className="text-gray-700 text-center text-justify text-xl md:text-2xl leading-relaxed font-medium border-l-4 border-primary/20 pl-8">
+                  The teaching of English language and literature – across schools,
                   colleges, and universities – stands at a defining crossroads in the twenty-first century. From early literacy classrooms to 
                   postgraduate seminars, educators across contexts are negotiating profound shifts in purpose, practice, and possibility. In higher 
                   education, English departments are being downsized or restructured, and the very identity of the discipline is under 
-                  scrutiny."
+                  scrutiny. In the Indian context, these transformations are shaped 
+                  significantly by the National Education Policy (NEP) 2020, which 
+                  foregrounds multilingual education and competency-based learning. English education today must therefore be understood not in isolation, 
+                  but in dialogue with the broader reforms and aspirations 
+                  envisioned by NEP 2020.
                 </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                <div className="bg-white p-8 rounded-[2.5rem] shadow-xl shadow-zinc-200/50 border border-zinc-100 relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-[5rem] -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
-                  <span className="inline-block rounded-full px-4 py-1.5 text-[10px] font-black text-white mb-6 uppercase tracking-widest" style={{ background: 'linear-gradient(90deg, #e76366, #8355eb)' }}>
-                    Policy Vision
-                  </span>
-                  <p className="text-gray-600 text-base leading-relaxed font-medium">
-                    In the Indian context, these transformations are shaped 
-                    significantly by the National Education Policy (NEP) 2020, which 
-                    foregrounds multilingual education and competency-based learning.
-                  </p>
-                </div>
-
-                <div className="pt-4">
-                  <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                    English education today must therefore be understood not in isolation, 
-                    but in dialogue with the broader reforms and aspirations 
-                    envisioned by NEP 2020.
-                  </p>
-                  <Link to="/theme" className="inline-flex items-center gap-2 text-primary font-black text-xs uppercase tracking-widest group">
-                    Explore Theme <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
+                
               </div>
             </motion.div>
 
@@ -147,7 +127,7 @@ const ConceptNotePage = () => {
         <path d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" fill="#000000"/>
       </svg>
 
-      {/* SECTION 3 — WHAT IS THE EDGE? */}
+      {/* Section 3 — What Is The Edge? */}
       <section className="bg-black py-24">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
@@ -158,41 +138,9 @@ const ConceptNotePage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="h-px w-12 bg-primary"></div>
-                  <p className="font-['Caveat'] text-2xl" style={gradientText}>
-                    The Concept
-                  </p>
-                </div>
-                <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl lg:text-6xl text-white mb-8 tracking-tighter uppercase">
-                  What is <span style={gradientText}>'The Edge'?</span>
-                </h2>
-                
-                <p className="text-gray-300 text-lg leading-relaxed mb-6 font-medium">
-                  "English on the Edge: Survive? Evolve? Thrive?" captures this 
-                  moment of both uncertainty and possibility. The "edge" here is 
-                  not merely a point of crisis or decline, but a dynamic threshold 
-                  where continuity and change meet. It is a space of negotiation 
-                  between inherited traditions and emerging futures, between 
-                  disciplinary stability and transformation.
+                <p className="text-gray-300 text-center text-justify text-lg leading-relaxed font-medium">
+                  "English on the Edge: Survive? Evolve? Thrive?" captures this moment of both uncertainty and possibility. The "edge" here is not merely a point of crisis or decline, but a dynamic threshold where continuity and change meet. It is a space of negotiation between inherited traditions and emerging futures, between disciplinary stability and transformation. At this edge, English education is neither collapsing nor complete; rather, it is being reimagined. The questions of survival, evolution, and thriving are not sequential stages but co-existing perspectives through which the present and future of English studies can be examined. While some political and ideological discourses frame English as a colonial inheritance to be resisted, global realities continue to position it as a language of connection, mobility, and shared intellectual exchange. At the same time, advances in artificial intelligence, digital platforms, and data-driven learning challenge long-held assumptions about reading, writing, authorship, and assessment. In this complex landscape, English education must respond not only by defending its relevance but by rearticulating its purpose – ethically, critically, and creatively. In India's multilingual ecology – shaped by constitutional languages, rich regional linguistic traditions, and everyday classroom realities – English functions not as a replacement for other languages, but as a complementary resource that coexists with and draws strength from linguistic diversity.
                 </p>
-                <p className="text-gray-400 text-base leading-relaxed mb-8">
-                  At this edge, English education is neither collapsing nor complete; rather, it is being 
-                  reimagined. The questions of survival, evolution, and thriving 
-                  are not sequential stages but co-existing perspectives through 
-                  which the present and future of English studies can be examined. While some political and ideological discourses frame English as a colonial inheritance to be resisted, global realities continue to position it as a language of connection, mobility, and shared intellectual exchange. At the same time, advances in artificial intelligence, digital platforms, and data-driven learning challenge long-held assumptions about reading, writing, authorship, and assessment. In this complex landscape, English education must respond not only by defending its relevance but by rearticulating its purpose – ethically, critically, and creatively.
-                </p>
-
-                <div className="bg-zinc-900 border-l-4 border-[#e76366] rounded-r-2xl p-6 md:p-8 relative">
-                  <Quote className="absolute top-6 left-6 w-8 h-8 opacity-20" color="#e76366" />
-                  <p className="text-gray-300 italic text-lg leading-relaxed pl-12 font-medium">
-                    In India's multilingual ecology – shaped by constitutional 
-                    languages, rich regional linguistic traditions, and everyday 
-                    classroom realities – English functions not as a replacement 
-                    for other languages, but as a complementary resource that 
-                    coexists with and draws strength from linguistic diversity.
-                  </p>
-                </div>
               </motion.div>
             </div>
 
@@ -217,7 +165,7 @@ const ConceptNotePage = () => {
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2000ms]"
                   />
                   {/* Overlay Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-60"></div>
                   
                   {/* Floating Badge */}
                   <div className="absolute bottom-8 left-8 right-8 bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl p-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
@@ -236,7 +184,7 @@ const ConceptNotePage = () => {
         <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
       </svg>
 
-      {/* SECTION 4 — THREE PILLARS (CORE INQUIRY) */}
+      {/* Section 4 — Three Pillars (core Inquiry) */}
       <section className="bg-black py-32 relative overflow-hidden">
         {/* Decorative background elements */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#e76366]/5 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
@@ -259,23 +207,14 @@ const ConceptNotePage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-heading font-black mb-6 tracking-tighter uppercase text-white"
+              className="text-3xl md:text-5xl font-heading font-black mb-6 capitalize text-white leading-tight"
             >
-              The Core Inquiry
+              The three questions - Survive? Evolve? Thrive? - guide the core inquiry of this conference. They function as overlapping lenses rather than linear stages.
             </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-gray-400 text-lg leading-relaxed font-medium"
-            >
-              The conference theme is structured around three fundamental perspectives that define our current educational landscape.
-            </motion.p>
           </div>
 
           <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
-            {/* SURVIVE */}
+            {/* Survive */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -287,14 +226,13 @@ const ConceptNotePage = () => {
                 <Shield size={32} className="text-[#e76366]" />
               </div>
               <div>
-                <h3 className="text-3xl font-heading font-black text-white mb-4 uppercase tracking-tight">Survive?</h3>
-                <p className="text-gray-400 leading-relaxed font-medium">
-                  The pressures on English education compel us to ask what must endure. In universities, long-established disciplinary structures are under strain; in schools, spaces for language and literature compete with STEM-driven priorities. Yet core human capacities – critical thinking, ethical reasoning, empathy, imagination – remain uniquely nurtured through English at all levels. What foundational experiences in early literacy, storytelling, and reading cultures must survive? And how do we articulate the enduring value of English education in systems driven increasingly by metrics, markets, and mechanisation?
+                <p className="text-gray-400 leading-relaxed font-medium text-justify">
+                  <strong>Survive?</strong> The pressures on English education compel us to ask what must endure. In universities, long-established disciplinary structures are under strain; in schools, spaces for language and literature compete with STEM-driven priorities. Yet core human capacities – critical thinking, ethical reasoning, empathy, imagination – remain uniquely nurtured through English at all levels. What foundational experiences in early literacy, storytelling, and reading cultures must survive? And how do we articulate the enduring value of English education in systems driven increasingly by metrics, markets, and mechanisation?
                 </p>
               </div>
             </motion.div>
 
-            {/* EVOLVE */}
+            {/* Evolve */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -306,14 +244,13 @@ const ConceptNotePage = () => {
                 <Zap size={32} className="text-[#8355eb]" />
               </div>
               <div>
-                <h3 className="text-3xl font-heading font-black text-white mb-4 uppercase tracking-tight">Evolve?</h3>
-                <p className="text-gray-400 leading-relaxed font-medium">
-                  Because the contexts of learning have changed dramatically, English education must evolve to remain meaningful. Students across age groups now inhabit digital ecosystems where AI-generated writing, machine translation, and algorithmic reading are everyday realities. Higher education navigates digital scholarship, posthuman theory, and academic integrity in the age of AI; schools negotiate device dependence, multimodal literacies, and diverse linguistic repertoires. How might curriculum, pedagogy, and assessment evolve across these contexts? What new approaches – multimodal composing, hybrid learning, AI-aware formative assessment, multilingual practice – can help English move beyond inherited binaries of print vs digital, teacher vs learner, human vs machine?
+                <p className="text-gray-400 leading-relaxed font-medium text-justify">
+                  <strong>Evolve?</strong> Because the contexts of learning have changed dramatically, English education must evolve to remain meaningful. Students across age groups now inhabit digital ecosystems where AI-generated writing, machine translation, and algorithmic reading are everyday realities. Higher education navigates digital scholarship, posthuman theory, and academic integrity in the age of AI; schools negotiate device dependence, multimodal literacies, and diverse linguistic repertoires. How might curriculum, pedagogy, and assessment evolve across these contexts? What new approaches – multimodal composing, hybrid learning, AI-aware formative assessment, multilingual practice – can help English move beyond inherited binaries of print vs digital, teacher vs learner, human vs machine?
                 </p>
               </div>
             </motion.div>
 
-            {/* THRIVE */}
+            {/* Thrive */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -325,9 +262,8 @@ const ConceptNotePage = () => {
                 <Star size={32} className="text-[#FFA239]" />
               </div>
               <div>
-                <h3 className="text-3xl font-heading font-black text-white mb-4 uppercase tracking-tight">Thrive?</h3>
-                <p className="text-gray-400 leading-relaxed font-medium">
-                  Thriving requires imagination – not only for continuity but also for renewal. English education can become a site of hope: cultivating cultural literacy, ethical reflection, emotional intelligence, creativity, and connection across generations. Initiatives such as ELTAI's India Reads Movement reaffirm reading as a social, emotional, and cultural practice that nurtures imagination and lifelong learning. From digital humanities projects, interdisciplinary programmes, and community archiving to school-based reading circles, storytelling clubs, and creative writing spaces, English flourishes when language is lived, shared, and meaningfully experienced. What bold paradigms might allow English education not only to survive change but to shape it – across institutions, communities, and generations?
+                <p className="text-gray-400 leading-relaxed font-medium text-justify">
+                  <strong>Thrive?</strong> Thriving requires imagination – not only for continuity but also for renewal. English education can become a site of hope: cultivating cultural literacy, ethical reflection, emotional intelligence, creativity, and connection across generations. Initiatives such as ELTAI's India Reads Movement reaffirm reading as a social, emotional, and cultural practice that nurtures imagination and lifelong learning. From digital humanities projects, interdisciplinary programmes, and community archiving to school-based reading circles, storytelling clubs, and creative writing spaces, English flourishes when language is lived, shared, and meaningfully experienced. What bold paradigms might allow English education not only to survive change but to shape it – across institutions, communities, and generations?
                 </p>
               </div>
             </motion.div>
@@ -340,7 +276,7 @@ const ConceptNotePage = () => {
         <path d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" fill="#000000"/>
       </svg>
 
-      {/* SECTION 6 — CLOSING INVITATION */}
+      {/* Section 6 — Closing Invitation */}
       <section className="bg-black py-32 relative overflow-hidden">
         
         <div className="relative z-10 text-center max-w-3xl mx-auto px-4">
@@ -350,7 +286,7 @@ const ConceptNotePage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-12">
+            <p className="text-gray-400 text-center text-justify text-lg md:text-xl leading-relaxed mb-12">
               This conference invites all who shape, teach, research, learn, 
               write, imagine, and transform English education – from early 
               schooling to higher education – to engage in critical 
