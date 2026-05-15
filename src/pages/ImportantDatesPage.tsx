@@ -344,7 +344,7 @@ const ImportantDatesPage = () => {
                                     className={`w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 transition-colors ${node.isHero ? "group-hover/card:bg-[#e76366]" : "group-hover/card:bg-[#8355eb]"}`}
                                   ></div>
                                   <p
-                                    className={`text-sm italic font-medium leading-relaxed text-gray-500 ${node.isHero ? "group-hover/card:text-gray-700 group-hover/card:font-bold group-hover/card:not-italic" : ""}`}
+                                    className={`text-sm font-medium leading-relaxed text-gray-500 ${node.isHero ? "group-hover/card:text-gray-700 group-hover/card:font-bold" : ""}`}
                                   >
                                     <Ordinal text={node.extra} />
                                   </p>
@@ -409,7 +409,7 @@ const ImportantDatesPage = () => {
               >
                 {/* Glow effect on hover */}
                 <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                <span className="relative z-10">Register Now →</span>
+                <span className="relative z-10">Register Now </span>
 
                 {/* External secondary glow */}
                 <div className="absolute inset-0 rounded-full shadow-[0_0_30px_rgba(231,99,102,0.4)] opacity-50 group-hover:opacity-100 transition-opacity"></div>

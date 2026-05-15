@@ -81,19 +81,19 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-wrap gap-4 w-full"
             >
               <Link 
                 to="/register"
-                className="bg-white text-black px-5 py-2 rounded-full font-bold text-base hover:bg-primary transition-all duration-300 flex items-center gap-2 hover:scale-105 active:scale-95"
+                className="w-full sm:w-auto sm:min-w-[200px] bg-white text-black px-5 py-3 rounded-full font-bold text-sm hover:bg-primary transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105 active:scale-95"
               >
                 Register Now
               </Link>
               <Link 
                 to="/guidelines"
-                className="bg-transparent text-white border-2 border-white px-5 py-2 rounded-full font-bold text-base hover:bg-white/10 transition-all duration-300 flex items-center gap-2 hover:scale-105 active:scale-95"
+                className="w-full sm:w-auto sm:min-w-[200px] bg-transparent text-white border-2 border-white px-5 py-3 rounded-full font-bold text-sm hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105 active:scale-95"
               >
-                Submit 
+                Submit Abstract
               </Link>
             </motion.div>
           </div>
@@ -139,7 +139,7 @@ const Home = () => {
               <div>
                 <p className="text-[10px] text-gray-400 font-bold tracking-wider capitalize mb-1">Organised By</p>
                 <p className="text-white font-bold text-sm leading-tight mb-1">English Language<br/>Teachers' Association of<br/>India</p>
-                <p className="text-gray-400 text-xs">(eltai)</p>
+                <p className="text-gray-400 text-xs">(ELT@I)</p>
               </div>
             </div>
 
@@ -256,14 +256,14 @@ const Home = () => {
                 
                 <br/><br/>
 
-                The <strong><Ordinal text="20th International and 56th Annual ELTAI Conference" /></strong>, theme "English on the Edge: Survive? Evolve? Thrive?", will be <strong>hosted by the School of Humanities and the School of Holistic Development, MIT Art, Design & Technology University, Pune, <Ordinal text="from 07th to 10th October 2026" /></strong>. As ELTAI continues its legacy of nurturing teachers, promoting reading cultures, and advancing English education across diverse contexts, <strong>ELTAI 2026 invites you to come together in Pune, the Oxford of the East,</strong> to reflect, reimagine, and reaffirm our shared commitment to the future of English education.
+                The <strong><Ordinal text="20th International and 56th Annual ELTAI Conference" /></strong>, theme "English on the Edge : Survive ? Evolve ? Thrive ? ", will be <strong>hosted by the School of Humanities and the School of Holistic Development, MIT Art, Design & Technology University, Pune, from 07<sup>th</sup> to 10<sup>th</sup> October 2026</strong>. As ELTAI continues its legacy of nurturing teachers, promoting reading cultures, and advancing English education across diverse contexts, <strong>ELTAI 2026 invites you to come together in Pune, the Oxford of the East,</strong> to reflect, reimagine, and reaffirm our shared commitment to the future of English education.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Link to="/register" className="text-white px-10 py-4 rounded-full font-bold text-xs hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-lg shadow-primary/20 capitalize tracking-wide" style={{ background: 'linear-gradient(135deg, #e76366, #8355eb)' }}>
+              <div className="flex flex-col sm:flex-row justify-center gap-6 w-full">
+                <Link to="/register" className="w-full sm:w-auto sm:min-w-[200px] text-white px-10 py-4 rounded-full font-bold text-xs hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-lg shadow-primary/20 capitalize tracking-wide" style={{ background: 'linear-gradient(135deg, #e76366, #8355eb)' }}>
                    Download Brochure <ArrowRight size={18} strokeWidth={3} />
                 </Link>
-                <button className="bg-white text-gray-900 border-2 border-gray-200 px-10 py-4 rounded-full font-bold text-xs hover:border-primary/50 transition-colors flex items-center justify-center gap-2 capitalize tracking-wide">
+                <button className="w-full sm:w-auto sm:min-w-[200px] bg-white text-gray-900 border-2 border-gray-200 px-10 py-4 rounded-full font-bold text-xs hover:border-primary/50 transition-colors flex items-center justify-center gap-2 capitalize tracking-wide">
                   <Download size={18} strokeWidth={2.5} /> Download Flyer
                 </button>
               </div>
@@ -560,7 +560,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-primary font-bold tracking-widest text-sm mb-6 capitalize"
           >
-            7–10 October 2026 • Pune, India
+            7<sup className="text-primary">th</sup> – 10<sup className="text-primary">th</sup> October 2026 • Pune, India
           </motion.p>
           
           <motion.h2 
@@ -588,17 +588,17 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full sm:w-auto"
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full"
           >
             <Link 
               to="/register" 
-              className="w-full sm:w-auto bg-primary text-white px-10 py-4 rounded-full font-bold text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2 capitalize tracking-wide"
+              className="w-full sm:w-auto min-w-[200px] bg-primary text-white px-10 py-4 rounded-full font-bold text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2 capitalize tracking-wide"
             >
               Register Now
             </Link>
             <Link 
               to="/guidelines" 
-              className="w-full sm:w-auto bg-transparent border border-white text-white px-10 py-4 rounded-full font-bold text-sm hover:bg-white/10 transition-colors flex items-center justify-center capitalize tracking-wide"
+              className="w-full sm:w-auto min-w-[200px] bg-transparent border border-white text-white px-10 py-4 rounded-full font-bold text-sm hover:bg-white/10 transition-colors flex items-center justify-center capitalize tracking-wide"
             >
               Submit Abstract
             </Link>

@@ -184,12 +184,7 @@ const ContactInformationPage = () => {
       </svg>
 
       <section className="py-20 bg-white relative z-10">
-        <div className="max-w-4xl mx-auto px-4 mb-12 text-center">
-          <div className="font-['Poppins'] text-lg mb-3" style={gradientText}>Find Us</div>
-          <h2 className="font-['Poppins'] font-black text-gray-900 text-4xl tracking-tight">
-            Our <span style={gradientText}>Office</span>
-          </h2>
-        </div>
+
 
         <div className="max-w-4xl mx-auto px-4">
           <div className="bg-white border border-gray-200 rounded-[2rem] overflow-hidden shadow-2xl shadow-gray-200/80">
@@ -238,7 +233,6 @@ const ContactInformationPage = () => {
           src="https://www.image2url.com/r2/default/images/1776343004910-541cc9e8-f3e1-40ff-ae7f-82de9bfd0dd3.png" 
           alt="Conference Background" 
           className="absolute inset-0 w-full h-full object-cover z-0"
-          style={{ filter: 'brightness(0.14) saturate(0.14)' }}
           loading="lazy"
           referrerPolicy="no-referrer"
         />
@@ -268,8 +262,7 @@ const ContactInformationPage = () => {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
               }}
-              className="font-['Poppins'] text-xl" 
-              style={gradientText}
+              className="font-['Poppins'] text-xl text-black font-bold" 
             >
               Get in Touch
             </motion.div>
@@ -279,10 +272,10 @@ const ContactInformationPage = () => {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
               }}
-              className="font-['Poppins'] font-black text-white text-5xl md:text-6xl mt-2 tracking-tight"
+              className="font-['Poppins'] font-black text-black text-5xl md:text-6xl mt-2 tracking-tight"
             >
               Questions ? <br className="md:hidden" />
-              <span className="inline-block" style={gradientText}>We're Here.</span>
+              <span className="inline-block text-black">We're Here.</span>
             </motion.h2>
 
             <motion.div
@@ -299,8 +292,7 @@ const ContactInformationPage = () => {
                 <Mail size={24} className="text-[#e76366]" />
                 <a 
                   href="mailto:indiaeltai@gmail.com"
-                  className="font-['Poppins'] font-black text-xl md:text-2xl underline hover:opacity-80 transition-opacity"
-                  style={gradientText}
+                  className="font-['Poppins'] font-black text-xl md:text-2xl underline hover:opacity-80 transition-opacity text-black"
                 >
                   indiaeltai@gmail.com
                 </a>

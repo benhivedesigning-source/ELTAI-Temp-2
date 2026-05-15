@@ -278,7 +278,7 @@ const SubmissionGuidelinesPage = () => {
                     </div>
                     <h4 className="font-bold text-gray-900 mb-3">Submission Template</h4>
                     <ul className="space-y-3 text-sm text-gray-500">
-                      <li className="flex gap-2 italic">
+                      <li className="flex gap-2">
                         <span className="text-primary">•</span>
                         Templates for abstracts of different presentation formats are available here.
                       </li>

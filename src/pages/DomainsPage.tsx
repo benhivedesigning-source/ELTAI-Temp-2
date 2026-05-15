@@ -380,7 +380,7 @@ const DomainsPage = () => {
                       {item.icon}
                     </div>
                     <div>
-                      <h3 className="text-white font-black text-xl italic">{item.title}</h3>
+                      <h3 className="text-white font-black text-xl">{item.title}</h3>
                       <p className="text-gray-500 text-sm font-medium">{item.desc}</p>
                     </div>
                   </motion.div>
@@ -409,7 +409,7 @@ const DomainsPage = () => {
                 {/* Floating Content on Image 
                 <div className="absolute bottom-10 left-10 right-10">
                   <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
-                    <p className="text-white font-medium text-lg leading-relaxed italic">
+                    <p className="text-white font-medium text-lg leading-relaxed">
                       "In the intersection of tradition and technology, we find the edge where English truly lives."
                     </p>
                   </div>

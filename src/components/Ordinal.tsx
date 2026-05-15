@@ -21,9 +21,9 @@ const Ordinal: React.FC<OrdinalProps> = ({ text }) => {
         const match = part.match(/^([0-9]+)(st|nd|rd|th)$/i);
         if (match) {
           return (
-            <span key={i} className="inline-flex items-baseline">
+            <span key={i}>
               {match[1]}
-              <sup className="text-[0.65em] leading-none ml-[0.05em] select-none lowercase">
+              <sup>
                 {match[2].toLowerCase()}
               </sup>
             </span>

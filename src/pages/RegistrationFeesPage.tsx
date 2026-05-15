@@ -62,21 +62,9 @@ const RegistrationFeesPage = () => {
         
         <div className="max-w-[1200px] mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-100 mb-6 shadow-sm"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#8355eb] animate-pulse"></span>
-              <span className="text-xs font-black capitalize tracking-widest text-gray-500">Pricing Tiers</span>
-            </motion.div>
             <h2 className="text-4xl md:text-5xl font-heading font-black text-gray-900 mb-6 tracking-tighter capitalize">
               Registration <span style={gradientText}>Fees</span>
             </h2>
-            <p className="text-gray-600 font-medium max-w-2xl mx-auto text-lg leading-relaxed">
-              Choose the category that best fits your role.
-            </p>
           </div>
 
           <motion.div 
@@ -121,7 +109,7 @@ const RegistrationFeesPage = () => {
                     <tr className="border-b border-zinc-200 hover:bg-zinc-50 transition-colors">
                       <td className="p-6 pl-20 align-top">
                           <div className="text-gray-900 font-bold mb-0.5 font-heading">Non-Members</div>
-                          <div className="text-gray-500 text-xs italic">(includes annual membership of ELTAI)</div>
+                          <div className="text-gray-500 text-xs">(includes annual membership of ELTAI)</div>
                       </td>
                       <td className="p-6 text-center font-black text-slate-900 text-lg whitespace-nowrap">₹{cat.nonMembers.earlybird} <span className="text-xs font-bold text-gray-400">**</span></td>
                       <td className="p-6 text-center font-black text-slate-900 text-lg whitespace-nowrap">₹{cat.nonMembers.regular} <span className="text-xs font-bold text-gray-400">**</span></td>

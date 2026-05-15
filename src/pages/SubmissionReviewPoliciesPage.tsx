@@ -221,7 +221,7 @@ const SubmissionReviewPoliciesPage = () => {
                       </p>
                       <div className="bg-white/5 border border-white/10 rounded-xl p-5 backdrop-blur-sm relative overflow-hidden">
                         <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#8355eb]"></div>
-                        <p className="text-gray-400 text-sm leading-relaxed italic">
+                        <p className="text-gray-400 text-sm leading-relaxed">
                           Please note that, due to the high volume of submissions received closer to the deadline, the review process may take slightly longer during peak periods. Every effort will be made to communicate decisions as promptly as possible.
                         </p>
                       </div>
@@ -262,7 +262,7 @@ const SubmissionReviewPoliciesPage = () => {
                   <div className="pt-6 border-t border-gray-100 relative z-10">
                     <div className="flex items-start gap-3">
                       <Info className="text-[#8355eb] shrink-0 mt-0.5" size={18} />
-                      <p className="text-gray-500 text-sm italic font-medium">
+                      <p className="text-gray-500 text-sm font-medium">
                         Authors of selected abstracts will receive <span className="text-[#8355eb] font-bold">formal communication and presentation guidelines.</span>
                       </p>
                     </div>

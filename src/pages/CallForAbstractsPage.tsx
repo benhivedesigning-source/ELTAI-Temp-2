@@ -8,6 +8,7 @@ import {
   Zap, Mic, ArrowRight
 } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
+import Ordinal from '../components/Ordinal';
 
 const CallForAbstractsPage = () => {
   useEffect(() => {
@@ -156,7 +157,7 @@ const CallForAbstractsPage = () => {
                 Call for <span style={gradientText}>Abstracts</span>
               </h2>
               <p className="text-gray-600 text-center text-justify text-xl font-medium leading-relaxed">
-                The 20th International and 56th Annual Conference of ELTAI invites submissions that engage critically, creatively, or experimentally with the conference theme <span className="text-black font-black italic">“English on the Edge: Survive? Evolve? Thrive?”</span> and the seven conference domains. Contributors are encouraged to propose work that is original, rigorous, and reflective of emerging questions in English language and literature studies.
+                <Ordinal text="The 20th International and 56th Annual Conference of ELTAI" /> invites submissions that engage critically, creatively, or experimentally with the conference theme <span className="text-black font-black">“English on the Edge: Survive? Evolve? Thrive?”</span> and the seven conference domains. Contributors are encouraged to propose work that is original, rigorous, and reflective of emerging questions in English language and literature studies.
               </p>
               
             </motion.div>
@@ -201,7 +202,7 @@ const CallForAbstractsPage = () => {
           ))}
         </div>
 
-          <p className="text-gray-400 text-lg leading-relaxed max-w-4xl mx-auto mt-20 text-center italic font-medium">
+          <p className="text-gray-400 text-lg leading-relaxed max-w-4xl mx-auto mt-20 text-center font-medium">
             All individuals and groups whose work intersects with the future of English language and literature – through teaching, research, creativity, policy, or practice – are warmly invited to contribute.
           </p>
         </div>
@@ -227,15 +228,13 @@ const CallForAbstractsPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl lg:text-7xl text-white mb-8 leading-[1.1] tracking-tighter capitalize">
-                What <span className="ml-1">Can</span>
-    <span className="ml-1">Be</span>
-    <span className="ml-1" style={gradientText}>Presented?</span>
+              <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl lg:text-7xl text-white mb-8 leading-[1.1] tracking-tight capitalize">
+                What Can Be <span style={gradientText}>Presented ?</span>
               </h2>
 
               <div className="space-y-6 text-gray-400 text-lg leading-relaxed font-medium">
                 <p>
-                  The conference welcomes a wide range of <span className="text-white font-bold">research-based, classroom-driven, creative, and community-focused contributions</span> that engage with any one of the seven domains of the conference theme <span style={gradientText} className="font-bold italic">"English on the Edge: Survive? Evolve? Thrive?"</span>.
+                  The conference welcomes a wide range of <span className="text-white font-bold">research-based, classroom-driven, creative, and community-focused contributions</span> that engage with any one of the seven domains of the conference theme <span style={gradientText} className="font-bold">"English on the Edge : Survive ? Evolve ? Thrive ? "</span>.
                 </p>
                 <p>
                To balance academic depth with experiential learning, presentation formats are organised into two programme categories. These categories are organisational, not hierarchical. All accepted presentations carry equal academic value. Each submission is evaluated independently on merit, relevance, and quality, regardless of category. Creative and practice-based contributions are valued on par with traditional academic papers.                  </p>

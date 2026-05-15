@@ -29,10 +29,10 @@ const PageBanner: React.FC<PageBannerProps> = ({
         <img 
           src={image} 
           alt={title} 
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-90"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
         {/* Decorative Glows */}
         <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#e76366]/10 blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#8355eb]/10 blur-[100px] translate-x-1/2 translate-y-1/2"></div>

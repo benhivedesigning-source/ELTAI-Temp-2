@@ -99,11 +99,23 @@ const Navbar = () => {
         
         {/* Center Menu */}
         <div className="hidden lg:flex items-center justify-center gap-2 xl:gap-3 font-bold text-[12px] xl:text-[15px] tracking-wide capitalize">
-          {navLinks.map((link, i) => (
+          {navLinks.map((link, i) => {
+            const isMainActive = location.pathname === link.path || 
+                                 (link.subItems && link.subItems.some(s => location.pathname === s.path || location.pathname.startsWith(link.name.toLowerCase() === 'home' ? '/!!fake' : `/${link.name.toLowerCase()}`))) ||
+                                 (link.name === 'Submit' && location.pathname.startsWith('/submit')) ||
+                                 (link.name === 'Highlights' && location.pathname.startsWith('/highlights')) ||
+                                 (link.name === 'Programme' && location.pathname.startsWith('/programme')) ||
+                                 (link.name === 'Travel' && location.pathname.startsWith('/travel')) ||
+                                 (link.name === 'Organizers' && location.pathname.startsWith('/organizers')) ||
+                                 (link.name === 'Theme' && location.pathname.startsWith('/theme')) ||
+                                 (link.name === 'Contact' && location.pathname.startsWith('/contact')) ||
+                                 (link.name === 'Register' && location.pathname.includes('/register'));
+
+            return (
             <div key={i} className="relative group">
               <Link 
                 to={link.path || '#'} 
-                className={`flex items-center transition-colors py-4 ${(location.pathname === link.path || (link.name === 'Register' && location.pathname.includes('/register'))) ? 'text-primary' : 'text-white hover:text-primary'}`}
+                className={`flex items-center transition-colors py-4 ${isMainActive ? 'text-primary' : 'text-white hover:text-primary'}`}
               >
                 <span className="whitespace-nowrap">{link.name}</span>
                 {link.dropdown && <ChevronDown className="w-3 h-3 xl:w-4 xl:h-4 transition-transform duration-300 group-hover:rotate-180" strokeWidth={3} />}
@@ -122,8 +134,9 @@ const Navbar = () => {
                           </div>
                         );
                       }
+                      const isSubActive = location.pathname === subItem.path;
                       return (
-                        <Link key={j} to={subItem.path} className="block px-4 py-2.5 text-white hover:text-primary hover:bg-white/5 transition-colors text-[13px] xl:text-[14px]">
+                        <Link key={j} to={subItem.path} className={`block px-4 py-2.5 hover:bg-white/5 transition-colors text-[13px] xl:text-[14px] ${isSubActive ? 'text-primary' : 'text-white hover:text-primary'}`}>
                           {subItem.name}
                         </Link>
                       );
@@ -132,7 +145,7 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-          ))}
+          )})}
         </div>
 
         {/* Right Section */}
@@ -179,6 +192,17 @@ const Navbar = () => {
         >
           {navLinks.map((link, i) => {
             const isExpanded = expandedMenu === link.name;
+            const isMainActive = location.pathname === link.path || 
+                                 (link.subItems && link.subItems.some(s => location.pathname === s.path || location.pathname.startsWith(link.name.toLowerCase() === 'home' ? '/!!fake' : `/${link.name.toLowerCase()}`))) ||
+                                 (link.name === 'Submit' && location.pathname.startsWith('/submit')) ||
+                                 (link.name === 'Highlights' && location.pathname.startsWith('/highlights')) ||
+                                 (link.name === 'Programme' && location.pathname.startsWith('/programme')) ||
+                                 (link.name === 'Travel' && location.pathname.startsWith('/travel')) ||
+                                 (link.name === 'Organizers' && location.pathname.startsWith('/organizers')) ||
+                                 (link.name === 'Theme' && location.pathname.startsWith('/theme')) ||
+                                 (link.name === 'Contact' && location.pathname.startsWith('/contact')) ||
+                                 (link.name === 'Register' && location.pathname.includes('/register'));
+
             return (
               <div key={i} className="flex flex-col">
                 <Link 
@@ -191,7 +215,7 @@ const Navbar = () => {
                       setIsMobileMenuOpen(false);
                     }
                   }}
-                  className={`text-lg font-heading font-bold flex items-center justify-center gap-3 transition-colors capitalize ${(location.pathname === link.path || (link.name === 'Register' && location.pathname.includes('/register'))) ? 'text-primary' : 'text-white hover:text-primary'}`}
+                  className={`text-lg font-heading font-bold flex items-center justify-center gap-3 transition-colors capitalize ${isMainActive ? 'text-primary' : 'text-white hover:text-primary'}`}
                 >
                   <div className="flex items-center">
                     {link.name}
@@ -217,12 +241,13 @@ const Navbar = () => {
                               </div>
                             );
                           }
+                          const isSubActive = location.pathname === subItem.path;
                           return (
                             <Link 
                               key={j} 
                               to={subItem.path} 
                               onClick={() => setIsMobileMenuOpen(false)}
-                              className="text-gray-400 hover:text-primary transition-colors text-base capitalize font-bold text-left"
+                              className={`transition-colors text-base capitalize font-bold text-left ${isSubActive ? 'text-primary' : 'text-gray-400 hover:text-primary'}`}
                             >
                               {subItem.name}
                             </Link>

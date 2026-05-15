@@ -33,7 +33,7 @@ const CancellationPolicyPage = () => {
       icon: <CheckCircle size={18} />,
       content: (
         <p className="text-gray-700 text-base leading-relaxed">
-          Cancellations received on or before <span className="font-bold" style={gradientText}>15 September 2026</span> will be eligible for a refund of <span className="font-bold" style={gradientText}>75%</span> of the registration fee. The remaining <span className="font-bold" style={gradientText}>25%</span> will be deducted towards administrative and processing charges.
+          Cancellations received on or before <span className="font-bold" style={gradientText}>15<sup className="text-[0.65em] leading-none ml-[0.05em] select-none lowercase">th</sup> September 2026</span> will be eligible for a refund of <span className="font-bold" style={gradientText}>75%</span> of the registration fee. The remaining <span className="font-bold" style={gradientText}>25%</span> will be deducted towards administrative and processing charges.
         </p>
       )
     },
@@ -43,7 +43,7 @@ const CancellationPolicyPage = () => {
       content: (
         <div>
           <p className="text-gray-700 text-base leading-relaxed">
-            Cancellations received <span className="font-bold" style={gradientText}>after 15 September 2026</span> will not be eligible for any refund.
+            Cancellations received <span className="font-bold" style={gradientText}>after 15<sup className="text-[0.65em] leading-none ml-[0.05em] select-none lowercase">th</sup> September 2026</span> will not be eligible for any refund.
           </p>
           <div className="bg-red-950 border border-red-800 text-red-400 rounded-full px-4 py-1.5 text-xs font-bold inline-flex items-center gap-1.5 mt-3">
             <AlertCircle size={12} /> No Refund After This Date
@@ -88,7 +88,7 @@ const CancellationPolicyPage = () => {
       icon: <Shield size={18} />,
       content: (
         <p className="text-gray-700 text-base leading-relaxed">
-          In the event of <span className="font-bold italic" style={gradientText}>force majeure</span> (natural calamities, government restrictions, public health emergencies, or other circumstances beyond the organisers' control), the organisers reserve the right to modify the programme or refund policy. In such cases, the decision of the Organising Committee shall be final.
+          In the event of <span className="font-bold" style={gradientText}>force majeure</span> (natural calamities, government restrictions, public health emergencies, or other circumstances beyond the organisers' control), the organisers reserve the right to modify the programme or refund policy. In such cases, the decision of the Organising Committee shall be final.
         </p>
       )
     }
@@ -193,22 +193,22 @@ const CancellationPolicyPage = () => {
           </div>
 
           {/* Timeline Container */}
-          <div className="relative flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-0">
+          <div className="relative flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0">
             
             {/* Connecting Line (Desktop) */}
             <div className="hidden md:block absolute top-6 left-10 right-10 h-0.5 opacity-30 z-0" style={{ background: 'linear-gradient(90deg, #e76366, #8355eb)' }}></div>
             
             {/* Connecting Line (Mobile) */}
-            <div className="md:hidden absolute top-6 bottom-6 left-6 border-l-2 border-dashed border-gray-200 z-0"></div>
+            <div className="md:hidden absolute top-6 bottom-6 left-1/2 -translate-x-1/2 border-l-2 border-dashed border-gray-200 z-0"></div>
 
             {/* Milestone 1 */}
-            <div className="relative z-10 flex md:flex-col items-start md:items-center gap-4 md:gap-4 w-full md:w-1/3 text-left md:text-center">
+            <div className="relative z-10 flex flex-col items-center gap-4 md:gap-4 w-full md:w-1/3 text-center">
               <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #e76366, #8355eb)' }}>
                 <CheckCircle color="#ffffff" size={24} />
               </div>
               <div>
                 <h4 className="font-['Poppins'] font-black text-gray-900 text-base leading-tight">
-                  On or Before<br className="hidden md:block" /> 15<sup>th</sup> September 2026
+                  On or Before<br className="hidden md:block" /> 15<sup className="text-[0.65em] leading-none ml-[0.05em] select-none lowercase">th</sup> September 2026
                 </h4>
                 <div className="mt-3">
                   <span className="bg-green-100 text-green-700 border border-green-200 rounded-full px-3 py-1 text-xs font-bold">
@@ -219,13 +219,13 @@ const CancellationPolicyPage = () => {
             </div>
 
             {/* Milestone 2 */}
-            <div className="relative z-10 flex md:flex-col items-start md:items-center gap-4 md:gap-4 w-full md:w-1/3 text-left md:text-center">
+            <div className="relative z-10 flex flex-col items-center gap-4 md:gap-4 w-full md:w-1/3 text-center">
               <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center shrink-0">
                 <XCircle color="#e76366" size={24} />
               </div>
               <div>
                 <h4 className="font-['Poppins'] font-black text-gray-900 text-base leading-tight">
-                  After<br className="hidden md:block" /> 15<sup>th</sup> September 2026
+                  After<br className="hidden md:block" /> 15<sup className="text-[0.65em] leading-none ml-[0.05em] select-none lowercase">th</sup> September 2026
                 </h4>
                 <div className="mt-3">
                   <span className="bg-red-100 text-red-600 border border-red-200 rounded-full px-3 py-1 text-xs font-bold">
@@ -236,7 +236,7 @@ const CancellationPolicyPage = () => {
             </div>
 
             {/* Milestone 3 */}
-            <div className="relative z-10 flex md:flex-col items-start md:items-center gap-4 md:gap-4 w-full md:w-1/3 text-left md:text-center">
+            <div className="relative z-10 flex flex-col items-center gap-4 md:gap-4 w-full md:w-1/3 text-center">
               <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center shrink-0">
                 <Ban color="#e76366" size={24} />
               </div>
@@ -251,7 +251,6 @@ const CancellationPolicyPage = () => {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
