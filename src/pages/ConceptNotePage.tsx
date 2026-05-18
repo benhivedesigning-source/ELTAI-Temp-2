@@ -96,9 +96,10 @@ const ConceptNotePage = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="w-full lg:w-7/12"
             >
-              <div className="flex items-center gap-4 mb-8">
+              <div className="flex items-center justify-center gap-4 mb-8">
                 <div className="h-px w-12 bg-primary"></div>
-                <p className="font-['Poppins'] text-3xl" style={gradientText}>Concept Note</p>
+                <p className="font-['Poppins'] text-3xl text-center" style={gradientText}>Concept Note</p>
+                <div className="h-px w-12 bg-primary"></div>
               </div>
 
               <div className="relative mb-12">

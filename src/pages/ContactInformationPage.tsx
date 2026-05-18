@@ -93,17 +93,22 @@ const ContactInformationPage = () => {
 
               <div className="flex gap-4 flex-wrap">
                 {[
-                  { icon: Twitter, link: "#" },
-                  { icon: Facebook, link: "#" },
-                  { icon: Instagram, link: "#" },
-                  { icon: Youtube, link: "#" },
-                  { icon: Linkedin, link: "#" }
+                  { icon: Twitter, link: "#", color: "#1DA1F2" },
+                  { icon: Facebook, link: "#", color: "#1877F2" },
+                  { icon: Instagram, link: "#", color: "#E4405F" },
+                  { icon: Youtube, link: "#", color: "#FF0000" },
+                  { icon: Linkedin, link: "#", color: "#0A66C2" }
                 ].map((social, i) => (
                   <motion.a
                     key={i}
                     href={social.link}
-                    whileHover={{ scale: 1.1 }}
-                    className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:bg-gradient-to-r hover:from-[#e76366] hover:to-[#8355eb] hover:border-transparent hover:shadow-[0_0_20px_rgba(231,99,102,0.3)] transition-all duration-300"
+                    whileHover={{ 
+                      scale: 1.15,
+                      backgroundColor: social.color,
+                      borderColor: social.color,
+                      boxShadow: `0 0 20px ${social.color}66`
+                    }}
+                    className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center transition-all duration-300"
                   >
                     <social.icon size={18} className="text-white" />
                   </motion.a>

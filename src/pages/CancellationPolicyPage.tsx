@@ -33,7 +33,7 @@ const CancellationPolicyPage = () => {
       icon: <CheckCircle size={18} />,
       content: (
         <p className="text-gray-700 text-base leading-relaxed">
-          Cancellations received on or before <span className="font-bold" style={gradientText}>15<sup className="text-[0.65em] leading-none ml-[0.05em] select-none lowercase">th</sup> September 2026</span> will be eligible for a refund of <span className="font-bold" style={gradientText}>75%</span> of the registration fee. The remaining <span className="font-bold" style={gradientText}>25%</span> will be deducted towards administrative and processing charges.
+          Cancellations received on or before <span className="font-bold text-black">15<sup className="text-[0.65em] leading-none ml-[0.05em] select-none lowercase">th</sup> September 2026</span> will be eligible for a refund of <span className="font-bold text-black">75%</span> of the registration fee. The remaining <span className="font-bold text-black">25%</span> will be deducted towards administrative and processing charges.
         </p>
       )
     },
@@ -43,7 +43,7 @@ const CancellationPolicyPage = () => {
       content: (
         <div>
           <p className="text-gray-700 text-base leading-relaxed">
-            Cancellations received <span className="font-bold" style={gradientText}>after 15<sup className="text-[0.65em] leading-none ml-[0.05em] select-none lowercase">th</sup> September 2026</span> will not be eligible for any refund.
+            Cancellations received <span className="font-bold text-black">after 15<sup className="text-[0.65em] leading-none ml-[0.05em] select-none lowercase">th</sup> September 2026</span> will not be eligible for any refund.
           </p>
           <div className="bg-red-950 border border-red-800 text-red-400 rounded-full px-4 py-1.5 text-xs font-bold inline-flex items-center gap-1.5 mt-3">
             <AlertCircle size={12} /> No Refund After This Date
@@ -124,7 +124,7 @@ const CancellationPolicyPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="font-['Poppins'] text-2xl mb-4" style={gradientText}>
+            <p className="font-['Poppins'] text-2xl mb-4 text-center" style={gradientText}>
               Terms & Conditions
             </p>
             <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl text-gray-900 tracking-tight capitalize">
@@ -261,32 +261,54 @@ const CancellationPolicyPage = () => {
       </svg>
 
       {/* Section 4 — Contact Note */}
-      <section className="py-20 bg-black relative overflow-hidden">
-        {/* Watermark */}
-        <div className="absolute z-0 pointer-events-none opacity-[0.03] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <span className="font-['Poppins'] font-black text-[18vw] whitespace-nowrap" style={gradientText}>
-            Policy
-          </span>
-        </div>
-
-        {/* Foreground */}
-        <div className="relative z-10 text-center max-w-xl mx-auto px-4">
-          <p className="font-['Poppins'] text-xl" style={gradientText}>
-            Cancellation & Refund Policy
-          </p>
-          <h2 className="font-['Poppins'] font-black text-white text-4xl md:text-5xl mt-2">
-            Questions?
-          </h2>
-
-          <p className="text-gray-400 text-base leading-relaxed mt-6">
-            Enquiries may be sent to
-          </p>
-          <a href="mailto:indiaeltai@gmail.com" className="block mt-2 font-['Poppins'] font-black text-2xl underline hover:opacity-80 transition-opacity" style={gradientText}>
-            indiaeltai@gmail.com
-          </a>
-          <p className="text-gray-500 text-sm mt-3">
-            only after the conference
-          </p>
+      <section className="py-24 bg-black relative overflow-hidden">
+        {/* Decorative ambient lighting */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] opacity-20 pointer-events-none blur-[120px]" style={{ background: 'radial-gradient(ellipse at center, #8355eb 0%, transparent 70%)' }}></div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative bg-zinc-900/40 backdrop-blur-xl border border-zinc-800/80 rounded-[2.5rem] p-10 md:p-16 text-center overflow-hidden shadow-2xl"
+          >
+            {/* Subtle inner background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#e76366]/5 to-[#8355eb]/5"></div>
+            
+            <div className="relative z-10">
+              <div className="mx-auto w-20 h-20 mb-8 rounded-2xl bg-gradient-to-br from-[#e76366]/20 to-[#8355eb]/20 flex items-center justify-center border border-white/10 rotate-3 transition-transform hover:rotate-6">
+                <Info size={36} className="text-white" />
+              </div>
+              
+              <p className="font-['Poppins'] text-lg md:text-xl font-medium tracking-wide mb-3 pl-[225px]" style={gradientText}>
+                Cancellation & Refund Policy
+              </p>
+              
+              <h2 className="font-['Poppins'] font-black text-white text-4xl md:text-6xl mb-6 tracking-tight">
+                Further Questions?
+              </h2>
+              
+              <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+                If you have any further questions or require clarifications regarding the cancellation and refund policy, our support team is available to assist you.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="mailto:indiaeltai@gmail.com" className="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition-all duration-300 rounded-full overflow-hidden shadow-[0_0_20px_rgba(231,99,102,0.3)] hover:shadow-[0_0_30px_rgba(131,85,235,0.5)] hover:-translate-y-1">
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#e76366] to-[#8355eb] opacity-90 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  <span className="relative flex items-center gap-3 text-lg">
+                    Contact via Email
+                    <ArrowRight size={20} className="transform group-hover:translate-x-1.5 transition-transform duration-300" />
+                  </span>
+                </a>
+              </div>
+              
+              <div className="mt-8 pt-8 border-t border-zinc-800/60 inline-flex items-center gap-2 text-zinc-500 text-sm font-medium">
+                <Clock size={16} className="text-zinc-400" />
+                <span>Enquiries may be sent only after the conclusion of the conference</span>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

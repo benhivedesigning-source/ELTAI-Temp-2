@@ -167,7 +167,6 @@ const Navbar = () => {
             Register Now
           </motion.button>
           
-          <div className="w-px h-6 xl:h-8 bg-zinc-700"></div>
           
           {/* Right Logo (MIT-AIFT) */}
           <Link to="/" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-10 p-1 xl:h-12 xl:p-1.5' : 'h-12 p-1.5 xl:h-16 xl:p-2'}`}>

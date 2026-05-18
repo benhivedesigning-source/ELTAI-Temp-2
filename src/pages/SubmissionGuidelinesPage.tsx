@@ -414,7 +414,7 @@ const SubmissionGuidelinesPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <p className="font-['Poppins'] text-3xl mb-10" style={gradientText}>Submission Deadline</p>
+            <p className="font-['Poppins'] text-3xl mb-10 text-center" style={gradientText}>Submission Deadline</p>
             
           </motion.div>
           

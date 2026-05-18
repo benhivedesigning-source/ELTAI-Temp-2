@@ -354,15 +354,15 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="flex flex-col items-start text-left"
+                className="flex flex-col items-center text-center mx-auto"
               >
                 <p className="text-gray-500 font-bold text-sm tracking-widest capitalize mb-2">Looking Back</p>
                 <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading font-black tracking-wide text-[#0a1128] capitalize mb-6 [word-spacing:0.1em]">
                   Our Past Conferences
                 </h2>
                 
-                <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                  <p className="text-gray-500 text-lg md:text-xl">
+                <div className="w-full flex flex-col items-center gap-4">
+                  <p className="text-gray-500 text-lg md:text-xl text-center">
                     Moments and milestones from our previous conference editions.
                   </p>
                   <Link to="/gallery" className="group flex items-center gap-2 text-[#0a1128] font-bold text-sm capitalize tracking-wide hover:text-[#e76366] transition-colors">

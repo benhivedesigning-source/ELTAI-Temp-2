@@ -351,12 +351,13 @@ const DomainsPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center justify-center gap-4 mb-6">
                 <div className="w-12 h-px bg-primary"></div>
-                <span className="text-xs font-bold tracking-widest capitalize text-gray-500">The Core Inquiry</span>
+                <span className="text-xs font-bold tracking-widest capitalize text-gray-500 text-center">The Core Inquiry</span>
+                <div className="w-12 h-px bg-primary"></div>
               </div>
 
-              <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl lg:text-7xl text-white mb-8 leading-[1.1] tracking-tighter capitalize">
+              <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl lg:text-7xl text-white mb-8 leading-[1.1] tracking-tighter capitalize text-center">
                 Overlapping <br/>
                 <span style={gradientText}>Lenses</span>
               </h2>

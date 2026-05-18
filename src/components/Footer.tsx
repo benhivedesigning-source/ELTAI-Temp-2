@@ -34,13 +34,13 @@ const Footer = () => {
           <div className="space-y-4">
             <p className="text-white font-bold text-lg mb-4">Join Us</p>
             <div className="flex gap-6">
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+              <a href="#" className="text-gray-400 hover:text-[#1DA1F2] transition-all transform hover:scale-125">
                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors"><Facebook className="w-5 h-5" /></a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors"><Instagram className="w-5 h-5" /></a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors"><Youtube className="w-5 h-5" /></a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors"><Linkedin className="w-5 h-5" /></a>
+              <a href="#" className="text-gray-400 hover:text-[#1877F2] transition-all transform hover:scale-125"><Facebook className="w-5 h-5" /></a>
+              <a href="#" className="text-gray-400 hover:text-[#E4405F] transition-all transform hover:scale-125"><Instagram className="w-5 h-5" /></a>
+              <a href="#" className="text-gray-400 hover:text-[#FF0000] transition-all transform hover:scale-125"><Youtube className="w-5 h-5" /></a>
+              <a href="#" className="text-gray-400 hover:text-[#0A66C2] transition-all transform hover:scale-125"><Linkedin className="w-5 h-5" /></a>
             </div>
           </div>
         </div>
