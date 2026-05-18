@@ -281,7 +281,7 @@ const CallForAbstractsPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <p className="font-['Poppins'] text-2xl mb-4 text-center" style={gradientText}>Core Academic Formats</p>
+              <p className="font-['Poppins'] text-2xl mb-4 text-center pl-[325px]" style={gradientText}>Core Academic Formats</p>
               <h2 className="font-['Poppins'] font-black text-gray-900 text-5xl md:text-7xl tracking-tighter mb-8 capitalize leading-tight">
                 Category <span style={gradientText}>A</span>
               </h2>
@@ -329,7 +329,7 @@ const CallForAbstractsPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <p className="font-['Poppins'] text-2xl mb-4 text-center" style={gradientText}>Interactive & Creative Formats</p>
+              <p className="font-['Poppins'] text-2xl mb-4 text-center pl-[325px]" style={gradientText}>Interactive & Creative Formats</p>
               <h2 className="font-['Poppins'] font-black text-white text-5xl md:text-7xl tracking-tighter mb-8 capitalize leading-tight">
                 Category <span style={gradientText}>B</span>
               </h2>
