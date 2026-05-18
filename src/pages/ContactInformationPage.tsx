@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
-import { MapPin, Phone, Mail, Globe, Twitter, Facebook, Instagram, Youtube, Linkedin, ChevronDown, ExternalLink, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Globe, Facebook, Instagram, Youtube, Linkedin, ChevronDown, ExternalLink, ArrowRight } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
 
 const ContactInformationPage = () => {
@@ -15,6 +15,12 @@ const ContactInformationPage = () => {
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text'
   };
+
+  const XIcon = ({ size, className }: { size: number, className: string }) => (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} width={size} height={size}>
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
 
   return (
     <div className="bg-black min-h-screen font-sans text-white selection:bg-primary selection:text-black overflow-x-hidden">
@@ -93,7 +99,7 @@ const ContactInformationPage = () => {
 
               <div className="flex gap-4 flex-wrap">
                 {[
-                  { icon: Twitter, link: "#", color: "#1DA1F2" },
+                  { icon: XIcon, link: "#", color: "#FFFFFF" },
                   { icon: Facebook, link: "#", color: "#1877F2" },
                   { icon: Instagram, link: "#", color: "#E4405F" },
                   { icon: Youtube, link: "#", color: "#FF0000" },
@@ -108,9 +114,9 @@ const ContactInformationPage = () => {
                       borderColor: social.color,
                       boxShadow: `0 0 20px ${social.color}66`
                     }}
-                    className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center transition-all duration-300"
+                    className="group w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center transition-all duration-300"
                   >
-                    <social.icon size={18} className="text-white" />
+                    <social.icon size={18} className="text-white group-hover:text-black transition-colors duration-300" />
                   </motion.a>
                 ))}
               </div>

@@ -124,9 +124,7 @@ const CancellationPolicyPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="font-['Poppins'] text-2xl mb-4 text-center" style={gradientText}>
-              Terms & Conditions
-            </p>
+            
             <h2 className="font-['Poppins'] font-black text-4xl md:text-5xl text-gray-900 tracking-tight capitalize">
               Cancellation <span style={gradientText}>Policy</span>
             </h2>

@@ -112,13 +112,28 @@ const Navbar = () => {
                                  (link.name === 'Register' && location.pathname.includes('/register'));
 
             return (
-            <div key={i} className="relative group">
+            <div key={i} className="relative group flex items-center">
               <Link 
                 to={link.path || '#'} 
-                className={`flex items-center transition-colors py-4 ${isMainActive ? 'text-primary' : 'text-white hover:text-primary'}`}
+                className={`flex items-center transition-colors py-4 px-2 xl:px-3 relative ${isMainActive ? 'text-primary' : 'text-white hover:text-primary'}`}
               >
                 <span className="whitespace-nowrap">{link.name}</span>
-                {link.dropdown && <ChevronDown className="w-3 h-3 xl:w-4 xl:h-4 transition-transform duration-300 group-hover:rotate-180" strokeWidth={3} />}
+                {link.dropdown && <ChevronDown className={`ml-1 w-3 h-3 xl:w-4 xl:h-4 transition-transform duration-300 ${isMainActive ? 'rotate-180' : 'group-hover:rotate-180'}`} strokeWidth={3} />}
+                
+                {/* Active Selection Indicator Arrow */}
+                {isMainActive && (
+                  <motion.div
+                    layoutId="navbar-indicator"
+                    className="absolute -bottom-[2px] left-1/2 -translate-x-1/2 flex justify-center items-center pointer-events-none"
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  >
+                    <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7 0L14 7H0L7 0Z" fill="currentColor" className="text-primary" />
+                    </svg>
+                  </motion.div>
+                )}
               </Link>
               {/* Dropdown Menu */}
               {link.subItems && (
