@@ -98,7 +98,7 @@ const Navbar = () => {
         </div>
         
         {/* Center Menu - Desktop (Visible from xl) */}
-        <div className="hidden xl:flex items-center justify-center gap-0 2xl:gap-2 font-bold text-[11px] xl:text-[12px] 2xl:text-[14px] tracking-tight capitalize">
+        <div className="hidden xl:flex items-center justify-center gap-1.5 2xl:gap-3 font-bold text-[13px] 2xl:text-[15px] tracking-wide capitalize px-2">
           {navLinks.map((link, i) => {
             const isMainActive = location.pathname === link.path || 
                                  (link.subItems && link.subItems.some(s => location.pathname === s.path || location.pathname.startsWith(link.name.toLowerCase() === 'home' ? '/!!fake' : `/${link.name.toLowerCase()}`))) ||
@@ -115,10 +115,10 @@ const Navbar = () => {
             <div key={i} className="relative group flex items-center">
               <Link 
                 to={link.path || '#'} 
-                className={`flex items-center transition-colors py-4 px-1.5 2xl:px-2 relative ${isMainActive ? 'text-primary' : 'text-white hover:text-primary'}`}
+                className={`flex items-center transition-colors py-4 px-2 2xl:px-3 relative ${isMainActive ? 'text-primary' : 'text-white hover:text-primary'}`}
               >
                 <span className="whitespace-nowrap">{link.name}</span>
-                {link.dropdown && <ChevronDown className={`ml-0.5 w-3 h-3 2xl:w-4 2xl:h-4 transition-transform duration-300 ${isMainActive ? 'rotate-180' : 'group-hover:rotate-180'}`} strokeWidth={3} />}
+                {link.dropdown && <ChevronDown className={`ml-1 w-3 h-3 2xl:w-4 2xl:h-4 transition-transform duration-300 ${isMainActive ? 'rotate-180' : 'group-hover:rotate-180'}`} strokeWidth={3} />}
                 
                 {/* Active Selection Indicator Arrow */}
                 {isMainActive && (
@@ -164,20 +164,21 @@ const Navbar = () => {
         </div>
 
         {/* Right Section - Desktop (Visible from xl) */}
-        <div className="hidden xl:flex items-center gap-2 2xl:gap-4 shrink-0">
-          <div className="relative group/submit">
+        <div className="hidden xl:flex items-center gap-3 2xl:gap-4 shrink-0">
+          <Link to="/submit/call-for-abstracts">
             <motion.button 
-              className="bg-zinc-900 text-zinc-500 px-3 py-1.5 2xl:px-5 2xl:py-2 rounded-full font-bold cursor-not-allowed text-[10px] 2xl:text-[11px] capitalize text-center leading-tight border border-zinc-800 whitespace-nowrap flex flex-col items-center"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-primary text-white px-4 py-2 2xl:px-6 2xl:py-2.5 rounded-full font-bold hover:bg-white hover:text-black transition-colors duration-300 text-[11px] 2xl:text-[12px] capitalize text-center leading-tight shadow-[0_0_15px_rgba(231,99,102,0.2)] whitespace-nowrap"
             >
-              Submit
-              <span className="text-[8px] bg-zinc-800 px-1 py-0.5 rounded text-zinc-500 capitalize font-black mt-0.5 shrink-0">Soon</span>
+              Submit Now
             </motion.button>
-          </div>
+          </Link>
           
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-primary text-white px-3 py-2 2xl:px-5 2xl:py-2.5 rounded-full font-bold hover:bg-white hover:text-black transition-colors duration-300 text-[10px] 2xl:text-[11px] capitalize text-center leading-tight shadow-[0_0_15px_rgba(231,99,102,0.2)] whitespace-nowrap"
+            className="bg-primary text-white px-4 py-2.5 2xl:px-6 2xl:py-3 rounded-full font-bold hover:bg-white hover:text-black transition-colors duration-300 text-[11px] 2xl:text-[13px] capitalize text-center leading-tight shadow-[0_0_15px_rgba(231,99,102,0.2)] whitespace-nowrap"
           >
             Register Now
           </motion.button>
@@ -300,14 +301,15 @@ const Navbar = () => {
 
               {/* Mobile/Tablet Menu Bottom Actions */}
               <div className="flex flex-col sm:grid sm:grid-cols-2 gap-4 mt-8 pt-8 border-t border-zinc-800">
-                <div className="relative group">
-                  <button 
-                    className="bg-zinc-900 text-zinc-600 py-4 px-6 rounded-2xl font-bold text-base w-full flex items-center justify-center gap-3 cursor-not-allowed border border-zinc-800"
+                <Link to="/submit/call-for-abstracts" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
+                  <motion.button 
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="bg-primary text-white py-4 px-6 rounded-2xl font-bold text-base w-full shadow-[0_0_20px_rgba(231,99,102,0.3)] transition-all active:scale-95"
                   >
                     Submit Abstract
-                    <span className="text-[10px] bg-zinc-800 px-2 py-0.5 rounded text-zinc-500 font-black uppercase tracking-widest">Soon</span>
-                  </button>
-                </div>
+                  </motion.button>
+                </Link>
                 
                 <motion.button 
                   whileHover={{ scale: 1.02 }}

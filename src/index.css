@@ -78,7 +78,7 @@
 }
 
 body {
- font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #000;
   color: #fff;
   overflow-x: hidden;
@@ -86,11 +86,10 @@ body {
 }
 
 *, *::before, *::after {
-  word-spacing: 0.25em;
+  box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  /* text-align: center; */
   letter-spacing: 0.025em;
   word-spacing: 0.25em !important;
   text-transform: capitalize;

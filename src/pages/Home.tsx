@@ -53,7 +53,7 @@ const Home = () => {
             playsInline
             className="w-full h-full object-cover origin-top"
           />
-          
+          <div className="absolute inset-0 bg-black/30 z-[1]"></div>
         </div>
 
         <div className="relative z-10 max-w-[1800px] mx-auto px-4 lg:px-8 w-full flex-1 flex flex-col justify-center mt-10">
@@ -548,9 +548,9 @@ const Home = () => {
           <img 
             src="https://www.image2url.com/r2/default/images/1776315989653-9a56a3fc-0281-441a-902b-dd4a9205a82b.webp" 
             alt="Conference Stage" 
-            className="w-full h-full object-cover opacity-100"
+            className="w-full h-full object-cover opacity-50"
           />
-         
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 lg:px-8 text-center flex flex-col items-center">
@@ -558,9 +558,9 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-primary font-bold tracking-widest text-sm mb-6 capitalize"
+            className="text-white font-bold tracking-widest text-sm mb-6 capitalize"
           >
-            7<sup className="text-primary">th</sup> – 10<sup className="text-primary">th</sup> October 2026 • Pune, India
+            7<sup className="text-white">th</sup> – 10<sup className="text-white">th</sup> October 2026 • Pune, India
           </motion.p>
           
           <motion.h2 
@@ -578,7 +578,7 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-200 text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed text-center"
+            className="text-white text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed text-center"
           >
             <Ordinal text="Be part of the 20th International and 56th Annual ELTAI Conference." /> Connect with educators, researchers, and thought leaders shaping the future of English education.
           </motion.p>

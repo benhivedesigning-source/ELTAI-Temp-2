@@ -265,10 +265,10 @@ const EltaiPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, type: "spring", stiffness: 50 }}
-            className="font-['Poppins'] font-black text-4xl md:text-5xl lg:text-7xl text-black mb-6 leading-tight"
+            className="font-['Poppins'] font-black text-4xl md:text-5xl lg:text-7xl text-white mb-6 leading-tight"
           >
             Empowering Educators, <br />
-            <span className="text-black">Enriching Classrooms</span>
+            <span className="text-white">Enriching Classrooms</span>
           </motion.h2>
           
           <motion.p 
@@ -276,7 +276,7 @@ const EltaiPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-2xl text-gray-800 mb-12 max-w-3xl mx-auto leading-relaxed font-medium text-justify"
+            className="text-lg md:text-2xl text-white-800 mb-12 max-w-3xl mx-auto leading-relaxed font-medium text-justify"
           >
             As ELTAI continues its journey, it remains firmly committed to empowering English language teachers and learners, fostering academic excellence, and shaping the future of English language education in India and beyond.
           </motion.p>
@@ -288,7 +288,7 @@ const EltaiPage = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col items-center gap-6"
           >
-            <span className="text-sm font-bold tracking-widest capitalize text-black">To Learn More</span>
+            <span className="text-sm font-bold tracking-widest capitalize text-white">To Learn More</span>
             <a 
               href="https://www.eltai.in" 
               target="_blank" 

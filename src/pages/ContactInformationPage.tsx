@@ -243,11 +243,13 @@ const ContactInformationPage = () => {
         <img 
           src="https://www.image2url.com/r2/default/images/1776343004910-541cc9e8-f3e1-40ff-ae7f-82de9bfd0dd3.png" 
           alt="Conference Background" 
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover opacity-80 z-0"
           loading="lazy"
           referrerPolicy="no-referrer"
         />
         
+        <div className="absolute inset-0 bg-black/60 z-[1]"></div>
+
         <div 
           className="absolute inset-0 pointer-events-none z-[1]"
           style={{ background: 'radial-gradient(ellipse at center, rgba(131,85,235,0.25) 0%, transparent 65%)' }}
@@ -273,7 +275,7 @@ const ContactInformationPage = () => {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
               }}
-              className="font-['Poppins'] text-xl text-black font-bold" 
+              className="font-['Poppins'] text-xl text-white font-bold" 
             >
               Get in Touch
             </motion.div>
@@ -283,10 +285,10 @@ const ContactInformationPage = () => {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
               }}
-              className="font-['Poppins'] font-black text-black text-5xl md:text-6xl mt-2 tracking-tight"
+              className="font-['Poppins'] font-black text-white text-5xl md:text-6xl mt-2 tracking-tight"
             >
               Questions ? <br className="md:hidden" />
-              <span className="inline-block text-black">We're Here.</span>
+              <span className="inline-block text-white">We're Here.</span>
             </motion.h2>
 
             <motion.div
@@ -303,7 +305,7 @@ const ContactInformationPage = () => {
                 <Mail size={24} className="text-[#e76366]" />
                 <a 
                   href="mailto:indiaeltai@gmail.com"
-                  className="font-['Poppins'] font-black text-xl md:text-2xl underline hover:opacity-80 transition-opacity text-black"
+                  className="font-['Poppins'] font-black text-xl md:text-2xl underline hover:opacity-80 transition-opacity text-white"
                 >
                   indiaeltai@gmail.com
                 </a>
