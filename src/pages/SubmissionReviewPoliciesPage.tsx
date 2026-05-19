@@ -199,7 +199,7 @@ const SubmissionReviewPoliciesPage = () => {
                       </div>
                       <h3 className="text-3xl font-black text-white tracking-tight">Double-Blind Peer Review</h3>
                     </div>
-                    <div className="sm:pl-[88px]">
+                    <div className="lg:pl-[88px]">
                       <p className="text-gray-400 leading-relaxed text-lg">
                         All abstracts undergo <span className="text-white font-bold">double-blind peer review</span> by experienced reviewers. Neither the presenters nor the reviewers will know each other's identities.
                       </p>
@@ -215,7 +215,7 @@ const SubmissionReviewPoliciesPage = () => {
                       </div>
                       <h3 className="text-3xl font-black text-white tracking-tight">Notification Timeline</h3>
                     </div>
-                    <div className="sm:pl-[88px]">
+                    <div className="lg:pl-[88px]">
                       <p className="text-gray-300 leading-relaxed mb-6 text-lg">
                         Presenters will normally be notified of the review outcome within <span className="text-[#8355eb] font-bold">15 days</span> of submission.
                       </p>

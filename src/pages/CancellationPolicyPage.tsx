@@ -279,7 +279,7 @@ const CancellationPolicyPage = () => {
                 <Info size={36} className="text-white" />
               </div>
               
-              <p className="font-['Poppins'] text-lg md:text-xl font-medium tracking-wide mb-3 pl-[225px]" style={gradientText}>
+              <p className="font-['Poppins'] text-lg md:text-xl font-medium tracking-wide mb-3 text-center" style={gradientText}>
                 Cancellation & Refund Policy
               </p>
               

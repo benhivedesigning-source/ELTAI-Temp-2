@@ -397,7 +397,7 @@ const Home = () => {
                   "https://www.image2url.com/r2/default/images/1776333845022-b6006276-2f5e-4fa6-b06f-a2c07fec6e08.png",
                   "https://www.image2url.com/r2/default/images/1776256958728-347bba30-f858-4570-b39c-219a012baeb1.webp"
                 ].map((src, i) => (
-                  <div key={i} className="rounded-3xl overflow-hidden h-[300px] md:h-[400px] w-[280px] md:w-[350px] lg:w-[400px] shrink-0 shadow-sm hover:shadow-xl transition-shadow duration-300">
+                  <div key={i} className="rounded-3xl overflow-hidden h-[300px] md:h-[400px] w-full md:w-[350px] lg:w-[400px] shrink-0 shadow-sm hover:shadow-xl transition-shadow duration-300">
                     <img 
                       src={src} 
                       alt={`Conference Moment ${i}`} 

@@ -277,7 +277,7 @@ const ImportantDatesPage = () => {
 
                     {/* Card Container */}
                     <div
-                      className={`w-full md:w-1/2 flex relative z-30 ${isEven ? "justify-start pl-[5rem] md:pl-20 md:ml-auto" : "justify-start md:justify-end pl-[5rem] md:pl-0 md:pr-20"}`}
+                      className={`w-full md:w-1/2 flex relative z-30 ${isEven ? "justify-start pl-12 md:pl-20 md:ml-auto" : "justify-start md:justify-end pl-12 md:pl-0 md:pr-20"}`}
                     >
                       <motion.div
                         initial={{ opacity: 0, x: isOdd ? -60 : 60, y: 20 }}

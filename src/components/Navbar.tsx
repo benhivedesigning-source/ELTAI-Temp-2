@@ -88,17 +88,17 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 border-b-2 ${isScrolled ? 'bg-black/95 backdrop-blur-md py-4 shadow-lg shadow-black/20 border-zinc-800' : 'bg-transparent py-6 border-transparent'}`}>
-      <div className="w-full px-4 xl:px-8 flex items-center justify-center gap-6 xl:gap-10 max-w-[1800px] mx-auto">
+    <nav className={`fixed w-full z-50 transition-all duration-300 border-b-2 ${isScrolled ? 'bg-black/95 backdrop-blur-md py-3 md:py-4 shadow-lg shadow-black/20 border-zinc-800' : 'bg-transparent py-4 md:py-6 border-transparent'}`}>
+      <div className="w-full px-4 lg:px-6 xl:px-8 flex items-center justify-between xl:justify-between 2xl:justify-center gap-2 lg:gap-4 xl:gap-2 2xl:gap-10 max-w-[1920px] mx-auto">
         {/* Left Logo (ELT@I) */}
         <div className="flex items-center shrink-0">
-          <Link to="/" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-10 p-1 xl:h-12 xl:p-1.5' : 'h-12 p-1.5 xl:h-16 xl:p-2'}`}>
+          <Link to="/" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-9 p-1 xl:h-12 xl:p-1.5' : 'h-11 p-1.5 xl:h-16 xl:p-2'}`}>
             <img src="https://conf2026.eltai.in/assets/ELTAI-DxCx19mA.png" alt="ELT@I Logo" className="h-full w-auto object-contain" />
           </Link>
         </div>
         
-        {/* Center Menu */}
-        <div className="hidden lg:flex items-center justify-center gap-2 xl:gap-3 font-bold text-[12px] xl:text-[15px] tracking-wide capitalize">
+        {/* Center Menu - Desktop (Visible from xl) */}
+        <div className="hidden xl:flex items-center justify-center gap-0.5 2xl:gap-3 font-bold text-[12px] 2xl:text-[15px] tracking-tight 2xl:tracking-wide capitalize px-2">
           {navLinks.map((link, i) => {
             const isMainActive = location.pathname === link.path || 
                                  (link.subItems && link.subItems.some(s => location.pathname === s.path || location.pathname.startsWith(link.name.toLowerCase() === 'home' ? '/!!fake' : `/${link.name.toLowerCase()}`))) ||
@@ -115,10 +115,10 @@ const Navbar = () => {
             <div key={i} className="relative group flex items-center">
               <Link 
                 to={link.path || '#'} 
-                className={`flex items-center transition-colors py-4 px-2 xl:px-3 relative ${isMainActive ? 'text-primary' : 'text-white hover:text-primary'}`}
+                className={`flex items-center transition-colors py-4 px-1.5 2xl:px-3 relative ${isMainActive ? 'text-primary' : 'text-white hover:text-primary'}`}
               >
                 <span className="whitespace-nowrap">{link.name}</span>
-                {link.dropdown && <ChevronDown className={`ml-1 w-3 h-3 xl:w-4 xl:h-4 transition-transform duration-300 ${isMainActive ? 'rotate-180' : 'group-hover:rotate-180'}`} strokeWidth={3} />}
+                {link.dropdown && <ChevronDown className={`ml-1 w-3 h-3 2xl:w-4 2xl:h-4 transition-transform duration-300 ${isMainActive ? 'rotate-180' : 'group-hover:rotate-180'}`} strokeWidth={3} />}
                 
                 {/* Active Selection Indicator Arrow */}
                 {isMainActive && (
@@ -143,7 +143,7 @@ const Navbar = () => {
                       const isRestricted = restrictedPaths.includes(subItem.path);
                       if (isRestricted) {
                         return (
-                          <div key={j} className="flex items-center justify-between px-4 py-2.5 text-zinc-600 cursor-not-allowed text-[13px] xl:text-[14px] group/item">
+                          <div key={j} className="flex items-center justify-between px-4 py-2.5 text-zinc-600 cursor-not-allowed text-[13px] 2xl:text-[14px] group/item">
                             <span>{subItem.name}</span>
                             <span className="text-[10px] bg-zinc-800 px-1.5 py-0.5 rounded text-zinc-500 capitalize font-black">Soon</span>
                           </div>
@@ -151,7 +151,7 @@ const Navbar = () => {
                       }
                       const isSubActive = location.pathname === subItem.path;
                       return (
-                        <Link key={j} to={subItem.path} className={`block px-4 py-2.5 hover:bg-white/5 transition-colors text-[13px] xl:text-[14px] ${isSubActive ? 'text-primary' : 'text-white hover:text-primary'}`}>
+                        <Link key={j} to={subItem.path} className={`block px-4 py-2.5 hover:bg-white/5 transition-colors text-[13px] 2xl:text-[14px] ${isSubActive ? 'text-primary' : 'text-white hover:text-primary'}`}>
                           {subItem.name}
                         </Link>
                       );
@@ -163,11 +163,11 @@ const Navbar = () => {
           )})}
         </div>
 
-        {/* Right Section */}
-        <div className="hidden lg:flex items-center gap-2 xl:gap-4 shrink-0">
+        {/* Right Section - Desktop (Visible from lg) */}
+        <div className="hidden lg:flex items-center gap-3 xl:gap-4 shrink-0">
           <div className="relative group/submit">
             <motion.button 
-              className="bg-zinc-900 text-zinc-500 px-4 py-2 xl:px-6 xl:py-2 rounded-full font-bold cursor-not-allowed text-[9px] xl:text-[11px] capitalize text-center leading-tight border border-zinc-800 whitespace-nowrap flex flex-col items-center"
+              className="bg-zinc-900 text-zinc-500 px-4 py-2 xl:px-6 xl:py-2 rounded-full font-bold cursor-not-allowed text-[10px] xl:text-[11px] capitalize text-center leading-tight border border-zinc-800 whitespace-nowrap flex flex-col items-center"
             >
               Submit
               <span className="text-[8px] bg-zinc-800 px-1.5 py-0.5 rounded text-zinc-600 capitalize font-black mt-0.5">Soon</span>
@@ -177,126 +177,158 @@ const Navbar = () => {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-primary text-white px-4 py-2 xl:px-6 xl:py-2 rounded-full font-bold hover:bg-white hover:text-black transition-colors duration-300 text-[9px] xl:text-[11px] capitalize text-center leading-tight shadow-[0_0_15px_rgba(231,99,102,0.2)] whitespace-nowrap"
+            className="bg-primary text-white px-4 py-2 xl:px-6 xl:py-2 rounded-full font-bold hover:bg-white hover:text-black transition-colors duration-300 text-[10px] xl:text-[11px] capitalize text-center leading-tight shadow-[0_0_15px_rgba(231,99,102,0.2)] whitespace-nowrap"
           >
             Register Now
           </motion.button>
           
-          
-          {/* Right Logo (MIT-AIFT) */}
-          <Link to="/" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-10 p-1 xl:h-12 xl:p-1.5' : 'h-12 p-1.5 xl:h-16 xl:p-2'}`}>
+          {/* Right Logo (MIT-ADT) */}
+          <Link to="/" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-9 p-1 xl:h-12 xl:p-1.5' : 'h-11 p-1.5 xl:h-16 xl:p-2'}`}>
             <img src="https://conf2026.eltai.in/assets/MITADT-KRFaF891.png" alt="MIT-ADT Logo" className="h-full w-auto object-contain" />
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
-        <div className="lg:hidden flex items-center justify-end">
-          <button className="text-white hover:text-primary transition-colors ml-4" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        {/* Mobile/Tablet Toggle */}
+        <div className="xl:hidden flex items-center justify-end gap-3">
+          {/* Tablet only quick actions */}
+          <div className="hidden md:flex lg:hidden items-center gap-3 mr-2">
+            <button className="bg-primary text-white px-5 py-2 rounded-full font-bold text-xs capitalize shadow-[0_0_15px_rgba(231,99,102,0.2)]">
+              Register
+            </button>
+          </div>
+          
+          <button className="text-white hover:text-primary transition-colors h-10 w-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
+          
+          {/* Mobile only right logo */}
+          <div className="lg:hidden flex items-center">
+             <Link to="/" className={`flex items-center bg-white rounded-lg cursor-pointer transition-all duration-300 ${isScrolled ? 'h-9 p-1' : 'h-10 p-1'}`}>
+                <img src="https://conf2026.eltai.in/assets/MITADT-KRFaF891.png" alt="MIT-ADT Logo" className="h-full w-auto object-contain" />
+             </Link>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="lg:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-t border-zinc-800 p-6 flex flex-col gap-4 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto"
-        >
-          {navLinks.map((link, i) => {
-            const isExpanded = expandedMenu === link.name;
-            const isMainActive = location.pathname === link.path || 
-                                 (link.subItems && link.subItems.some(s => location.pathname === s.path || location.pathname.startsWith(link.name.toLowerCase() === 'home' ? '/!!fake' : `/${link.name.toLowerCase()}`))) ||
-                                 (link.name === 'Submit' && location.pathname.startsWith('/submit')) ||
-                                 (link.name === 'Highlights' && location.pathname.startsWith('/highlights')) ||
-                                 (link.name === 'Programme' && location.pathname.startsWith('/programme')) ||
-                                 (link.name === 'Travel' && location.pathname.startsWith('/travel')) ||
-                                 (link.name === 'Organizers' && location.pathname.startsWith('/organizers')) ||
-                                 (link.name === 'Theme' && location.pathname.startsWith('/theme')) ||
-                                 (link.name === 'Contact' && location.pathname.startsWith('/contact')) ||
-                                 (link.name === 'Register' && location.pathname.includes('/register'));
+      {/* Mobile/Tablet Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="xl:hidden fixed inset-0 top-[60px] md:top-[80px] bg-black/98 backdrop-blur-2xl z-[60] overflow-y-auto"
+          >
+            <div className="max-w-3xl mx-auto p-6 md:p-10 flex flex-col gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8">
+                {navLinks.map((link, i) => {
+                  const isExpanded = expandedMenu === link.name;
+                  const isMainActive = location.pathname === link.path || 
+                                      (link.subItems && link.subItems.some(s => location.pathname === s.path || location.pathname.startsWith(link.name.toLowerCase() === 'home' ? '/!!fake' : `/${link.name.toLowerCase()}`))) ||
+                                      (link.name === 'Submit' && location.pathname.startsWith('/submit')) ||
+                                      (link.name === 'Highlights' && location.pathname.startsWith('/highlights')) ||
+                                      (link.name === 'Programme' && location.pathname.startsWith('/programme')) ||
+                                      (link.name === 'Travel' && location.pathname.startsWith('/travel')) ||
+                                      (link.name === 'Organizers' && location.pathname.startsWith('/organizers')) ||
+                                      (link.name === 'Theme' && location.pathname.startsWith('/theme')) ||
+                                      (link.name === 'Contact' && location.pathname.startsWith('/contact')) ||
+                                      (link.name === 'Register' && location.pathname.includes('/register'));
 
-            return (
-              <div key={i} className="flex flex-col">
-                <Link 
-                  to={link.path || '#'} 
-                  onClick={(e) => {
-                    if (link.dropdown) {
-                      e.preventDefault();
-                      setExpandedMenu(isExpanded ? null : link.name);
-                    } else {
-                      setIsMobileMenuOpen(false);
-                    }
-                  }}
-                  className={`text-lg font-heading font-bold flex items-center justify-center gap-3 transition-colors capitalize ${isMainActive ? 'text-primary' : 'text-white hover:text-primary'}`}
-                >
-                  <div className="flex items-center">
-                    {link.name}
-                  </div>
-                  {link.dropdown && <ChevronDown size={20} className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />}
-                </Link>
-                <AnimatePresence>
-                  {link.dropdown && isExpanded && link.subItems && (
-                    <motion.div 
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="flex flex-col gap-3 mt-3 ml-2 py-2">
-                        {link.subItems.map((subItem, j) => {
-                          const isRestricted = restrictedPaths.includes(subItem.path);
-                          if (isRestricted) {
-                            return (
-                              <div key={j} className="text-zinc-600 cursor-not-allowed text-base capitalize font-bold flex items-center justify-start gap-2">
-                                {subItem.name}
-                                <span className="text-[10px] bg-zinc-800 px-2 py-0.5 rounded text-zinc-500 capitalize font-black">Soon</span>
-                              </div>
-                            );
+                  return (
+                    <div key={i} className="flex flex-col bg-zinc-900/50 border border-zinc-800/50 rounded-2xl p-4 transition-all hover:bg-zinc-900/80">
+                      <Link 
+                        to={link.path || '#'} 
+                        onClick={(e) => {
+                          if (link.dropdown) {
+                            e.preventDefault();
+                            setExpandedMenu(isExpanded ? null : link.name);
+                          } else {
+                            setIsMobileMenuOpen(false);
                           }
-                          const isSubActive = location.pathname === subItem.path;
-                          return (
-                            <Link 
-                              key={j} 
-                              to={subItem.path} 
-                              onClick={() => setIsMobileMenuOpen(false)}
-                              className={`transition-colors text-base capitalize font-bold text-left ${isSubActive ? 'text-primary' : 'text-gray-400 hover:text-primary'}`}
-                            >
-                              {subItem.name}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                        }}
+                        className={`text-base md:text-lg font-bold flex items-center justify-between transition-colors capitalize ${isMainActive ? 'text-primary' : 'text-white hover:text-primary'}`}
+                      >
+                        <div className="flex items-center gap-3">
+                          <span className="p-2 rounded-xl bg-white/5 text-zinc-400">
+                             {link.icon}
+                          </span>
+                          {link.name}
+                        </div>
+                        {link.dropdown && <ChevronDown size={20} className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />}
+                      </Link>
+                      
+                      <AnimatePresence>
+                        {link.dropdown && isExpanded && link.subItems && (
+                          <motion.div 
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="flex flex-col gap-2.5 mt-4 pt-4 border-t border-zinc-800/50">
+                              {link.subItems.map((subItem, j) => {
+                                const isRestricted = restrictedPaths.includes(subItem.path);
+                                if (isRestricted) {
+                                  return (
+                                    <div key={j} className="flex items-center justify-between px-2 py-1.5 text-zinc-500 cursor-not-allowed text-sm font-medium">
+                                      <span>{subItem.name}</span>
+                                      <span className="text-[9px] bg-zinc-800 px-1.5 py-0.5 rounded text-zinc-600 font-bold uppercase tracking-wider">Coming Soon</span>
+                                    </div>
+                                  );
+                                }
+                                const isSubActive = location.pathname === subItem.path;
+                                return (
+                                  <Link 
+                                    key={j} 
+                                    to={subItem.path} 
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className={`px-2 py-1.5 transition-colors text-sm font-medium rounded-lg hover:bg-white/5 ${isSubActive ? 'text-primary' : 'text-zinc-400 hover:text-white'}`}
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })}
               </div>
-            );
-          })}
-          <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 pt-4 border-t border-zinc-800">
-            <div className="w-full sm:w-auto flex-grow relative">
-              <motion.button 
-                className="bg-zinc-900 text-zinc-600 px-6 py-3 rounded-full font-bold text-lg w-full flex items-center justify-center gap-3 cursor-not-allowed border border-zinc-800"
-              >
-                Submit Now
-                <span className="text-[10px] bg-zinc-800 px-2.5 py-1 rounded text-zinc-500 capitalize font-black">Soon</span>
-              </motion.button>
+
+              {/* Mobile/Tablet Menu Bottom Actions */}
+              <div className="flex flex-col sm:grid sm:grid-cols-2 gap-4 mt-8 pt-8 border-t border-zinc-800">
+                <div className="relative group">
+                  <button 
+                    className="bg-zinc-900 text-zinc-600 py-4 px-6 rounded-2xl font-bold text-base w-full flex items-center justify-center gap-3 cursor-not-allowed border border-zinc-800"
+                  >
+                    Submit Abstract
+                    <span className="text-[10px] bg-zinc-800 px-2 py-0.5 rounded text-zinc-500 font-black uppercase tracking-widest">Soon</span>
+                  </button>
+                </div>
+                
+                <motion.button 
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="bg-primary text-white py-4 px-6 rounded-2xl font-bold text-base w-full shadow-[0_0_20px_rgba(231,99,102,0.3)] capitalize transition-all active:scale-95"
+                >
+                  Register Now
+                </motion.button>
+              </div>
+              
+              {/* Organized by badge at mobile menu bottom */}
+              <div className="flex flex-col items-center gap-4 mt-6 text-center">
+                <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-600">Hosted At</p>
+                <div className="bg-white p-4 rounded-2xl inline-block shadow-lg">
+                  <img src="https://conf2026.eltai.in/assets/MITADT-KRFaF891.png" alt="MIT-ADT Logo" className="h-10 md:h-12 w-auto object-contain" />
+                </div>
+              </div>
             </div>
-            
-            <motion.button 
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-primary text-white px-6 py-3 rounded-full font-bold text-lg w-full sm:w-auto flex-grow shadow-[0_0_20px_rgba(231,99,102,0.3)] capitalize leading-tight"
-            >
-              Register Now
-            </motion.button>
-            <div className="flex items-center justify-center bg-white px-4 py-2 rounded-lg w-full sm:w-auto h-14">
-              <img src="https://conf2026.eltai.in/assets/MITADT-KRFaF891.png" alt="MIT-ADT Logo" className="h-full w-auto object-contain" />
-            </div>
-          </div>
-        </motion.div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
