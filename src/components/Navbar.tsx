@@ -89,16 +89,16 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 border-b-2 ${isScrolled ? 'bg-black/95 backdrop-blur-md py-3 md:py-4 shadow-lg shadow-black/20 border-zinc-800' : 'bg-transparent py-4 md:py-6 border-transparent'}`}>
-      <div className="w-full px-4 lg:px-6 xl:px-8 flex items-center justify-between xl:justify-between 2xl:justify-center gap-2 lg:gap-4 xl:gap-2 2xl:gap-10 max-w-[1920px] mx-auto">
+      <div className="w-full px-2 lg:px-4 xl:px-6 2xl:px-8 flex items-center justify-between gap-2 xl:gap-4 2xl:gap-10 max-w-[1920px] mx-auto">
         {/* Left Logo (ELT@I) */}
         <div className="flex items-center shrink-0">
-          <Link to="/" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-9 p-1 xl:h-12 xl:p-1.5' : 'h-11 p-1.5 xl:h-16 xl:p-2'}`}>
+          <Link to="/" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-8 p-1 xl:h-11 xl:p-1' : 'h-10 p-1 xl:h-14 xl:p-1.5'}`}>
             <img src="https://conf2026.eltai.in/assets/ELTAI-DxCx19mA.png" alt="ELT@I Logo" className="h-full w-auto object-contain" />
           </Link>
         </div>
         
         {/* Center Menu - Desktop (Visible from xl) */}
-        <div className="hidden xl:flex items-center justify-center gap-0.5 2xl:gap-3 font-bold text-[12px] 2xl:text-[15px] tracking-tight 2xl:tracking-wide capitalize px-2">
+        <div className="hidden xl:flex items-center justify-center gap-0 2xl:gap-2 font-bold text-[11px] xl:text-[12px] 2xl:text-[14px] tracking-tight capitalize">
           {navLinks.map((link, i) => {
             const isMainActive = location.pathname === link.path || 
                                  (link.subItems && link.subItems.some(s => location.pathname === s.path || location.pathname.startsWith(link.name.toLowerCase() === 'home' ? '/!!fake' : `/${link.name.toLowerCase()}`))) ||
@@ -115,10 +115,10 @@ const Navbar = () => {
             <div key={i} className="relative group flex items-center">
               <Link 
                 to={link.path || '#'} 
-                className={`flex items-center transition-colors py-4 px-1.5 2xl:px-3 relative ${isMainActive ? 'text-primary' : 'text-white hover:text-primary'}`}
+                className={`flex items-center transition-colors py-4 px-1.5 2xl:px-2 relative ${isMainActive ? 'text-primary' : 'text-white hover:text-primary'}`}
               >
                 <span className="whitespace-nowrap">{link.name}</span>
-                {link.dropdown && <ChevronDown className={`ml-1 w-3 h-3 2xl:w-4 2xl:h-4 transition-transform duration-300 ${isMainActive ? 'rotate-180' : 'group-hover:rotate-180'}`} strokeWidth={3} />}
+                {link.dropdown && <ChevronDown className={`ml-0.5 w-3 h-3 2xl:w-4 2xl:h-4 transition-transform duration-300 ${isMainActive ? 'rotate-180' : 'group-hover:rotate-180'}`} strokeWidth={3} />}
                 
                 {/* Active Selection Indicator Arrow */}
                 {isMainActive && (
@@ -163,27 +163,27 @@ const Navbar = () => {
           )})}
         </div>
 
-        {/* Right Section - Desktop (Visible from lg) */}
-        <div className="hidden lg:flex items-center gap-3 xl:gap-4 shrink-0">
+        {/* Right Section - Desktop (Visible from xl) */}
+        <div className="hidden xl:flex items-center gap-2 2xl:gap-4 shrink-0">
           <div className="relative group/submit">
             <motion.button 
-              className="bg-zinc-900 text-zinc-500 px-4 py-2 xl:px-6 xl:py-2 rounded-full font-bold cursor-not-allowed text-[10px] xl:text-[11px] capitalize text-center leading-tight border border-zinc-800 whitespace-nowrap flex flex-col items-center"
+              className="bg-zinc-900 text-zinc-500 px-3 py-1.5 2xl:px-5 2xl:py-2 rounded-full font-bold cursor-not-allowed text-[10px] 2xl:text-[11px] capitalize text-center leading-tight border border-zinc-800 whitespace-nowrap flex flex-col items-center"
             >
               Submit
-              <span className="text-[8px] bg-zinc-800 px-1.5 py-0.5 rounded text-zinc-600 capitalize font-black mt-0.5">Soon</span>
+              <span className="text-[8px] bg-zinc-800 px-1 py-0.5 rounded text-zinc-500 capitalize font-black mt-0.5 shrink-0">Soon</span>
             </motion.button>
           </div>
           
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-primary text-white px-4 py-2 xl:px-6 xl:py-2 rounded-full font-bold hover:bg-white hover:text-black transition-colors duration-300 text-[10px] xl:text-[11px] capitalize text-center leading-tight shadow-[0_0_15px_rgba(231,99,102,0.2)] whitespace-nowrap"
+            className="bg-primary text-white px-3 py-2 2xl:px-5 2xl:py-2.5 rounded-full font-bold hover:bg-white hover:text-black transition-colors duration-300 text-[10px] 2xl:text-[11px] capitalize text-center leading-tight shadow-[0_0_15px_rgba(231,99,102,0.2)] whitespace-nowrap"
           >
             Register Now
           </motion.button>
           
           {/* Right Logo (MIT-ADT) */}
-          <Link to="/" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-9 p-1 xl:h-12 xl:p-1.5' : 'h-11 p-1.5 xl:h-16 xl:p-2'}`}>
+          <Link to="/" className={`flex items-center bg-white rounded-lg cursor-pointer shrink-0 transition-all duration-300 ${isScrolled ? 'h-8 p-1 xl:h-11 xl:p-1' : 'h-10 p-1 xl:h-14 xl:p-1.5'}`}>
             <img src="https://conf2026.eltai.in/assets/MITADT-KRFaF891.png" alt="MIT-ADT Logo" className="h-full w-auto object-contain" />
           </Link>
         </div>
